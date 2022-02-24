@@ -17,11 +17,8 @@ import { HomeComponent } from './home/home.component';
     ForgotPasswordComponent,
     RegisterComponent,
     EmailValidationComponent,
-<<<<<<< HEAD
-    AuthUserHomeComponent
-=======
+    AuthUserHomeComponent,
     HomeComponent
->>>>>>> 40c50c56f1793191fd90b64299288143f0b651f1
   ],
   imports: [
     BrowserModule,
