@@ -4,7 +4,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 const routes: Routes = [
   {component: ConnexionComponent, path:"login"},
-  {component: ForgotPasswordComponent, path:"login/forgot-password"},
+  {component: ForgotPasswordComponent, path:"forgot-password"},
 ];
 
 @NgModule({
