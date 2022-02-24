@@ -7,6 +7,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { RegisterComponent } from './register/register.component';
 import { EmailValidationComponent } from './email-validation/email-validation.component';
+import { AuthUserHomeComponent } from './auth-user-home/auth-user-home.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { EmailValidationComponent } from './email-validation/email-validation.co
     ConnexionComponent,
     ForgotPasswordComponent,
     RegisterComponent,
-    EmailValidationComponent
+    EmailValidationComponent,
+    AuthUserHomeComponent
   ],
   imports: [
     BrowserModule,
