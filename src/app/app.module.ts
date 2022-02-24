@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { RegisterComponent } from './register/register.component';
+import { EmailValidationComponent } from './email-validation/email-validation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnexionComponent,
     ForgotPasswordComponent,
-    RegisterComponent
+    RegisterComponent,
+    EmailValidationComponent
   ],
   imports: [
     BrowserModule,
