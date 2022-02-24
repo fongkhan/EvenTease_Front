@@ -8,6 +8,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { RegisterComponent } from './register/register.component';
 import { EmailValidationComponent } from './email-validation/email-validation.component';
 import { AuthUserHomeComponent } from './auth-user-home/auth-user-home.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,11 @@ import { AuthUserHomeComponent } from './auth-user-home/auth-user-home.component
     ForgotPasswordComponent,
     RegisterComponent,
     EmailValidationComponent,
+<<<<<<< HEAD
     AuthUserHomeComponent
+=======
+    HomeComponent
+>>>>>>> 40c50c56f1793191fd90b64299288143f0b651f1
   ],
   imports: [
     BrowserModule,
