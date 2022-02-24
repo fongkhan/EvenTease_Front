@@ -4,16 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConnexionComponent } from './connexion/connexion.component';
-import { HomeComponent } from './home/home.component';
-import { HelpComponent } from './help/help.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnexionComponent,
-   
-    HomeComponent,
-         HelpComponent
+    ForgotPasswordComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
