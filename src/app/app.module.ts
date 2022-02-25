@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { RegisterComponent } from './register/register.component';
+import { EventPrivateComponent } from './event-private/event-private.component';
 import { EmailValidationComponent } from './email-validation/email-validation.component';
 import { AuthUserHomeComponent } from './auth-user-home/auth-user-home.component';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +17,7 @@ import { HomeComponent } from './home/home.component';
     ConnexionComponent,
     ForgotPasswordComponent,
     RegisterComponent,
+    EventPrivateComponent,
     EmailValidationComponent,
     AuthUserHomeComponent,
     HomeComponent
