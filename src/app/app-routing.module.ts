@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { HelpComponent } from './help/help.component';
 import { HomeComponent } from './home/home.component';
 import { AuthUserHomeComponent } from './auth-user-home/auth-user-home.component';
+
 const routes: Routes = [
   {component: ConnexionComponent, path:"login"},
   {component: ForgotPasswordComponent, path:"forgot-password"},
