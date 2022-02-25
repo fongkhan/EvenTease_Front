@@ -29,9 +29,7 @@ export class EventCreationComponent implements OnInit {
       },
       error: (err)=>{console.log(err)}
     });
-  }
-
- 
+  } 
 
 }
 
