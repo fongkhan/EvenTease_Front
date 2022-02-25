@@ -24,7 +24,7 @@ export class ConnexionComponent implements OnInit {
         if(this.user != null) {
           console.log('ok');
           this.route.navigateByUrl('auth-user-home');
-          this.auth.isConnect();
+          this.auth.setUserSession(this.user);
         }
         else{
           this.msgErr ='Identifiant ou mot de passe erroné';
