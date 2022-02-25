@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { AuthService } from './service/auth.service';
+//IMPOTRATION DES SERVICES
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'EvenTease_Front';
+
+  constructor(public auth: AuthService){}
+  //IMPOTRATION DES SERVICES
 }
