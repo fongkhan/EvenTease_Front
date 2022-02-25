@@ -11,6 +11,7 @@ import { EmailValidationComponent } from './email-validation/email-validation.co
 import { AuthUserHomeComponent } from './auth-user-home/auth-user-home.component';
 import { HomeComponent } from './home/home.component';
 import { EventPublicComponent } from './event-public/event-public.component';
+import { EventCreationComponent } from './event-creation/event-creation.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EventPublicComponent } from './event-public/event-public.component';
     EmailValidationComponent,
     AuthUserHomeComponent,
     HomeComponent,
-    EventPublicComponent
+    EventPublicComponent,
+    EventCreationComponent
   ],
   imports: [
     BrowserModule,
