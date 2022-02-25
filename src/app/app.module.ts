@@ -10,6 +10,7 @@ import { EventPrivateComponent } from './event-private/event-private.component';
 import { EmailValidationComponent } from './email-validation/email-validation.component';
 import { AuthUserHomeComponent } from './auth-user-home/auth-user-home.component';
 import { HomeComponent } from './home/home.component';
+import { EventPublicComponent } from './event-public/event-public.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeComponent } from './home/home.component';
     EventPrivateComponent,
     EmailValidationComponent,
     AuthUserHomeComponent,
-    HomeComponent
+    HomeComponent,
+    EventPublicComponent
   ],
   imports: [
     BrowserModule,
