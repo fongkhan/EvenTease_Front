@@ -23,6 +23,7 @@ const routes: Routes = [
   {component: EventPrivateComponent, path:"event-private"},
   {component: EventPublicComponent, path:"event-public"},
   {component: EventCreationComponent, path:"event-creation"},
+  {path :'',redirectTo:'home', pathMatch: 'full'},
 ];
 
 @NgModule({

@@ -6,15 +6,23 @@
                     Email validation
                     <br><br>
                 </h1>
-                <form>
-                    <!-- Email input -->
+                
+                <form >
+                    
+                    <!-- email validation input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="form2Example1" class="form-control" />
+                        <input ngModel="" name="confirm_email" type="email" id="" class="form-control" />
+                        <label class="form-label" for="">confirm email</label>
+                    </div>
+
+                    <!-- code input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="" name="code_verif" class="form-control" />
                         <label class="form-label" for="form2Example1">Code sent by email</label>
                     </div>
 
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block mb-4">Confirm email</button>
+                    <button type="submit" class="btn btn-primary btn-block mb-4">Verify email</button>
                 </form>
             </div>
         </div>

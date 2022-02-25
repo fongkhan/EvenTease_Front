@@ -5,72 +5,75 @@
                 <h1>
                     <b>REGISTER<br><br></b>
                 </h1>
-                    <form>
+                    <form #connect="ngForm" (ngSubmit)="register(connect.value)">
+                        <div *ngIf="msgErr != ''" class="alert alert-danger text-center" >
+                            {{msgErr}}
+                        </div>
                         <!-- login input -->
                         <div class="form-outline mb-4">
-                            <input type="text" id="login-input" class="form-control" />
-                            <label class="form-label" for="login-input">Login</label>
+                            <input ngModel="" name="login" type="text" id="login-input" class="form-control" required/>
+                            <label class="form-label" for="">Login *</label>
                         </div>
 
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="email" id="" class="form-control" />
-                            <label class="form-label" for="">Email address</label>
+                            <input ngModel="" name = "mail" type="mail" id="" class="form-control" required/>
+                            <label class="form-label" for="">Email address *</label>
                         </div>
-
+                     
                         <!-- Password input -->
                         <div class="form-outline mb-4">
-                            <input type="password" id="" class="form-control" />
-                            <label class="form-label" for="">Password</label>
+                            <input ngModel="" name ="password" type="password" id="password" class="form-control" required />
+                            <label class="form-label" for="">Password *</label>
                         </div>
 
                         <!-- Confirm Password input -->
                         <div class="form-outline mb-4">
-                            <input type="password" id="" class="form-control" />
-                            <label class="form-label" for="">Confirm password</label>
+                            <input ngModel="" name="confirm_password" type="password" id="confirm_password" class="form-control" required/>
+                            <label class="form-label" for="">Confirm password * </label>
                         </div>
 
                         <!-- Name input -->
                         <div class="form-outline mb-4">
-                            <input type="text" id="" class="form-control" />
-                            <label class="form-label" for="">Name</label>
+                            <input ngModel="" name="name" type="text" id="name" class="form-control" required />
+                            <label class="form-label" for="">Name *</label>
                         </div>
 
                         <!--Surname input -->
                         <div class="form-outline mb-4">
-                            <input type="text" id="" class="form-control" />
-                            <label class="form-label" for="">Surname</label>
+                            <input ngModel="" name="surname" type="text" id="surname" class="form-control" required />
+                            <label class="form-label" for="">Surname *</label>
                         </div>
 
                         <!--Birthdate input -->
                         <div class="form-outline mb-4">
-                            <input type="date" id="" class="form-control" />
+                            <input ngModel="" name="birthdate" type="date" id="birthdate" class="form-control" />
                             <label class="form-label" for="">Birth date</label>
                         </div>
                         <!--Phone input -->
                         <div class="form-outline mb-4">
-                            <input type="text" id="" class="form-control" />
+                            <input ngModel="" name="phone" type="text" id="phone" class="form-control" />
                             <label class="form-label" for="">Phone</label>
                         </div>
                         <!--zip input -->
                         <div class="form-outline mb-4">
-                            <input type="text" id="" class="form-control" />
+                            <input ngModel="" name="zipCode" type="text" id="zip" class="form-control" />
                             <label class="form-label" for="">Zip code</label>
                         </div>
                         <!--Town input -->
                         <div class="form-outline mb-4">
-                            <input type="text" id="" class="form-control" />
+                            <input ngModel="" name="town" type="text" id="town" class="form-control" />
                             <label class="form-label" for="">Town</label>
                         </div>
-                        <!--Descrption input -->
+                        <!--Descrption input 
                         <div class="input-group">
                             <div class="input-group-prepend">
                               <span class="input-group-text">Descrption</span>
                             </div>
-                            <textarea class="form-control" aria-label="Descrption"></textarea>
+                            <textarea  name="Descrption" ngModel="" class="form-control" aria-label="Descrption"></textarea>
                         </div>
                         <br>
-                        <br>
+                        <br>-->
                     
                         <!-- Submit button -->
                         <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
