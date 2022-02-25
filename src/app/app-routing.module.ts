@@ -7,6 +7,9 @@ import { RegisterComponent } from './register/register.component';
 import { HelpComponent } from './help/help.component';
 import { HomeComponent } from './home/home.component';
 import { AuthUserHomeComponent } from './auth-user-home/auth-user-home.component';
+import { EventPrivateComponent } from './event-private/event-private.component';
+
+
 const routes: Routes = [
   {component: ConnexionComponent, path:"login"},
   {component: ForgotPasswordComponent, path:"forgot-password"},
@@ -15,6 +18,7 @@ const routes: Routes = [
   {component: HomeComponent, path:"home"},
   {component: HelpComponent, path:"help"},
   {component: AuthUserHomeComponent, path:"auth-user-home"},
+  {component: EventPrivateComponent, path:"event-private"},
 ];
 
 @NgModule({
