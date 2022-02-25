@@ -1,128 +1,120 @@
 <section>
     <div class="container py-5 h-100">
         <div class="row d-flex align-items-center justify-content-center h-100">
-            <div >
-                <h1><b>Ready to create your own event?<br><br></b>    </h1>
+            <div>
+                <h1><b>Ready to create your own event?<br><br></b> </h1>
             </div>
 
 
-            <div class="col-md-6">
-
-                <form>
-                    <!-- Nom -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="form2Example1">Name*</label>
-                        <input type="text" name="nom" class="form-control" />
-                    </div>
-
-                    <!-- Date -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="form2Example1">Date</label>
-                        <input type="date" name="date" class="form-control" />
-                    </div>
-
-                    <!-- Lieu -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="form2Example1">Address</label>
-                        <input type="text" name="lieu" class="form-control" />
-                    </div>
-
-                   
+            <form #connect="ngForm" (ngSubmit)="CreateEvent(connect.value)">
+                <div class="col-md-6">
 
                     
+                    
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="">Name*</label>
+                        <input type="text" name="nom" class="form-control" ngModel="" />
+                    </div>
+                    <!--
+                    
+                    
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example1">Date</label>
+                        <input type="date" name="date" class="form-control"ngModel="" />
+                    </div>
 
-                    <!-- Activité -->
+                    
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example1">Address</label>
+                        <input type="text" name="lieu" class="form-control"ngModel="" />
+                    </div>
+
+                    
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Describe your event*</label>
-                        <input type="text" name="describe" class="form-control" />
-                    </div>  
+                        <input type="text" name="describe" class="form-control"ngModel="" />
+                    </div>
 
-                </form>
+                </div>
 
-
-
-            </div>
+                <div class="col-md-6">
 
 
-            <div class="col-md-6">
-                <form>
+                    
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example1">Type*</label>
+                        <br>
+                        <input type="radio" id="private" name="pp" value="" ngModel="" checked>
+                        <label for="private">Private</label>
+                        <input type="radio" id="public" name="pp" value=""ngModel="">
+                        <label for="public">Public</label>
 
-                    <!-- Choix privat/public -->
-                 <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example1">Type*</label> 
-                    <br>            
-                    <input type="radio"  id="private" name="pp" value="" checked >
-                    <label for="private">Private</label>
-                    <input type="radio"  id="public" name="pp" value="">
-                    <label for="public">Public</label>                                               
+                    </div>
+
+                    
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example1">Image release*</label>
+                        <br>
+                        <input type="radio" id="okImage" name="image" value=""ngModel="">
+                        <label for="okImage">Ok</label>
+                        <input type="radio" id="nokImage" name="image" value="" ngModel="" checked>
+                        <label for="nokImage">Nok</label>
+                    </div>
+                    
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example1">Video release*</label>
+                        <br>
+                        <input type="radio" id="okVideo" name="video" value=""ngModel="">
+                        <label for="okVideo">Ok</label>
+                        <input type="radio" id="nokVideo" name="video" value="" ngModel="" checked>
+                        <label for="nokVideo">Nok</label>
+                    </div>
+                    
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example1">Chat*</label>
+                        <br>
+                        <input type="radio" id="admin only" name="chat" value="" ngModel="" checked>
+                        <label for="ok">Admin only</label>
+                        <input type="radio" id="anyone" name="chat" value=""ngModel="" >
+                        <label for="nok">Anyone</label>
+                    </div>
+
+
+                -->
+
 
 
                 </div>
 
-
-                <!-- Droit image -->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example1">Image release*</label> 
-                    <br>               
-                    <input type="radio"  id="okImage" name="image" value="" >
-                    <label for="okImage">Ok</label>
-                    <input type="radio"  id="nokImage" name="image" value="" checked>
-                    <label for="nokImage">Nok</label>                                               
-                </div>
-                <!-- Droit vidéo-->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example1">Video release*</label> 
-                    <br>               
-                    <input type="radio"  id="okVideo" name="video" value="" >
-                    <label for="okVideo">Ok</label>
-                    <input type="radio"  id="nokVideo" name="video" value="" checked >
-                    <label for="nokVideo">Nok</label>                                               
-                </div>
-                <!-- Autorisation message-->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example1">Chat*</label> 
-                    <br>               
-                    <input type="radio"  id="admin only" name="chat" value="" checked>
-                    <label for="ok">Admin only</label>
-                    <input type="radio"  id="anyone" name="chat" value="" >
-                    <label for="nok">Anyone</label>                                               
+                <div>
+                    <button type="submit" class="btn btn-primary btn-block mb-4">Create</button>
+                    <br>
+                    <p><i><small>* = Must be completed</small></i></p>
+        
                 </div>
 
-
-
-
-
-
-                </form>
-
-                
-
-                 
-
-
-            
-
-                
-
-
-                
-            </div>
-
-            
-
-
-
-
+            </form>
 
 
         </div>
 
-        <div>
-            <button type="submit" class="btn btn-primary btn-block mb-4">Create</button>
-            <br>
-            <p><i><small>* = Must be completed</small></i></p>
-       
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
 
 
 
