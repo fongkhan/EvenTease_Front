@@ -23,7 +23,7 @@ export class ConnexionComponent implements OnInit {
         this.user = data; 
         if(this.user != null) {
           console.log('ok');
-          this.route.navigateByUrl('email-validation');
+          this.route.navigateByUrl('auth-user-home');
           this.auth.setUserSession(this.user);
         }
         else{
