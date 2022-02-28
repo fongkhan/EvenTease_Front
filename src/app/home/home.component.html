@@ -107,10 +107,11 @@
 
                             <h5 class="card-title">{{listevent[2].title}}</h5>
 
-                            <p class="card-text">> {{listevent[2].dateEvent}}</p>
-    
-                            <a href="#!" class="btn btn-primary">I'm in!</a>
-    
+                            <p class="card-text">> {{listevent[2].id}}</p>
+                            
+                            <button class="btn btn-primary">
+                                <a class="nav-link" (click)="eventDet.setEventId(listevent[2].id)" routerLink="/event-public">I'M IN!</a>
+                            </button>
                         </div>
 
 
