@@ -12,4 +12,5 @@ export class EventPublicComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
 }
