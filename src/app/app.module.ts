@@ -16,6 +16,8 @@ import { EventPublicComponent } from './event-public/event-public.component';
 import { EventCreationComponent } from './event-creation/event-creation.component';
 import { ProfilPersoComponent } from './profil-perso/profil-perso.component';
 import { EditProfilComponent } from './edit-profil/edit-profil.component';
+import { DeleteEventComponent } from './delete-event/delete-event.component';
+import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { EditProfilComponent } from './edit-profil/edit-profil.component';
     EventPublicComponent,
     EventCreationComponent,
     ProfilPersoComponent,
-    EditProfilComponent
+    EditProfilComponent,
+    DeleteEventComponent,
+    DeleteConfirmationComponent
   ],
   imports: [
     FormsModule,
