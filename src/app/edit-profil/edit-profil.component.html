@@ -1,1 +1,130 @@
-<p>edit-profil works!</p>
+<section class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h1><b> USER </b></h1>
+            <form>
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+
+                <img src="https://static.fnac-static.com/multimedia/Images/FR/MC/00/23/53/22225664/1540-1/tsp20140429182221/Figurine-Geante-Mickey-Mouse.jpg" />
+    
+                    <a href="#!">
+    
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+    
+                    </a>
+            </div>
+            <div style="background-color: #3a86dd;" class="pt-1 mb-4">
+                <button type="button" class="btn btn-lg btn-block white-text" routerLink=""> <b>Import profil picture</b> </button>
+            </div>
+
+            </form>
+        </div>
+
+        <div class="col-md-4">
+
+            <h1><b> c2 </b></h1>
+
+            <form>
+
+            <!-- Edit Login-->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="">Login</label>
+                <input ngModel="" name="login" type="text"  class="form-control" placeholder="New login"/>
+            </div>
+           <!-- Edit mdp-->
+            <div class="form-outline mb-4">
+            <label class="form-label" for="">Password</label>
+            <input ngModel="" name="password" type="text"  class="form-control" placeholder="New password"/>
+            </div>
+            <!-- Edit mail-->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="">Email</label>
+                <input ngModel="" name="email" type="text"  class="form-control" placeholder="New email adress"/>
+                </div>
+            <!-- Edit name-->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="">Name</label>
+                <input ngModel="" name="name" type="text"  class="form-control" placeholder="New name"/>
+                </div>
+             <!-- Edit surname-->
+             <div class="form-outline mb-4">
+                <label class="form-label" for="">Surname</label>
+                <input ngModel="" name="surname" type="text"  class="form-control" placeholder="New surname"/>
+                </div>
+            
+
+
+
+            </form>
+
+            
+        </div>
+
+        <div class="col-md-4">
+
+            <h1><b> c3 </b></h1>
+
+            <form>
+                <!-- Edit phone number-->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="">Phone number</label>
+                <input ngModel="" name="phone number" type="text"  class="form-control" placeholder="New phone number"/>
+                </div>
+
+            <!-- Edit zipcode-->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="">zipcode</label>
+                <input ngModel="" name="zipcode" type="text"  class="form-control" placeholder="New zipcope"/>
+                </div>
+            <!-- Edit town-->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="">town</label>
+                <input ngModel="" name="town" type="text"  class="form-control" placeholder="New town"/>
+                </div>
+            <!-- Edit description-->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="">description</label>
+                <input ngModel="" name="description" type="text"  class="form-control" placeholder="New description"/>
+                </div>
+
+
+
+
+
+                <!-- Edit birthday-->
+           <div class="form-outline mb-4">
+               <label class="form-label" for="">Birthday</label>
+               <input ngModel="" name="age" type="date"  class="form-control" placeholder="Edit your birthday"/>
+           </div>
+           
+           <!-- Edit prodil publique / privé -->
+           <div class="form-outline mb-4">
+               <label class="form-label" for="form2Example1">Your profil is :</label>
+               <br>
+               <input type="radio" id="private" name="isPublic" value="false" ngModel="" checked>
+               <label for="private">Private</label>
+               <input type="radio"  id="public" name="isPublic" value="true" ngModel="">
+               <label for="public">Public</label>
+
+           </div>
+
+
+           </form>
+
+
+        </div>
+
+       
+        
+    </div>
+<br>
+    <div>
+        <form>
+            <div style="background-color: #3a86dd;" class="pt-1 mb-4">
+                <button type="button" class="btn btn-lg btn-block white-text" routerLink=""> <b>Edit your profil</b></button>
+            </div>
+        </form>
+
+    </div>
+
+</section>

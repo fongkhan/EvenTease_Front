@@ -11,6 +11,7 @@ import { EventPrivateComponent } from './event-private/event-private.component';
 import { EventPublicComponent } from './event-public/event-public.component';
 import { EventCreationComponent } from './event-creation/event-creation.component';
 import { ProfilPersoComponent } from './profil-perso/profil-perso.component';
+import { EditProfilComponent } from './edit-profil/edit-profil.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {component: EventPublicComponent, path:"event-public"},
   {component: EventCreationComponent, path:"event-creation"},
   {component: ProfilPersoComponent, path:"profil-perso"},
+  {component: EditProfilComponent, path:"edit-profil"},
   {path :'',redirectTo:'home', pathMatch: 'full'},
 ];
 

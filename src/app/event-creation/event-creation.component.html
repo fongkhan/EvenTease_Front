@@ -5,34 +5,36 @@
                 <h1><b>Ready to create your own event?<br><br></b> </h1>
             </div>
 
+            <div class="col-md-12">
 
+                <!-- Il reste à recuperer les info du createur -->
             <form #connect="ngForm" (ngSubmit)="CreateEvent(connect.value)">
                 <div class="col-md-6">
 
                     
                     
-                    <div class="form-outline mb-4">
+                    <div class="form-outline mb-4"> 
                         <label class="form-label" for="">Name*</label>
-                        <input type="text" name="nom" class="form-control" ngModel="" />
+                        <input type="text" name="title" class="form-control" ngModel="" />
                     </div>
-                    <!--
+                    
                     
                     
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Date</label>
-                        <input type="date" name="date" class="form-control"ngModel="" />
+                        <input type="date" name="dateEvent" class="form-control"ngModel="" />
                     </div>
 
                     
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Address</label>
-                        <input type="text" name="lieu" class="form-control"ngModel="" />
+                        <input type="text" name="locationEvent" class="form-control"ngModel="" />
                     </div>
 
                     
                     <div class="form-outline mb-4">
-                        <label class="form-label" for="form2Example1">Describe your event*</label>
-                        <input type="text" name="describe" class="form-control"ngModel="" />
+                        <label class="form-label" for="form2Example1">Describe your event</label>
+                        <input type="text" name="description" class="form-control"ngModel="" />
                     </div>
 
                 </div>
@@ -44,43 +46,43 @@
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Type*</label>
                         <br>
-                        <input type="radio" id="private" name="pp" value="" ngModel="" checked>
+                        <input type="radio" id="private" name="isPublic" value="false" ngModel="" checked>
                         <label for="private">Private</label>
-                        <input type="radio" id="public" name="pp" value=""ngModel="">
+                        <input type="radio"  id="public" name="isPublic" value="true" ngModel="">
                         <label for="public">Public</label>
 
                     </div>
 
-                    
+                    <!-- ABSENT DE LA BDD-->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Image release*</label>
                         <br>
-                        <input type="radio" id="okImage" name="image" value=""ngModel="">
+                        <input type="radio"  name="okImage" value="Yes"ngModel="">
                         <label for="okImage">Ok</label>
-                        <input type="radio" id="nokImage" name="image" value="" ngModel="" checked>
+                        <input type="radio"  name="okImage" value="No" ngModel="" checked>
                         <label for="nokImage">Nok</label>
                     </div>
-                    
+                    <!-- ABSENT DE LA BDD-->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Video release*</label>
                         <br>
-                        <input type="radio" id="okVideo" name="video" value=""ngModel="">
+                        <input type="radio" id="okVideo" name="video" value="yes"ngModel="">
                         <label for="okVideo">Ok</label>
-                        <input type="radio" id="nokVideo" name="video" value="" ngModel="" checked>
+                        <input type="radio" id="nokVideo" name="video" value="no" ngModel="" checked>
                         <label for="nokVideo">Nok</label>
                     </div>
-                    
+                    <!-- ABSENT DE LA BDD-->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Chat*</label>
                         <br>
-                        <input type="radio" id="admin only" name="chat" value="" ngModel="" checked>
+                        <input type="radio" id="admin only" name="chat" value="yes" ngModel="" checked>
                         <label for="ok">Admin only</label>
-                        <input type="radio" id="anyone" name="chat" value=""ngModel="" >
+                        <input type="radio" id="anyone" name="chat" value="no"ngModel="" >
                         <label for="nok">Anyone</label>
                     </div>
 
 
-                -->
+                    
 
 
 
@@ -94,6 +96,8 @@
                 </div>
 
             </form>
+
+        </div>
 
 
         </div>
