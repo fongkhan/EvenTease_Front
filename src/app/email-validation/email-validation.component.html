@@ -7,17 +7,17 @@
                     <br><br>
                 </h1>
                 
-                <form >
+                <form  #connect="ngForm" (ngSubmit)="validateMail(connect.value)" >
                     
                     <!-- email validation input -->
                     <div class="form-outline mb-4">
-                        <input ngModel="" name="confirm_email" type="email" id="" class="form-control" />
+                        <input ngModel="" name="mail" type="email" id="" class="form-control" />
                         <label class="form-label" for="">confirm email</label>
                     </div>
 
                     <!-- code input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="" name="code_verif" class="form-control" />
+                        <input ngModel="" type="int" id="" name="codeVerif" class="form-control" />
                         <label class="form-label" for="form2Example1">Code sent by email</label>
                     </div>
 

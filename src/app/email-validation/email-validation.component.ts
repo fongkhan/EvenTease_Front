@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpContext, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,16 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./email-validation.component.css']
 })
 export class EmailValidationComponent implements OnInit {
-
+  mail:any;
+  codeVerfi:any;
+  userTemp:any;
   constructor(private http:HttpClient, private route: Router) { }
 
-  validateMail(user:any){
-    console.log("les datas du formulaire",user);
+  validateMail(userTemp:any){
+    console.log("les datas du formulaire");
     
-    this.http.post('http://localhost:8182/sign-in',user).subscribe({
+    this.http.post('http://localhost:8182/sign-in/confirm',userTemp).subscribe({
       next: (data)=> {
         console.log("ok");
-        this.route.navigateByUrl('email-validation');
+        this.route.navigateByUrl('auth-user-home');
        },
       error: (err)=>{console.log(err)}
     });
