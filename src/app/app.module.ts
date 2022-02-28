@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { EventPublicComponent } from './event-public/event-public.component';
 import { EventCreationComponent } from './event-creation/event-creation.component';
+import { ProfilPersoComponent } from './profil-perso/profil-perso.component';
+import { EditProfilComponent } from './edit-profil/edit-profil.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { EventCreationComponent } from './event-creation/event-creation.componen
     AuthUserHomeComponent,
     HomeComponent,
     EventPublicComponent,
-    EventCreationComponent
+    EventCreationComponent,
+    ProfilPersoComponent,
+    EditProfilComponent
   ],
   imports: [
     FormsModule,
