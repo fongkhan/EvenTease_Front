@@ -12,6 +12,8 @@ import { EventPublicComponent } from './event-public/event-public.component';
 import { EventCreationComponent } from './event-creation/event-creation.component';
 import { ProfilPersoComponent } from './profil-perso/profil-perso.component';
 import { EditProfilComponent } from './edit-profil/edit-profil.component';
+import { DeleteEventComponent } from './delete-event/delete-event.component';
+import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 
 
 const routes: Routes = [
@@ -27,6 +29,8 @@ const routes: Routes = [
   {component: EventCreationComponent, path:"event-creation"},
   {component: ProfilPersoComponent, path:"profil-perso"},
   {component: EditProfilComponent, path:"edit-profil"},
+  {component: DeleteEventComponent, path:"delete-event"},
+  {component: DeleteConfirmationComponent, path:"delete-confirmation"},
   {path :'',redirectTo:'home', pathMatch: 'full'},
 ];
 
