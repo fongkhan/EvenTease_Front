@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  listevent:any;
+  msgErr ='';
+
+  constructor(private http:HttpClient, private route: Router) { }
 
   ngOnInit(): void {
+    this.http.get('http://localhost:8182/event/public').subscribe({
+      next: (data)=> {
+        this.listevent = data; 
+        if(this.listevent!= null) {
+          console.log(this.listevent[0])
+        }
+        else{
+          this.msgErr ='No events in coming';
+        }
+      },
+        error: (err)=>{console.log(err)}
+      });
+
+      
+    }
   }
 
-}
+
