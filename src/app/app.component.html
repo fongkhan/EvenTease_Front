@@ -10,21 +10,25 @@
       <div class="collapse navbar-collapse" id="navbarExample01" >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" routerLink="home" routerLinkActive="lien-active">Home</a>
+            <a class="nav-link" routerLink="home" routerLinkActive="lien-active" *ngIf="!auth.isConnect()">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="login" routerLinkActive="lien-active" *ngIf="!auth.isConnect()">Connection</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="auth-user-home" routerLinkActive="lien-active" *ngIf="auth.isConnect()">My Profile</a>
+            <a class="nav-link" routerLink="auth-user-home" routerLinkActive="lien-active" *ngIf="auth.isConnect()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="profil-perso" routerLinkActive="lien-active" *ngIf="auth.isConnect()">My profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" (click)="auth.logout()" routerLinkActive="lien-active" *ngIf="auth.isConnect()">Disconnect</a>
           </li>
         </ul>
+        
       </div>
-  
-  </div>
+        <a class="nav-link" routerLink="/profil-perso" id="userSession" routerLinkActive="lien-active" *ngIf="auth.isConnect()">{{user.login}}</a>
+      </div>
   </nav>
 
 <!-- Navbar -->

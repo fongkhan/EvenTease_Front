@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+
+
 import { AuthService } from './service/auth.service';
 //IMPOTRATION DES SERVICES
 @Component({
@@ -8,7 +10,16 @@ import { AuthService } from './service/auth.service';
 })
 export class AppComponent {
   title = 'EvenTease_Front';
-
+  
   constructor(public auth: AuthService){}
   //IMPOTRATION DES SERVICES
+  
+  //user=this.auth.getUserConnect();
+
+
+    get user(): any {
+      return this.auth.getUserConnect();
+      }
+
+
 }
