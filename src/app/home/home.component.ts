@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
+import { EventDetailsService } from '../service/event-details.service';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +13,9 @@ export class HomeComponent implements OnInit {
 
   listevent:any;
   msgErr ='';
+  authe:any;
 
-  constructor(private http:HttpClient, private route: Router) { }
+  constructor(private http:HttpClient, private route: Router, public eventDet: EventDetailsService,public auth: AuthService) { }
 
   ngOnInit(): void {
     this.http.get('http://localhost:8182/event/public').subscribe({
@@ -27,7 +30,7 @@ export class HomeComponent implements OnInit {
       },
         error: (err)=>{console.log(err)}
       });
-
+      
       
     }
   }
