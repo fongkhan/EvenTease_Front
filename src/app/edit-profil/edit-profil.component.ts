@@ -22,41 +22,20 @@ export class EditProfilComponent implements OnInit {
     return this.auth.getUserConnect();
     }
 
-/*
+
     EditProfil(user:any){
-      console.log("les datas du formulaire",user);
-      this.http.post('http://localhost:8182/edit-profil',user).subscribe({
-        next: (data)=> {
-          this.user = data; 
-          if(this.user != null) {
-            console.log('ok');
-
-            // ajouter la comande qui envoie le JSON
-
-
-
+      console.log("on recupere les modif",user);
+         
+        this.http.put('http://localhost:8182/user/update',user).subscribe({
+          next: (data)=> {
+            console.log("ok");
             this.route.navigateByUrl('profil-perso');
-            
-          }
-          else{
-            // recuperer la donnée de base et l'envoyer avec le form / pas laisser de champ vide;
+           },
+          error: (err)=>{console.log(err)}
+        });
+      }
 
-
-            this.route.navigateByUrl('profil-perso');
-
-
-          }
-        },
-        error: (err)=>{console.log(err)}
-      });
-    }
-
-
-
-
-
-*/
-
+      
 
 
 }

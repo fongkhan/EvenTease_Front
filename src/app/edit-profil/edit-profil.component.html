@@ -3,7 +3,7 @@
     <br>
 
 
-    <form class=" border border-light p-5" action="#!">
+    <form class=" border border-light p-5" action="#!" #edit="ngForm" (ngSubmit)="EditProfil(edit.value)">
         <h1 align="center">You can know edit your profil !</h1>
         <div class="form-row mb-4">
             <div class="col">
@@ -71,7 +71,7 @@
                 <!-- Edit zipcode-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current zipcode : <i>{{user.zipCode}}</i></label>
-                    <input ngModel="" name="zipCode" type="text" class="form-control" placeholder="New zipcope" />
+                    <input ngModel="" name="zipCode" type="text" class="form-control" placeholder="New zipcode" />
                 </div>
 
             </div>
@@ -102,7 +102,7 @@
                     </div>
                     <!-- Edit profil publique / privé -->
                     <div class="form-outline mb-4">
-                        <label class="form-label" for="form2Example1">Private profil ? <i>{{user.isPublic}}</i></label>
+                        <label class="form-label" for="form2Example1">Public profil ? <i>{{user.isPublic}}</i></label>
                         <br>
                         <input type="checkbox" class="demo5" id="private" name="isPublic" value="false" ngModel="">
                         <label for="private">Switch</label>
@@ -116,7 +116,7 @@
         <div>
 
             <div style="background-color: #3a86dd;" class="pt-1 mb-4">
-                <button type="button" class="btn btn-lg btn-block white-text" routerLink=""> <b>Edit</b></button>
+                <button type="submit" class="btn btn-lg btn-block white-text" > <b>Edit</b></button>
             </div>
 
         </div>
