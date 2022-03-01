@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -8,7 +10,10 @@ import { AuthService } from '../service/auth.service';
 })
 export class EditProfilComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  // user:any;
+  msgErr = '';
+
+  constructor(private http: HttpClient, public auth: AuthService, private route: Router,) { }
   
   ngOnInit(): void {
   }
@@ -16,6 +21,22 @@ export class EditProfilComponent implements OnInit {
   get user(): any {
     return this.auth.getUserConnect();
     }
+
+
+    EditProfil(user:any){
+      console.log("on recupere les modif",user);
+         
+        this.http.put('http://localhost:8182/user/update',user).subscribe({
+          next: (data)=> {
+            console.log("ok");
+            this.route.navigateByUrl('profil-perso');
+           },
+          error: (err)=>{console.log(err)}
+        });
+      }
+
+      
+
 
 }
 

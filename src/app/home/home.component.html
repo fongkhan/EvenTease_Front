@@ -1,5 +1,6 @@
 <section class="container">
     <div class="row">
+      
         <div class="col-sm-5">
             <div class="py-5 h-100">
                 <div class="row d-flex ali gn-items-center justify-content-center h-100">
@@ -47,7 +48,10 @@
 
                         <p class="card-text">> {{listevent[0].dateEvent}}</p>
 
-                        <a href="#!" class="btn btn-primary">I'm in!</a>
+                      
+                        <button class="btn btn-primary">
+                            <a class="nav-link" (click)="eventDet.setEventId(listevent[0].id)" routerLink="/event-public">I'm in!</a>
+                        </button>
 
                     </div>
 
@@ -76,7 +80,9 @@
 
                             <p class="card-text">> {{listevent[1].dateEvent}}</p>
     
-                            <a href="#!" class="btn btn-primary">I'm in!</a>
+                            <button class="btn btn-primary">
+                                <a class="nav-link" (click)="eventDet.setEventId(listevent[1].id)" routerLink="/event-public">I'm in!</a>
+                            </button>
     
                         </div>
 
