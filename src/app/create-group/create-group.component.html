@@ -1,1 +1,85 @@
-<p>create-group works!</p>
+<section>
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div>
+                <h1><b>Ready to create your Group?<br><br></b> </h1>
+            </div>
+
+            <div class="col-md-12">
+
+                <!-- Il reste à recuperer les info du createur -->
+            <form #connect="ngForm" (ngSubmit)="CreateGroup(connect.value)">
+                <div class="col-md-6">
+
+                    <div class="form-outline mb-4"> 
+                        <label class="form-label" for="">Name*</label>
+                        <input type="text" name="Name" class="form-control" ngModel="" />
+                    </div>
+                    <label for="addMember">Members : </label>
+                    <div *ngFor='let member of members'>
+                        <input name = "members" list="user" type="member" [attr.name]="member" id="members" ngModel="">
+                        <datalist id="user" type="member" [attr.name]="member">
+                            <option *ngFor="let user of alluser" [value]="">{{user}}</option>
+                        </datalist>
+                    </div>
+                    <input type="button" value="Add Member" (click)="addInputMember()"><input type="button" value="Remove Member" (click)="removeInputMember()">
+                </div>
+
+                    <!-- ABSENT DE LA BDD-->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example1">Chat*</label>
+                        <br>
+                        <input type="radio" id="admin only" name="chat" value="yes" ngModel="" checked>
+                        <label for="ok">Admin only</label>
+                        <input type="radio" id="anyone" name="chat" value="no"ngModel="" >
+                        <label for="nok">Anyone</label>
+                    </div>
+
+
+                <div>
+                    <button type="submit" class="btn btn-primary btn-block mb-4 ">
+                        create
+                    </button>
+                    <br>
+                    <p><i><small>* = Must be completed</small></i></p>
+        
+                </div>
+
+            </form>
+
+        </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+</section>
