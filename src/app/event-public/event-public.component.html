@@ -1,8 +1,10 @@
 <section class="container">
     <div class="row">
         <div class="col-sm-5">
-            <h1> <br> <br> you've just accessed this public event !</h1>
+            <h1> <br> <br> you've just accessed {{event.title}}</h1>
             <p><br> <i>As you are not logged in, you only have access to part of the available information</i></p>
+
+            <p><br> Date : {{event.dateEvent}}</p>
 
         </div>
 
@@ -27,7 +29,7 @@
 
                 <div class="card-body">
 
-                    <h5 class="card-title">Event XXX</h5>
+                    <h5 class="card-title">{{event.title}}</h5>
 
                     <p class="card-text">Quick example</p>
 

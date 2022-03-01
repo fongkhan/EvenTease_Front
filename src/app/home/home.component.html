@@ -47,7 +47,10 @@
 
                         <p class="card-text">> {{listevent[0].dateEvent}}</p>
 
-                        <a href="#!" class="btn btn-primary">I'm in!</a>
+                      
+                        <button class="btn btn-primary">
+                            <a class="nav-link" (click)="eventDet.setEventId(listevent[0].id)" routerLink="/event-public">I'm in!</a>
+                        </button>
 
                     </div>
 
@@ -76,7 +79,9 @@
 
                             <p class="card-text">> {{listevent[1].dateEvent}}</p>
     
-                            <a href="#!" class="btn btn-primary">I'm in!</a>
+                            <button class="btn btn-primary">
+                                <a class="nav-link" (click)="eventDet.setEventId(listevent[1].id)" routerLink="/event-public">I'm in!</a>
+                            </button>
     
                         </div>
 
