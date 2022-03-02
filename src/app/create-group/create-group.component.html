@@ -9,22 +9,32 @@
 
                 <!-- Il reste à recuperer les info du createur -->
             <form #connect="ngForm" (ngSubmit)="CreateGroup(connect.value)">
-                <div class="col-md-6">
-
-                    <div class="form-outline mb-4"> 
+                <div class="col-md-12">
+                    <div class="form-outline mb-4 col-auto" > 
                         <label class="form-label" for="">Name*</label>
-                        <input type="text" name="Name" class="form-control" ngModel="" />
+                        <input type="text" name="Name" class="form-control col-auto" ngModel="" />
                     </div>
-                    <label for="addMember">Members : </label>
-                    <div *ngFor='let member of members'>
-                        <input name = "members" list="user" [attr.name]="member" id="members" ngModel="">
-                        <datalist id="user"  [attr.name]="member">
-                            <option *ngFor="let user of alluser" [value]="user.login">{{user}}</option>
-                        </datalist>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="addMember">Members : </label>
+                            <div *ngFor='let member of members'>
+                                <input name = "members" list="user" [attr.name]="member" id="members" ngModel="">
+                                <datalist id="user"  [attr.name]="member">
+                                    <option *ngFor="let user of alluser" [value]="user.login">{{user}}</option>
+                                </datalist>
+                            </div>
+                            
+                        </div>
+                        <input type="button" class="btn btn-primary btn-sm "value="Add Member" (click)="addInputMember()">
+                        <input type="button" class="btn btn-primary btn-sm "value="Remove Member" (click)="removeInputMember()">
+                        <input type="button" class="btn btn-primary btn-sm "value="Remove All Member" (click)="removeInputAllMember()">
+                        <input type="button" class="btn btn-primary btn-sm " value="Validate Member list" >
+    
                     </div>
-                    <input type="button" value="Add Member" (click)="addInputMember()"><input type="button" value="Remove Member" (click)="removeInputMember()">
-                </div>
-                <input type="button" value="Validate Member list" >
+
+                    </div>
+                    
+
 
                     <!-- ABSENT DE LA BDD
                     <div class="form-outline mb-4">
