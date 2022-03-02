@@ -19,6 +19,7 @@ import { EditProfilComponent } from './edit-profil/edit-profil.component';
 import { DeleteEventComponent } from './delete-event/delete-event.component';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 import { CreateGroupComponent } from './create-group/create-group.component';
+import { EditMyEventComponent } from './edit-my-event/edit-my-event.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CreateGroupComponent } from './create-group/create-group.component';
     DeleteEventComponent,
     DeleteConfirmationComponent,
     CreateGroupComponent,
+    EditMyEventComponent,
   ],
   imports: [
     FormsModule,
