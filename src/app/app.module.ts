@@ -18,6 +18,8 @@ import { EditProfilComponent } from './edit-profil/edit-profil.component';
 import { DeleteEventComponent } from './delete-event/delete-event.component';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 import { CreateGroupComponent } from './create-group/create-group.component';
+import { ListeAchatCreationComponent } from './liste-achat-creation/liste-achat-creation.component';
+import { FriendrequestComponent } from './friendrequest/friendrequest.component';
 import {MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { EditMyEventComponent } from './edit-my-event/edit-my-event.component';
 
@@ -37,7 +39,8 @@ import { EditMyEventComponent } from './edit-my-event/edit-my-event.component';
     DeleteEventComponent,
     DeleteConfirmationComponent,
     CreateGroupComponent,
-
+    ListeAchatCreationComponent,
+    FriendrequestComponent,
     EditMyEventComponent,
   ],
   imports: [
