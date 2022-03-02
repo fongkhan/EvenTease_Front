@@ -17,15 +17,16 @@
                     </div>
                     <label for="addMember">Members : </label>
                     <div *ngFor='let member of members'>
-                        <input name = "members" list="user" type="member" [attr.name]="member" id="members" ngModel="">
-                        <datalist id="user" type="member" [attr.name]="member">
-                            <option *ngFor="let user of alluser" [value]="">{{user}}</option>
+                        <input name = "members" list="user" [attr.name]="member" id="members" ngModel="">
+                        <datalist id="user"  [attr.name]="member">
+                            <option *ngFor="let user of alluser" [value]="user.login">{{user}}</option>
                         </datalist>
                     </div>
                     <input type="button" value="Add Member" (click)="addInputMember()"><input type="button" value="Remove Member" (click)="removeInputMember()">
                 </div>
+                <input type="button" value="Validate Member list" >
 
-                    <!-- ABSENT DE LA BDD-->
+                    <!-- ABSENT DE LA BDD
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Chat*</label>
                         <br>
@@ -33,7 +34,7 @@
                         <label for="ok">Admin only</label>
                         <input type="radio" id="anyone" name="chat" value="no"ngModel="" >
                         <label for="nok">Anyone</label>
-                    </div>
+                    </div>-->
 
 
                 <div>

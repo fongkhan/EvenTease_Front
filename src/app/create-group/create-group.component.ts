@@ -17,6 +17,7 @@ export class CreateGroupComponent implements OnInit {
 
   members = ["member1"];
   memberNumber = 1;
+  membersObj = [];
 
   constructor(private http: HttpClient, private route: Router,private auth: AuthService) { }
 
@@ -32,6 +33,7 @@ export class CreateGroupComponent implements OnInit {
   CreateGroup(group:any){
     this.user = this.auth.getUserConnect();
     group["admin"]=this.user;
+    group["members"]=this.members;
     console.log(this.user);
     console.log("les datas du formulaire",group);
     this.http.post('http://localhost:8182/group/create',group).subscribe({
@@ -42,11 +44,6 @@ export class CreateGroupComponent implements OnInit {
       error: (err)=>{console.log(err)}
     });
   } 
-  /*textAreasList:any = [];
-
-    addMember(){        
-        this.textAreasList.push('text_area'+ (this.textAreasList.length + 1));
-    }*/
 
     addInputMember() {
       this.memberNumber++; 
