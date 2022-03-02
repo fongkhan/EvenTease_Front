@@ -7,7 +7,6 @@ import { RegisterComponent } from './register/register.component';
 import { HelpComponent } from './help/help.component';
 import { HomeComponent } from './home/home.component';
 import { AuthUserHomeComponent } from './auth-user-home/auth-user-home.component';
-import { EventPrivateComponent } from './event-private/event-private.component';
 import { EventPublicComponent } from './event-public/event-public.component';
 import { EventCreationComponent } from './event-creation/event-creation.component';
 import { ProfilPersoComponent } from './profil-perso/profil-perso.component';
@@ -26,7 +25,6 @@ const routes: Routes = [
   {component: HomeComponent, path:"home"},
   {component: HelpComponent, path:"help"},
   {component: AuthUserHomeComponent, path:"auth-user-home"},
-  {component: EventPrivateComponent, path:"event-private"},
   {component: EventPublicComponent, path:"event-public"},
   {component: EventCreationComponent, path:"event-creation"},
   {component: ProfilPersoComponent, path:"profil-perso"},

@@ -2,7 +2,19 @@
     <div class="row">
         <div class="col-sm-5">
             <br>
-            <h1>{{event.title}}</h1> <br>
+            <div class="p-3 mb-2 bg-dark text-white">
+            
+            <h1>{{event.title}}</h1> 
+            </div>
+            <br>
+            <h2 *ngIf="!this.isPublicCheck()">
+                Private event
+            </h2>
+            
+            <h2 *ngIf="this.isPublicCheck()">
+                Public event
+            </h2>
+            <br>
             <p *ngIf="!auth.isConnect()"><br> <i>As you are not logged in, you only have access to part of the available
                     information</i>
             <p>
@@ -10,14 +22,7 @@
             <p *ngIf="auth.isConnect()">
             <h3> Location : {{event.locationEvent}}</h3>
 
-            <h2 *ngIf="!this.isPublicCheck()">
-                Private event
-            </h2>
-            <br>
-            <h2 *ngIf="this.isPublicCheck()">
-                Public event
-            </h2>
-            <br>
+            
             <div class="p-3 mb-2 bg-dark text-white">
 
                 <h3>Descrption</h3> {{event.description}}
@@ -50,21 +55,11 @@
                 <div class="card-body">
 
                     <h5 class="card-title">{{event.title}}</h5>
-
-
                     <button class="btn btn-primary">
                         Request to participate!
                     </button>
                 </div>
-
-
-
-
             </div>
-
-
-
-
         </div>
 
         <div class="col-md-3">
