@@ -34,6 +34,18 @@ myfriendrequest:any;
     },
     error: (err)=>{console.log(err)}
   });
+
+
+  }
+
+  CreateFriendRequest(friendrequest:any){}
+
+  AcceptFriendRequest(friendrequest:any){}
+
+  RefuseFriendRequest(friendrequest:any){
+    this.user = this.auth.getUserConnect();
+    friendrequest["demandeur"]=this.user;
+    friendrequest["statut"]=2;
   }
 
   /*CreateFriendRequest(friendrequest:any){

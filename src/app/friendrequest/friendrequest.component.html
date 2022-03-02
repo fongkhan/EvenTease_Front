@@ -4,7 +4,7 @@
     <div class="row brd">
         <div class="col brd">
             <h2>Send a Friend Request</h2>
-            <form #connect="ngForm"  >
+            <form #connect="ngForm" (ngSubmit)="CreateFriendRequest(connect.value)">
                 <label >Select the user* : </label>
                 <label ></label><br/>
                     <select  name="receveur" class="form-control" ngModel="">
