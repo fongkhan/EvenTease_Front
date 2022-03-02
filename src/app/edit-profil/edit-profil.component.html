@@ -3,7 +3,7 @@
     <br>
 
 
-    <form class=" border border-light p-5" action="#!" #edit="ngForm" (ngSubmit)="EditProfil(edit.value)">
+    <form class=" border border-light p-5" #edit="ngForm" (ngSubmit)="EditProfil()">
         <h1 align="center">You can know edit your profil !</h1>
         <div class="form-row mb-4">
             <div class="col">
@@ -29,7 +29,7 @@
                 <!-- Edit Login-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current login : <i>{{user.login}}</i></label>
-                    <input ngiflogin=''ngModel="" name="login" type="text" class="form-control" placeholder="New login" required />
+                    <input ngiflogin=''[(ngModel)]="currentUser.login" #loginAction="ngModel" name="login" type="text" class="form-control" placeholder="New login" required />
                 </div>
                 <!-- Edit mdp-->
                 <div class="form-outline mb-4">

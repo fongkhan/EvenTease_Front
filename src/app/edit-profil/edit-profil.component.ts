@@ -12,10 +12,11 @@ export class EditProfilComponent implements OnInit {
 
   // user:any;
   msgErr = '';
-
+  currentUser: any;
   constructor(private http: HttpClient, public auth: AuthService, private route: Router,) { }
   
   ngOnInit(): void {
+    this.currentUser = this.auth.getUserConnect();
   }
 
   get user(): any {
@@ -23,13 +24,15 @@ export class EditProfilComponent implements OnInit {
     }
 
 
-    EditProfil(user:any){
-      console.log("on recupere les modif",user);
-        user["id"]=this.auth.getUserConnect()["id"];
-        console.log(user);
-        this.http.put('http://localhost:8182/user/update',user).subscribe({
+    EditProfil(){
+     // console.log("on recupere les modif",user);
+       // user["id"]=this.auth.getUserConnect()["id"];
+       // console.log(user);
+        this.http.put('http://localhost:8182/user/update/'+ this.currentUser.id ,this.currentUser).subscribe({
           next: (data)=> {
-            console.log(user);
+            // console.log(data);
+            this.currentUser = data;
+            this.auth.setUserSession(this.currentUser);
             this.route.navigateByUrl('profil-perso');
            },
           error: (err)=>{console.log(err)}

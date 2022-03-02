@@ -51,5 +51,9 @@ export class AuthUserHomeComponent implements OnInit {
     
   }
 
+  // goCreateGroup() {
+  //   this.route.navigateByUrl('create-group');
+  // }
+
 }
 

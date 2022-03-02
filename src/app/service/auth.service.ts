@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-
+ users: any;
   constructor(private route: Router) { }
 
   setUserSession(user: any) {
