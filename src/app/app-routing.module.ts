@@ -15,6 +15,8 @@ import { EditProfilComponent } from './edit-profil/edit-profil.component';
 import { DeleteEventComponent } from './delete-event/delete-event.component';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 import { CreateGroupComponent } from './create-group/create-group.component';
+import { ListeAchatCreationComponent } from './liste-achat-creation/liste-achat-creation.component';
+import { FriendrequestComponent } from './friendrequest/friendrequest.component';
 
 
 
@@ -34,6 +36,8 @@ const routes: Routes = [
   {component: DeleteEventComponent, path:"delete-event"},
   {component: DeleteConfirmationComponent, path:"delete-confirmation"},
   {component: CreateGroupComponent, path:"create-group"},
+  {component: ListeAchatCreationComponent, path:"create-shoppinglist"},
+  {component: FriendrequestComponent, path:"create-friendrequest"},
   {path :'',redirectTo:'home', pathMatch: 'full'},
 ];
 
