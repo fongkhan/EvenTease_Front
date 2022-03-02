@@ -50,6 +50,11 @@ export class CreateGroupComponent implements OnInit {
       this.members.push("member"+this.memberNumber)
     }
     removeInputMember() {
+      this.memberNumber = this.memberNumber-1;
       this.members.splice(this.memberNumber)
+    }
+
+    removeInputAllMember() {
+      this.members.splice(1,this.memberNumber)
     }
 }
