@@ -1,10 +1,34 @@
 <section class="container">
     <div class="row">
         <div class="col-sm-5">
-            <h1> <br> <br> you've just accessed {{event.title}}</h1>
-            <p *ngIf="!auth.isConnect()"><br> <i>As you are not logged in, you only have access to part of the available information</i></p>
+            <br>
+            <div class="p-3 mb-2 bg-dark text-white">
+            
+            <h1>{{event.title}}</h1> 
+            </div>
+            <br>
+            <h2 *ngIf="!this.isPublicCheck()">
+                Private event
+            </h2>
+            
+            <h2 *ngIf="this.isPublicCheck()">
+                Public event
+            </h2>
+            <br>
+            <p *ngIf="!auth.isConnect()"><br> <i>As you are not logged in, you only have access to part of the available
+                    information</i>
+            <p>
+            <h3>Date : {{event.dateEvent}}</h3>
+            <p *ngIf="auth.isConnect()">
+            <h3> Location : {{event.locationEvent}}</h3>
 
-            <p><br> Date : {{event.dateEvent}}</p>
+            
+            <div class="p-3 mb-2 bg-dark text-white">
+
+                <h3>Descrption</h3> {{event.description}}
+
+            </div>
+
 
         </div>
 
@@ -17,57 +41,47 @@
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 
 
-                    <img src="http://api.park-gorkogo.com/storage/gallery/145/regular_preview_picture-3c291bf33d4002b149ff55e671dd7bfc.jpg" class="img-fluid" />
-        
-                        <a href="#!">
-        
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        
-                        </a>
+                    <img src="http://api.park-gorkogo.com/storage/gallery/145/regular_preview_picture-3c291bf33d4002b149ff55e671dd7bfc.jpg"
+                        class="img-fluid" />
+
+                    <a href="#!">
+
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+
+                    </a>
 
                 </div>
 
                 <div class="card-body">
 
                     <h5 class="card-title">{{event.title}}</h5>
-
-                    <p class="card-text">Quick example</p>
-
-                    <a href="#!" class="btn btn-primary">Request to participate!</a>
-
+                    <button class="btn btn-primary">
+                        Request to participate!
+                    </button>
                 </div>
-
-
-
-
             </div>
-            
-
-
-
         </div>
 
         <div class="col-md-3">
 
             <br><br>
-
-            <h4 >Liste des participants</h4>
-            <div>
-                <br>
-                <p>Afficher la photo de profil des participants + Prenom</p>
-                <br>
-                <p>Afficher la photo de profil des participants + Prenom</p>
-                <br>
-                <p>Afficher la photo de profil des participants + Prenom</p>
-
-
+            <h3>Organiser</h3>
+            <ul>
+                <li><b>{{event.organizer.name}} {{event.organizer.surname}}</b></li>
+            </ul>
+            <h3>Participants</h3>
+            <div *ngIf="auth.isConnect()">
+                <ul>
+                    <li *ngFor="let participant of participants; let i = index">{{participants[i].user.name}}
+                        {{participants[i].user.surname}}</li>
+                </ul>
             </div>
 
         </div>
 
 
-        
-    
+
+
 
 
 

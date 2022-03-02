@@ -6,202 +6,139 @@
     </div>
 </div>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <h2>Participate</h2>
+    <div class="col">
+        <div>
+           
+                <nav class="nav nav-tabs">
+                    <a class="nav-item nav-link active" href="#p1" data-toggle="tab">Organise</a>
+                    <a class="nav-item nav-link" href="#p2" data-toggle="tab">Participate</a>
+                </nav>
+            <div class="p-3 mb-2 bg-dark text-white">
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="p1">
+                    <div class="row">
+                        <div class="col-sm-2" *ngFor="let event of listevent; let i = index">
+                            <div class="card">
+                                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp"
+                                        class="img-fluid" />
+                                    <a href="#!">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{listevent[i].title}}</h5>
+
+                                <p class="card-text">{{listevent[i].description}}</p>
+
+                                <button class="btn btn-primary">
+                                    <a class="nav-link" (click)="eventDet.setEventId(listevent.participer[i].event.id)"
+                                        routerLink="/event-public">Lego!</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="p2">
+                    <div class="row">
+                        <div class="col-sm-2" *ngFor="let event of listevent.participer; let i = index">
+                            <div class="card">
+                                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp"
+                                        class="img-fluid" />
+                                    <a href="#!">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{listevent.participer[i].event.title}}</h5>
+
+                                <p class="card-text">{{listevent.participer[i].event.description}}</p>
+
+                                <button class="btn btn-primary">
+                                    <a class="nav-link" (click)="eventDet.setEventId(listevent.participer[i].event.id)"
+                                        routerLink="/event-public">Lego!</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
+                    See more events
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark"
+                    routerLink="/event-creation">
+                    Create new event
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark"
+                    routerLink="/profil-perso">
+                    My information
+                </button>
+            </div>
+
         </div>
-        <div class="col">
-            <h2>Organise</h2>
+    </div>
+    <div class="container-fluid">
+        <br>
+        <h2>My groups</h2>
+        <br>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top"
+                        alt="Sunset Over the Sea" />
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up
+                            the
+                            bulk of
+                            the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top"
+                        alt="Sunset Over the Sea" />
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up
+                            the
+                            bulk of
+                            the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top"
+                        alt="Sunset Over the Sea" />
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up
+                            the
+                            bulk of
+                            the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
+                    See more groups
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark"
+                    routerLink="/create-group">
+                    Create new group
+                </button>
+            </div>
         </div>
     </div>
 </div>
-<div class="container-fluid">
-    <div class="col">
-        <div class="p-3 mb-2 bg-dark text-white">
-            <div class="row">
-                <div class="col-sm-2">
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{listevent.participer[0].event.title}}</h5>
-
-                        <p class="card-text">{{listevent.participer[0].event.description}}</p>
-
-                        <button class="btn btn-primary">
-                            <a class="nav-link" (click)="eventDet.setEventId(listevent.participer[0].event.id)"
-                                routerLink="/event-public">Lego!</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{listevent.participer[1].event.title}}</h5>
-
-                        <p class="card-text">{{listevent.participer[1].event.description}}</p>
-
-                        <button class="btn btn-primary">
-                            <a class="nav-link" (click)="eventDet.setEventId(listevent.participer[1].event.id)"
-                                routerLink="/event-public">Lego!</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{listevent.participer[2].event.title}}</h5>
-
-                        <p class="card-text">{{listevent.participer[2].event.description}}</p>
-
-                        <button class="btn btn-primary">
-                            <a class="nav-link" (click)="eventDet.setEventId(listevent.participer[2].event.id)"
-                                routerLink="/event-public">Lego!</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <!--EVENNEMENTS ORGANISES-->
-                    <div class="card-body">
-                        <h5 class="card-title">{{listevent[0].title}}</h5>
-
-                        <p class="card-text">{{listevent[0].description}}</p>
-
-                        <button class="btn btn-primary">
-                            <a class="nav-link" (click)="eventDet.setEventId(listevent[0].id)"
-                                routerLink="/event-public">Lego!</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{listevent[1].title}}</h5>
-                        <p class="card-text">{{listevent[1].description}}</p>
-                        <button class="btn btn-primary">
-                            <a class="nav-link" (click)="eventDet.setEventId(listevent[1].id)"
-                                routerLink="/event-public">Lego!</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{listevent[2].title}}</h5>
-                        <p class="card-text">{{listevent[2].description}}</p>
-                        <button class="btn btn-primary">
-                            <a class="nav-link" (click)="eventDet.setEventId(listevent[2].id)"
-                                routerLink="/event-public">Lego!</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="row">
-                        <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
-                            See more events
-                        </button>
-                        <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark"
-                            routerLink="/event-creation">
-                            Create new event
-                        </button>
-                        <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark"
-                            routerLink="/profil-perso">
-                            My information
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-            <div class="container-fluid">
-                <br>
-                <h1>My groups</h1>
-                <br>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="card">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top"
-                                alt="Sunset Over the Sea" />
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of
-                                    the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="card">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top"
-                                alt="Sunset Over the Sea" />
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of
-                                    the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="card">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top"
-                                alt="Sunset Over the Sea" />
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of
-                                    the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
-                            See more groups
-                        </button>
-                        <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark"
-                            routerLink="/create-group">
-                            Create new group
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>

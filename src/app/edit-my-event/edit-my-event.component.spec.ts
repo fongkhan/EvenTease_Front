@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EventPrivateComponent } from './event-private.component';
+import { EditMyEventComponent } from './edit-my-event.component';
 
-describe('EventPrivateComponent', () => {
-  let component: EventPrivateComponent;
-  let fixture: ComponentFixture<EventPrivateComponent>;
+describe('EditMyEventComponent', () => {
+  let component: EditMyEventComponent;
+  let fixture: ComponentFixture<EditMyEventComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EventPrivateComponent ]
+      declarations: [ EditMyEventComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EventPrivateComponent);
+    fixture = TestBed.createComponent(EditMyEventComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

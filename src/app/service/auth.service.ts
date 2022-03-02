@@ -30,4 +30,12 @@ export class AuthService {
     localStorage.clear();
     this.route.navigateByUrl("login")
   }
+
+  getEventId(){
+    let eventId: any;
+    eventId = localStorage.getItem('eventId');
+    return JSON.parse(eventId);
+  }
+ 
+
 }

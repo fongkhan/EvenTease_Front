@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { RegisterComponent } from './register/register.component';
-import { EventPrivateComponent } from './event-private/event-private.component';
 import { EmailValidationComponent } from './email-validation/email-validation.component';
 import { AuthUserHomeComponent } from './auth-user-home/auth-user-home.component';
 import { HomeComponent } from './home/home.component';
@@ -20,6 +19,7 @@ import { DeleteEventComponent } from './delete-event/delete-event.component';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 import { CreateGroupComponent } from './create-group/create-group.component';
 import {MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { EditMyEventComponent } from './edit-my-event/edit-my-event.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,6 @@ import {MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
     ConnexionComponent,
     ForgotPasswordComponent,
     RegisterComponent,
-    EventPrivateComponent,
     EmailValidationComponent,
     AuthUserHomeComponent,
     HomeComponent,
@@ -38,6 +37,8 @@ import {MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
     DeleteEventComponent,
     DeleteConfirmationComponent,
     CreateGroupComponent,
+
+    EditMyEventComponent,
   ],
   imports: [
     FormsModule,
