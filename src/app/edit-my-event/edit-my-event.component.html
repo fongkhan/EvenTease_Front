@@ -1,0 +1,72 @@
+<section class="container">
+
+    <br>
+
+    <form class=" border border-light p-5" action="#!" #edit="ngForm" (ngSubmit)="EditEvent(edit.value)">
+        <h1 align="center">You can know edit your event !</h1>
+        <div class="form-row mb-4">
+            <div class="col">
+
+                <br>
+
+                <div align="center" class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+
+                    <!-- METTRE LE LIEN DE ALEXIS POUR PHOTO ASSOCIEE-->
+                    <img height="110" width="110"
+                        src="https://static.fnac-static.com/multimedia/Images/FR/MC/00/23/53/22225664/1540-1/tsp20140429182221/Figurine-Geante-Mickey-Mouse.jpg" />
+
+                    <a href="#!">
+
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+
+                    </a>
+                </div>
+                <div style="background-color: #3a86dd;" class="pt-1 mb-4">
+                    <button type="button" class="btn btn-lg btn-block white-text" routerLink=""> <b>Import new event picture</b> </button>
+                </div>
+                <!-- Edit Title-->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="">Current Title : <i>{{Event.title}}</i></label>
+                    <input ngModel="" name="title" type="text" class="form-control" placeholder="New title" required />
+                </div>
+                <!-- Edit Date-->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="">Current date : <i>{{Event.dateEvent}}</i></label>
+                    <input ngModel="" name="dateEvent" type="date" class="form-control" placeholder="New date" required/>
+                </div>
+            </div>
+            <div class="col">
+
+                <br><br><br><br><br><br>
+                <!-- Edit location-->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="">Current location : <i>{{Event.locationEvent}}</i></label>
+                    <input ngModel="" name="locationEvent" type="text" class="form-control" placeholder="New location" required/>
+                </div>
+                 <!-- Edit event publique / privé -->
+                 <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example1">Public event ? <i>{{Event.isPublic}}</i></label>
+                    <br>
+                    <input type="checkbox" class="demo5" id="private" name="isPublic" value="false" ngModel="">
+                    <label for="private">Switch</label>
+                </div>
+                <!-- Edit description-->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="">Current description : <br><i>{{Event.description}}</i></label>
+                    <input ngModel="" name="description" type="text" class="form-control" placeholder="New description" required/>
+                </div>
+
+            </div>
+        </div>
+        <div>
+
+            <div style="background-color: #3a86dd;" class="pt-1 mb-4">
+                <button type="submit" class="btn btn-lg btn-block white-text" > <b>Edit</b></button>
+            </div>
+
+        </div>
+
+
+    </form>
+
+</section>

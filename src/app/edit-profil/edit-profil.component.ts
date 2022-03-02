@@ -25,10 +25,11 @@ export class EditProfilComponent implements OnInit {
 
     EditProfil(user:any){
       console.log("on recupere les modif",user);
-         
+        user["id"]=this.auth.getUserConnect()["id"];
+        console.log(user);
         this.http.put('http://localhost:8182/user/update',user).subscribe({
           next: (data)=> {
-            console.log("ok");
+            console.log(user);
             this.route.navigateByUrl('profil-perso');
            },
           error: (err)=>{console.log(err)}
