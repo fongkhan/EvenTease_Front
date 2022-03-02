@@ -37,7 +37,6 @@ import { EditMyEventComponent } from './edit-my-event/edit-my-event.component';
     DeleteEventComponent,
     DeleteConfirmationComponent,
     CreateGroupComponent,
-
     EditMyEventComponent,
   ],
   imports: [
