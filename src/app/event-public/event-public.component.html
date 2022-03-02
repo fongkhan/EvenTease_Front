@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-5">
             <h1> <br> <br> you've just accessed {{event.title}}</h1>
-            <p><br> <i>As you are not logged in, you only have access to part of the available information</i></p>
+            <p *ngIf="!auth.isConnect()"><br> <i>As you are not logged in, you only have access to part of the available information</i></p>
 
             <p><br> Date : {{event.dateEvent}}</p>
 
