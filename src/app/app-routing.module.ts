@@ -15,6 +15,8 @@ import { EditProfilComponent } from './edit-profil/edit-profil.component';
 import { DeleteEventComponent } from './delete-event/delete-event.component';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 import { EditMyEventComponent } from './edit-my-event/edit-my-event.component';
+import { CreateGroupComponent } from './create-group/create-group.component';
+
 
 
 const routes: Routes = [
@@ -33,6 +35,7 @@ const routes: Routes = [
   {component: DeleteEventComponent, path:"delete-event"},
   {component: DeleteConfirmationComponent, path:"delete-confirmation"},
   {component: EditMyEventComponent, path:"edit-my-event"},
+  {component: CreateGroupComponent, path:"create-group"},
   {path :'',redirectTo:'home', pathMatch: 'full'},
 ];
 

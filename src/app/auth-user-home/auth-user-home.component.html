@@ -34,7 +34,7 @@
                         <p class="card-text">{{listevent.participer[0].event.description}}</p>
 
                         <button class="btn btn-primary">
-                            <a class="nav-link" (click)="eventDet.setEventId(listevent.participer[2].event.id)"
+                            <a class="nav-link" (click)="eventDet.setEventId(listevent.participer[0].event.id)"
                                 routerLink="/event-public">Lego!</a>
                         </button>
                     </div>
@@ -136,8 +136,8 @@
                         </button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="row">
+                
+                    <div class="row" >
                         <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
                             See more events
                         </button>
@@ -150,79 +150,12 @@
                             My information
                         </button>
                     </div>
-                </div>
+                
             </div>
         </div>
-        <div class="container-fluid">
-            <br>
-            <h1>Suggested events</h1>
-            <br>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's
-                            content.</p>
-                        <a href="#!" class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's
-                            content.</p>
-                        <a href="#!" class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's
-                            content.</p>
-                        <a href="#!" class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
-                        See more events
-                    </button>
-                </div>
-            </div>
             <div class="container-fluid">
                 <br>
-                <h1>My groups</h1>
+                <h2>My groups</h2>
                 <br>
             </div>
             <div class="container-fluid">
