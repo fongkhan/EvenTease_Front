@@ -15,6 +15,7 @@ export class EventPublicComponent implements OnInit {
   event: any;
   msgErr = '';
   participants: any;
+  votes:any;
 
   constructor(private http: HttpClient, private route: Router, public eventDet: EventDetailsService, public auth: AuthService) { }
 
@@ -25,7 +26,7 @@ export class EventPublicComponent implements OnInit {
       next: (data) => {
         this.event = data;
         if (this.event != null) {
-          console.log(this.event)
+          //console.log(this.event)
         }
         else {
           this.msgErr = 'No event to show';
@@ -38,7 +39,20 @@ export class EventPublicComponent implements OnInit {
       next: (data2) => {
         this.participants = data2;
         if (this.participants != null) {
-          console.log(this.participants)
+          //console.log(this.participants)
+        }
+        else {
+          this.msgErr = 'No participants';
+        }
+      },
+      error: (err) => { console.log(err) }
+    });
+
+    this.http.post('http://localhost:8182/event/vote/idevent',this.id).subscribe({
+      next: (data) => {
+        this.votes = data;
+        if (this.votes != null) {
+          console.log(this.votes)
         }
         else {
           this.msgErr = 'No participants';
