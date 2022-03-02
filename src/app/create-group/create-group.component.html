@@ -12,9 +12,9 @@
                 <div class="col-md-12">
                     <div class="form-outline mb-4 col-auto" > 
                         <label class="form-label" for="">Name*</label>
-                        <input type="text" name="Name" class="form-control col-auto" ngModel="" />
+                        <input type="text" name="name" class="form-control col-auto" ngModel="" />
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-12">
                             <label for="addMember">Members : </label>
                             <div *ngFor='let member of members'>
@@ -30,7 +30,14 @@
                         <input type="button" class="btn btn-primary btn-sm "value="Remove All Member" (click)="removeInputAllMember()">
                         <input type="button" class="btn btn-primary btn-sm " value="Validate Member list" >
     
+                    </div> -->
+
+
+                    <div class=" text-center">
+                        <ejs-multiselect id='membres' [dataSource]='users'
+                           [placeholder]='msgInfo' name="membres" ngModel=""></ejs-multiselect>
                     </div>
+                    <br>
 
                     </div>
                     
