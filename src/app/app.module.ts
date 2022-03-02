@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { RegisterComponent } from './register/register.component';
-import { EventPrivateComponent } from './event-private/event-private.component';
 import { EmailValidationComponent } from './email-validation/email-validation.component';
 import { AuthUserHomeComponent } from './auth-user-home/auth-user-home.component';
 import { HomeComponent } from './home/home.component';
@@ -21,6 +20,8 @@ import { DeleteConfirmationComponent } from './delete-confirmation/delete-confir
 import { CreateGroupComponent } from './create-group/create-group.component';
 import { ListeAchatCreationComponent } from './liste-achat-creation/liste-achat-creation.component';
 import { FriendrequestComponent } from './friendrequest/friendrequest.component';
+import {MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { EditMyEventComponent } from './edit-my-event/edit-my-event.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,6 @@ import { FriendrequestComponent } from './friendrequest/friendrequest.component'
     ConnexionComponent,
     ForgotPasswordComponent,
     RegisterComponent,
-    EventPrivateComponent,
     EmailValidationComponent,
     AuthUserHomeComponent,
     HomeComponent,
@@ -41,12 +41,14 @@ import { FriendrequestComponent } from './friendrequest/friendrequest.component'
     CreateGroupComponent,
     ListeAchatCreationComponent,
     FriendrequestComponent,
+    EditMyEventComponent,
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MultiSelectAllModule
   ],
   providers: [],
   bootstrap: [AppComponent]
