@@ -19,6 +19,7 @@ import { EditProfilComponent } from './edit-profil/edit-profil.component';
 import { DeleteEventComponent } from './delete-event/delete-event.component';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 import { CreateGroupComponent } from './create-group/create-group.component';
+import {MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CreateGroupComponent } from './create-group/create-group.component';
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MultiSelectAllModule
   ],
   providers: [],
   bootstrap: [AppComponent]
