@@ -21,6 +21,8 @@ export class EditMyEventComponent implements OnInit {
 
   constructor(private http: HttpClient, public auth: AuthService, public eventDet: EventDetailsService, private route: Router) { }
 
+  currentEvent: any;
+
   ngOnInit(): void {
 
     this.currentUser = this.auth.getUserConnect();

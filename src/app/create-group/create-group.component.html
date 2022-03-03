@@ -8,13 +8,13 @@
             <div class="col-md-12">
 
                 <!-- Il reste à recuperer les info du createur -->
-            <form #connect="ngForm" (ngSubmit)="CreateGroup(connect.value)">
-                <div class="col-md-12">
-                    <div class="form-outline mb-4 col-auto" > 
-                        <label class="form-label" for="">Name*</label>
-                        <input type="text" name="name" class="form-control col-auto" ngModel="" />
-                    </div>
-                    <!-- <div class="row">
+                <form #connect="ngForm" (ngSubmit)="CreateGroup(connect.value)">
+                    <div class="col-md-12">
+                        <div class="form-outline mb-4 col-auto">
+                            <label class="form-label" for="">Name*</label>
+                            <input type="text" name="name" class="form-control col-auto" ngModel="" />
+                        </div>
+                        <!-- <div class="row">
                         <div class="col-md-12">
                             <label for="addMember">Members : </label>
                             <div *ngFor='let member of members'>
@@ -33,14 +33,14 @@
                     </div> -->
 
 
-                    <div class="text-center">
-                        <ejs-multiselect id='membres' [dataSource]='auth.users'
-                           [placeholder]='msgInfo' name="membres" ngModel=""></ejs-multiselect>
-                    </div>
-                    <br>
+                        <div class="text-center">
+                            <ejs-multiselect id='membres' [dataSource]='auth.users' [placeholder]='msgInfo'
+                                name="membres" ngModel=""></ejs-multiselect>
+                        </div>
+                        <br>
 
                     </div>
-                    
+
 
 
                     <!-- ABSENT DE LA BDD
@@ -54,50 +54,43 @@
                     </div>-->
 
 
-                <div>
-                    <button type="submit" class="btn btn-primary btn-block mb-4 ">
-                        create
-                    </button>
-                    <br>
-                    <p><i><small>* = Must be completed</small></i></p>
-        
-                </div>
-
-            </form>
-
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-block mb-4 ">
+                            create
+                        </button>
+                        <br>
+                        <p><i><small>* = Must be completed</small></i></p>
+                    </div>
+                </form>
+            </div>
         </div>
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
     </div>
-
-
-
-
-
-
-
-
 </section>
+<!-- 
+<div class="container text-center" style="margin-left: 250px;">
+    <form class="example-chip-list" appearance="fill">
+        <div class="md-form">
+            <mat-chip-list #chipList aria-label="Fruit selection">
+                <mat-chip *ngFor="let fruit of fruits" (removed)="remove(fruit)">
+                    {{fruit}}
+                    <button matChipRemove>
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+                </mat-chip>
+                <input placeholder="New fruit..." #fruitInput [formControl]="fruitCtrl" [matAutocomplete]="auto"
+                    [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+                    {{fruit}}
+                </mat-option>
+            </mat-autocomplete>
+        </div>
+      
+    </form>
+
+
+    <br><br><br><br>
+</div> -->
