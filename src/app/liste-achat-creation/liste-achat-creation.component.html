@@ -1,4 +1,3 @@
-<p>liste-achat-creation works!</p>
 <section>
     <div class="container py-5 h-100">
         <div class="row d-flex align-items-center justify-content-center h-100">
@@ -33,23 +32,22 @@
                 
                             </div>
                             -->
-                            <mat-form-field class="example-chip-list" appearance="fill">
-                                <mat-label>Favorite Fruits</mat-label>
-                                <mat-chip-list #chipList aria-label="Fruit selection">
-                                  <mat-chip *ngFor="let fruit of fruits" (removed)="remove(fruit)">
-                                    {{fruit.name}}
+                            <mat-form-field class="list-achat"  appearance="fill">
+                                <mat-label>Liste d'achats</mat-label>
+                                <mat-chip-list #Achat name="Achat" aria-label="Fruit selection">
+                                  <mat-chip *ngFor="let achat of achats" (removed)="remove(achat)">
+                                    {{achat.name}}
                                     <button matChipRemove>
                                       <mat-icon>cancel</mat-icon>
                                     </button>
                                   </mat-chip>
                                   <input placeholder="New fruit..."
-                                         [matChipInputFor]="chipList"
+                                         [matChipInputFor]="Achat"
                                          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                                          [matChipInputAddOnBlur]="addOnBlur"
                                          (matChipInputTokenEnd)="add($event)">
                                 </mat-chip-list>
-                              </mat-form-field>
-
+                            </mat-form-field>
                         </div>
                         <div>
                             <button type="submit" class="btn btn-primary btn-block mb-4 ">

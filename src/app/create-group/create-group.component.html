@@ -4,9 +4,7 @@
             <div>
                 <h1><b>Ready to create your Group?<br><br></b> </h1>
             </div>
-
             <div class="col-md-12">
-
                 <!-- Il reste à recuperer les info du createur -->
                 <form #connect="ngForm" (ngSubmit)="CreateGroup(connect.value)">
                     <div class="col-md-12">
@@ -23,26 +21,18 @@
                                     <option *ngFor="let user of alluser" [value]="user.login">{{user}}</option>
                                 </datalist>
                             </div>
-                            
                         </div>
                         <input type="button" class="btn btn-primary btn-sm "value="Add Member" (click)="addInputMember()">
                         <input type="button" class="btn btn-primary btn-sm "value="Remove Member" (click)="removeInputMember()">
                         <input type="button" class="btn btn-primary btn-sm "value="Remove All Member" (click)="removeInputAllMember()">
                         <input type="button" class="btn btn-primary btn-sm " value="Validate Member list" >
-    
                     </div> -->
-
-
                         <div class="text-center">
                             <ejs-multiselect id='membres' [dataSource]='auth.users' [placeholder]='msgInfo'
                                 name="membres" ngModel=""></ejs-multiselect>
                         </div>
                         <br>
-
                     </div>
-
-
-
                     <!-- ABSENT DE LA BDD
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Chat*</label>

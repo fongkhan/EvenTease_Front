@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
 
-export interface Fruit {
+export interface Achat {
   name: string;
 }
 
@@ -20,27 +20,33 @@ export class ListeAchatCreationComponent implements OnInit {
   shoppinglist:any;
   pricelist:any;
   user:any;
-  achats = ["achat1"];
-  achatNumber = 1;
+  msgErr:any;
+  /*achats = ["achat1"];
+  achatNumber = 1;*/
   addOnBlur = true;
 
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
-  fruits: Fruit[] = [{name: 'Lemon'}, {name: 'Lime'}, {name: 'Apple'}];
+  achats: Achat [] = [];
   
 
 
- constructor(private http: HttpClient, private route: Router,private auth: AuthService) { }
-
+constructor(private http: HttpClient, private route: Router,private auth: AuthService) { }
 
 ngOnInit(): void {
-  this.user = this.auth.getUserConnect();
-  this.http.post('http://localhost:8182/event/organizer',this.user).subscribe({
-    next: (data)=> {
-      this.eventcreated= data; //j'obtient tous les events où je suis organizer
-      console.log(data);
-    },
-    error: (err)=>{console.log(err)}
-  });
+  this.user=this.auth.getUserConnect();
+    this.http.get('http://localhost:8182/event/organizer/' + this.auth.getUserConnect().id).subscribe({
+      next: (data)=> {
+        this.eventcreated = data; 
+        if(this.eventcreated!= null) {
+          console.log(data)
+         
+        }
+        else{
+          this.msgErr ='No event to show';
+        }
+      },
+        error: (err)=>{console.log(err)}
+      });
 }
 
 add(event: MatChipInputEvent): void {
@@ -48,23 +54,24 @@ add(event: MatChipInputEvent): void {
 
   // Add our fruit
   if (value) {
-    this.fruits.push({name: value});
+    this.achats.push({name: value});
   }
 
   // Clear the input value
   event.chipInput!.clear();
 }
 
-remove(fruit: Fruit): void {
-  const index = this.fruits.indexOf(fruit);
+remove(achat: Achat): void {
+  const index = this.achats.indexOf(achat);
 
   if (index >= 0) {
-    this.fruits.splice(index, 1);
+    this.achats.splice(index, 1);
   }
 }
 CreateShoppingList(shoppinglist:any){
   this.user = this.auth.getUserConnect();
   shoppinglist["createur"]=this.user;
+  shoppinglist["Achat"]=this.achats;
   console.log(this.user);
   console.log("les datas du formulaire",shoppinglist);
   this.http.post('http://localhost:8182/event/create',shoppinglist).subscribe({
@@ -75,7 +82,7 @@ CreateShoppingList(shoppinglist:any){
     error: (err)=>{console.log(err)}
   });
 } 
-
+/*
 addInputAchat() {
   this.achatNumber++; 
   this.achats.push("achat"+this.achatNumber)
@@ -88,7 +95,7 @@ removeInputAchat() {
 
 removeInputAllAchat() {
   this.achats.splice(1,this.achatNumber)
-}
+}*/
 
 }
 
