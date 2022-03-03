@@ -11,22 +11,25 @@ import { EventDetailsService } from '../service/event-details.service';
 })
 export class EventPublicComponent implements OnInit {
   id: any;
-  
   event: any;
   msgErr = '';
   participants: any;
   votes:any;
+  eventid:any;
+  user:any;
+
 
   constructor(private http: HttpClient, private route: Router, public eventDet: EventDetailsService, public auth: AuthService) { }
 
   ngOnInit(): void {
 
     this.id = this.eventDet.getEventId();
+    
     this.http.post('http://localhost:8182/eventid', this.id).subscribe({
       next: (data) => {
         this.event = data;
         if (this.event != null) {
-          //console.log(this.event)
+          console.log(this.event)
         }
         else {
           this.msgErr = 'No event to show';
@@ -34,12 +37,13 @@ export class EventPublicComponent implements OnInit {
       },
       error: (err) => { console.log(err) }
     });
-
+    
+   
     this.http.post('http://localhost:8182/event/participant/event',this.id).subscribe({
       next: (data2) => {
         this.participants = data2;
         if (this.participants != null) {
-          //console.log(this.participants)
+          console.log(this.participants)
         }
         else {
           this.msgErr = 'No participants';
@@ -71,6 +75,16 @@ export class EventPublicComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  isParticipantCheck() {
+    this.user=this.auth.getUserConnect();
+    for (let i = 0; i < this.participants.length; i++ ) {
+      if (this.participants[i].user["id"]==this.user["id"]) {
+        return true;
+    }
+   }
+   return false;
   }
 }
 
