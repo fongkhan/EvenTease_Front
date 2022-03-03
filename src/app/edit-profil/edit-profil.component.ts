@@ -13,8 +13,9 @@ export class EditProfilComponent implements OnInit {
   // user:any;
   msgErr = '';
   currentUser: any;
+  mediaURL:any;
   constructor(private http: HttpClient, public auth: AuthService, private route: Router,) { }
-  
+
   ngOnInit(): void {
     this.currentUser = this.auth.getUserConnect();
   }
@@ -23,6 +24,13 @@ export class EditProfilComponent implements OnInit {
     return this.auth.getUserConnect();
     }
 
+    onFileChanged(event:any):any{
+      const reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload = (event2) => {
+        this.mediaURL = reader.result;
+      }
+    }
 
     EditProfil(){
      // console.log("on recupere les modif",user);
@@ -39,12 +47,12 @@ export class EditProfilComponent implements OnInit {
         });
       }
 
-      
+
 
 
 }
 
-  
+
 
 
 
