@@ -1,144 +1,136 @@
-<div class="container-fluid">
-    <div class="p-3 mb-2 bg-dark text-white">
+<div class="container">
+
+    <div class="card text-center p-2 w3-round-xxlarge z-depth-3">
+        <h2 class="text-info letter-space">My events</h2>
         <br>
-        <h1>My events</h1>
-        <br>
-    </div>
-</div>
-<div class="container-fluid">
-    <div class="col">
-        <div>
-           
-                <nav class="nav nav-tabs">
+        <div class="col">
+            <div>
+                <nav class="nav nav-tabs justify-content-center">
                     <a class="nav-item nav-link active" href="#p1" data-toggle="tab">Organise</a>
                     <a class="nav-item nav-link" href="#p2" data-toggle="tab">Participate</a>
                 </nav>
-            <div class="p-3 mb-2 bg-dark text-white">
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="p1">
-                    <div class="row">
-                        <div class="col-sm-2" *ngFor="let event of events;">
-                            <div class="card">
-                                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp"
-                                        class="img-fluid" />
-                                    <a href="#!">
-                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+                <div class="p-3 mb-2">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="p1">
+                            <div class="row">
+                                <div class="col-sm-3" *ngFor="let event of events">
+                                    <div class="card p-2">
+                                        <div class="card-head">
+                                            <p class="grey-text">{{event.title | uppercase}}</p>
                                         </div>
-                                    </a>
+                                        <div class="card-body">
+                                            <p>{{event.description}}</p>
+                                            <button class="btn btn-primary btn-sm"
+                                                (click)="eventDet.setEventId(event.id)">
+                                                Go to event
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title">{{event.title}}</h5>
 
-                                <p class="card-text">{{event.description}}</p>
-
-                                <button class="btn btn-primary">
-                                    <a class="nav-link" (click)="eventDet.setEventId(event.id)"
-                                        routerLink="/event-public">Lego!</a>
-                                </button>
+                        </div>
+                        <div class="tab-pane fade" id="p2">
+                            <div class="row">
+                                <div class="col-sm-3" *ngFor="let eventP of eventsparticip">
+                                    <div class="card p-2">
+                                        <div class="card-head">
+                                            <p class="grey-text">{{eventP.event.title | uppercase}}</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>{{eventP.event.description}}</p>
+                                            <button class="btn btn-primary btn-sm"
+                                                (click)="eventDet.setEventId(eventP.event.id)">
+                                                Go to event
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                </div>
-                <div class="tab-pane fade" id="p2">
-                    <div class="row">
-                        <div class="col-sm-2" *ngFor="let eventP of eventsparticip">
-                            <div class="card">
-                                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp"
-                                        class="img-fluid" />
-                                    <a href="#!">
-                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">{{eventP.event.title}}</h5>
-
-                                <p class="card-text">{{eventP.event.description}}</p>
-
-                                <button class="btn btn-primary">
-                                    <a class="nav-link" (click)="eventDet.setEventId(eventP.event.id)"
-                                        routerLink="/event-public">Lego!</a>
-                                </button>
-                            </div>
-                        </div>
+                    <br>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-secondary btn-sm w3-round-xlarge">
+                            See more events
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm w3-round-xlarge">
+                            Create new event
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm w3-round-xlarge">
+                            My information
+                        </button>
                     </div>
+
                 </div>
             </div>
-
-
-            <div class="row">
-                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
-                    See more events
-                </button>
-                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark"
-                    routerLink="/event-creation">
-                    Create new event
-                </button>
-                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark"
-                    routerLink="/profil-perso">
-                    My information
-                </button>
-            </div>
-
         </div>
     </div>
-    <div class="container-fluid">
+
+    <br><br><br>
+    <div class="card text-center p-2 w3-round-xxlarge z-depth-3">
+        <h2 class="text-warning letter-space">My teams</h2>
         <br>
-        <h2>My groups</h2>
-        <br>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="card">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top"
-                        alt="Sunset Over the Sea" />
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up
-                            the
-                            bulk of
-                            the card's content.</p>
+        <div class="col">
+            <div>
+                <nav class="nav nav-tabs justify-content-center">
+                    <a class="nav-item nav-link active" href="#p1t" data-toggle="tab">Organise</a>
+                    <a class="nav-item nav-link" href="#p2t" data-toggle="tab">Participate</a>
+                </nav>
+                <div class="p-3 mb-2">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="p1t">
+                            <div class="row">
+                                <div class="col-sm-3" *ngFor="let team of teams">
+                                    <div class="card p-2 w3-round-xxlarge">
+                                        <p class="grey-text">{{team.name | uppercase}}</p>
+                                        <button class="btn btn-warning btn-sm w3-round-xxlarge">
+                                            Go to team
+                                        </button>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="p2t">
+                            <div class="row">
+                                <div class="col-sm-3" *ngFor="let eventP of eventsparticip">
+                                    <div class="card p-2">
+                                        <div class="card-head">
+                                            <p class="grey-text">{{eventP.event.title | uppercase}}</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>{{eventP.event.description}}</p>
+                                            <button class="btn btn-warning btn-sm"
+                                                (click)="eventDet.setEventId(eventP.event.id)">
+                                                Go to team
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top"
-                        alt="Sunset Over the Sea" />
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up
-                            the
-                            bulk of
-                            the card's content.</p>
+
+                    <br>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-secondary btn-sm w3-round-xlarge">
+                            See more teams
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm w3-round-xlarge" (click)="goTeamCreatePup()">
+                            Create new team
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm w3-round-xlarge">
+                            My information
+                        </button>
                     </div>
+
                 </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top"
-                        alt="Sunset Over the Sea" />
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up
-                            the
-                            bulk of
-                            the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
-                    See more groups
-                </button>
-                <button type="button" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark"
-                    routerLink="/create-group">
-                    Create new group
-                </button>
             </div>
         </div>
     </div>
 </div>
+
+<br><br><br>
