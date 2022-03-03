@@ -71,10 +71,14 @@ remove(achat: Achat): void {
 CreateShoppingList(shoppinglist:any){
   this.user = this.auth.getUserConnect();
   shoppinglist["createur"]=this.user;
-  shoppinglist["Achat"]=this.achats;
+  let yous: string[] = [];
+  this.achats.forEach(element => {
+    yous.push(element.name);
+  });
+  shoppinglist["achat"]=yous;
   console.log(this.user);
   console.log("les datas du formulaire",shoppinglist);
-  this.http.post('http://localhost:8182/event/create',shoppinglist).subscribe({
+  this.http.post('http://localhost:8182/shoppinglist/add',shoppinglist).subscribe({
     next: (data)=> {
       console.log("ok");
       this.route.navigateByUrl('auth-user-home');

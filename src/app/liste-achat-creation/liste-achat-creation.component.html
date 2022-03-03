@@ -34,7 +34,7 @@
                             -->
                             <mat-form-field class="list-achat"  appearance="fill">
                                 <mat-label>Liste d'achats</mat-label>
-                                <mat-chip-list #Achat name="Achat" aria-label="Fruit selection">
+                                <mat-chip-list #Achat name="achat" aria-label="Fruit selection">
                                   <mat-chip *ngFor="let achat of achats" (removed)="remove(achat)">
                                     {{achat.name}}
                                     <button matChipRemove>
