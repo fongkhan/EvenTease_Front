@@ -12,23 +12,24 @@
 
                 <div align="center" class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                   <div *ngIf="mediaExist(this.currentUser.profilePic)">
+                    <p>current image :</p>
                     <img [src]="changeFormatMedia(this.currentUser.profilePic)" width="50%" alt="profil picture">
                   </div>
                     <a href="#!">
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                     </a>
                     <div>
-                      <button type="button" mat-icon-button class="btn btn-block" (click)="file.click()">
-                        <mat-icon>add_photo_alternate</mat-icon>
-                      </button>
                     </div>
                     <input  name="profilePic" type="file" [hidden]="true" #file accept="image/*" (change)="onFileChanged($event)">
-                    <div class="text-center">
+                    <div class="text-center" >
+                      <div *ngIf="!mediaExist(this.currentUser.profilePic)">
+                        <p>new image :</p>
+                      </div>
                       <img [src]="mediaURL" alt="imageURL" width="50%" *ngIf="mediaURL">
                     </div>
-                </div>
-                <div style="background-color: #3a86dd;" class="pt-1 mb-4">
-                    <button type="button" class="btn btn-lg btn-block white-text" routerLink=""> <b>Import profil picture</b> </button>
+                    <button type="button" mat-icon-button class="btn btn-block" (click)="file.click()">
+                      <mat-icon>add_photo_alternate</mat-icon>
+                    </button>
                 </div>
 
                 <!-- Edit Login-->
