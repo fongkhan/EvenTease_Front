@@ -38,12 +38,6 @@
                     <button type="button" class="btn btn-success btn-sm" (click)="AcceptFriendRequest(f)">Accept</button>
                     <button type="button" class="btn btn-danger btn-sm" (click)="RefuseFriendRequest(f)">Refuse</button>
                 </div>
-                <div *ngIf="msgAccept == 'Demande acceptée'+f.id" class="alert alert-success text-center col" >
-                    {{msgAccept}}  
-                </div>
-                <div *ngIf="msgAccept == 'Demande refusée'+f.id" class="alert alert-danger text-center col" >
-                    {{msgAccept}}
-                </div>
             </div>
         </div>
         <div class= "col">
@@ -58,6 +52,11 @@
             </div>
         </div>
     </div>
+</div>
+<div id = "firstdiv" >
+    <p>
+    .
+    </p>
 </div>
 </section>
 
