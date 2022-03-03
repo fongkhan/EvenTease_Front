@@ -3,7 +3,7 @@
         <div class="col-sm-12">
             <h1><b> USER </b></h1>
             <!--<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">-->
-            <div *ngIf="mediaExist(user.profilePic)">
+            <div *ngIf="mediaExist(user.profilePic)" class="text-center">
               <img [src]="changeFormatMedia(user.profilePic)" width="50%" alt="Image de profil">
                     <!--<a href="#!">
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -34,7 +34,7 @@
         </div>
 
 
-        
+
     </div>
 
 
