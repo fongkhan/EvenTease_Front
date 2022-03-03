@@ -2,24 +2,21 @@
     <div class="row">
         <div class="col-sm-4">
             <h1><b> USER </b></h1>
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-
-                <img src="{{user.profilpic}}"/>
-    
-                    <a href="#!">
-    
+            <!--<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">-->
+            <div *ngIf="mediaExist(user.profilePic)">
+              <img [src]="changeFormatMedia(user.profilePic)" width="100%" alt="Image de profil">
+                    <!--<a href="#!">
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-    
-                    </a>
+                    </a>-->
             </div>
             <p><i>Name : {{user.name}}</i></p>
             <p>Surname : {{user.surname}}</p>
             <p>Date fo birth : {{user.birthDate}}</p>
             <p>Mail : {{user.mail}}</p>
-            <p>Phone number : {{user.phone}}</p>    
+            <p>Phone number : {{user.phone}}</p>
             <p>Town : {{user.town}}</p>
             <p>Description : {{user.description}}</p>
-            
+
         </div>
 
         <div class="col-md-4">
@@ -32,11 +29,11 @@
 
 
                     <img src="http://api.park-gorkogo.com/storage/gallery/145/regular_preview_picture-3c291bf33d4002b149ff55e671dd7bfc.jpg" class="img-fluid" />
-        
+
                         <a href="#!">
-        
+
                             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        
+
                         </a>
 
                 </div>
@@ -55,7 +52,7 @@
 
 
             </div>
-            
+
 
 
 
@@ -65,7 +62,7 @@
 
         <div>
             <h1>My groups</h1>
-            
+
 
                 <p align="center">GRp 1</p>
             <form>
@@ -85,17 +82,23 @@
                         <button type="button" class="btn btn-lg btn-block white-text" routerLink=""> <b>Check</b></button>
                     </div>
                 </form>
-            
-                
-            
-
-            
 
 
 
 
-          
 
+
+
+
+
+
+
+
+
+
+
+
+        </div>
 
 
 
@@ -104,12 +107,6 @@
         </div>
 
 
-
-
-
-        </div>
-        
-    
 
 
 
