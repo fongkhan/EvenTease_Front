@@ -79,13 +79,12 @@ export class EventPublicComponent implements OnInit {
 
   isParticipantCheck() {
     this.user=this.auth.getUserConnect();
-
-    if (this.event["isPublic"]) {
-      return true;
-
-    } else {
-      return false;
+    for (let i = 0; i < this.participants.length; i++ ) {
+      if (this.participants[i].user["id"]==this.user["id"]) {
+        return true;
     }
+   }
+   return false;
   }
 }
 
