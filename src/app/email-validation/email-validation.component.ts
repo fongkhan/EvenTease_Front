@@ -19,7 +19,7 @@ export class EmailValidationComponent implements OnInit {
     this.http.post('http://localhost:8182/sign-in/confirm',userTemp).subscribe({
       next: (data)=> {
         console.log("ok");
-        this.route.navigateByUrl('auth-user-home');
+        this.route.navigateByUrl('home');
        },
       error: (err)=>{console.log(err)}
     });

@@ -17,8 +17,10 @@ export class EventPublicComponent implements OnInit {
   votes: any;
   eventid: any;
   user: any;
-  voteAnswerUser:any;
-
+  voteAnswerUser: any;
+  votanswer: any;
+  idVote:any;
+  nbVoteAnswer:any;
 
   constructor(private http: HttpClient, private route: Router, public eventDet: EventDetailsService, public auth: AuthService) { }
 
@@ -30,7 +32,7 @@ export class EventPublicComponent implements OnInit {
       next: (data) => {
         this.event = data;
         if (this.event != null) {
-         //s console.log(this.event)
+          //s console.log(this.event)
         }
         else {
           this.msgErr = 'No event to show';
@@ -48,26 +50,17 @@ export class EventPublicComponent implements OnInit {
       error: (err) => { console.log(err) }
     });
 
-    this.http.get('http://localhost:8182/event/vote/'+ this.id).subscribe({
+    this.http.get('http://localhost:8182/event/vote/' + this.id).subscribe({
       next: (data) => {
         this.votes = data;
         console.log(this.votes);
-        for (var vote of this.votes) {
-          console.log(vote.id);
-          this.http.get('http://localhost:8182/event/vote/answer/user/'+vote.id).subscribe({
-            next: (data) => {
-              this.voteAnswerUser;
-              console.log(this.voteAnswerUser);
-            },
-            error: (err) => { console.log(err) }
-          });
-        }
+
       },
       error: (err) => { console.log(err) }
     });
-   
 
-    
+
+
 
   }
   isPublicCheck() {
@@ -80,6 +73,26 @@ export class EventPublicComponent implements OnInit {
     }
   }
 
+  getAllAnswersOfVote(idVote:any) {
+      this.nbVoteAnswer=[0,0,0,0];
+      console.log("ok");
+      this.http.get('http://localhost:8182/event/vote/answer/user/' + idVote).subscribe({
+        next: (data) => {
+          console.log(data);
+          this.voteAnswerUser=data;
+          for (var vote of this.voteAnswerUser){
+            for (let i = 0; i < 4; i++){
+              if (vote.idAnswer==i+1){
+                  this.nbVoteAnswer[i]++;
+              }
+            }
+          }
+          console.log(this.nbVoteAnswer);
+        },
+        error: (err) => { console.log(err) }
+      })
+    
+  }
   isParticipantCheck() {
     this.user = this.auth.getUserConnect();
     for (let i = 0; i < this.participants.length; i++) {

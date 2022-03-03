@@ -1,8 +1,11 @@
 <section>
-<div class="container brd">
-    <h1><b>Friend Request<br><br></b> </h1>
-    <div class="row brd">
-        <div class="col brd">
+<div class="container ">
+    <div class="text-center">
+        <img src="/assets/img/amis2.jpg" alt="" width="100%" style="opacity: 0.60;">
+    </div>
+    
+    <div class="row ">
+        <div class="col">
             <h2>Send a Friend Request</h2>
             <form #connect="ngForm" (ngSubmit)="CreateFriendRequest(connect.value)">
                 <label >Select the user* : </label>
@@ -12,20 +15,48 @@
                         <option *ngFor="let u of alluser" [ngValue]="u"> {{u.login}}</option>
                     </select>
                 <label ></label><br/>
-                <button type="submit" class="btn btn-primary btn-block mb-4">
+                <button type="submit" class="btn btn-primary btn-sm btn-block mb-4">
                     Send your Friend Request
                 </button>
-    </form>
+            </form>
         </div>
-        <div class="col brd">
-            <h2>My Friend Request</h2>
-            
+        <div class="col-6">
+            <h2 style="text-align: center">My Friend Request</h2>
+            <div class="row" *ngFor="let f of myfriendrequests">
+                <div class="col-8">
+                    <div  class="list-group row">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                              <h5 class="mb-1">{{f.demandeur.name}} {{f.demandeur.surname}}</h5>
+                            </div>
+                            <small >{{f.demandeur.mail}}</small>
+                        </a>
+                    </div>
+                </div>
+                <div *ngIf="msgAppear != 'true'+f.id && 
+                (msgAccept != 'Demande acceptée'+f.id || msgAccept != 'Demande refusée'+f.id)"  class="col">
+                    <button type="button" class="btn btn-success btn-sm" (click)="AcceptFriendRequest(f)">Accept</button>
+                    <button type="button" class="btn btn-danger btn-sm" (click)="RefuseFriendRequest(f)">Refuse</button>
+                </div>
+            </div>
         </div>
-        <div class="col">
-            <h2>My Friends</h2>
-            <h5 *ngFor="let f of friendrequest" ngModel=""> {{f}}</h5>
+        <div class= "col">
+            <h2 style="text-align: center">My Friends</h2>
+            <div *ngFor="let f of myfriends" class="list-group row">
+                <a href="http://localhost:4200/user/{{f.id}}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">{{f.demandeur.name}} {{f.demandeur.surname}}</h5>
+                    </div>
+                    <small >{{f.demandeur.mail}}</small>
+                </a>
+            </div>
         </div>
     </div>
+</div>
+<div id = "firstdiv" >
+    <p>
+    .
+    </p>
 </div>
 </section>
 

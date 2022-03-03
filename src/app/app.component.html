@@ -20,6 +20,10 @@
             Mes Teams</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" routerLink="friendrequest" routerLinkActive="lien-active" *ngIf="auth.isConnect()">
+            Mes Friends</a>
+        </li>
+        <li class="nav-item">
           <!-- <a class="nav-link" routerLink="profil-perso" routerLinkActive="lien-active" *ngIf="auth.isConnect()">My
             Profile</a> -->
             <button mat-mini-fab color="primary"  class=" nav-link for-mat-button" routerLink="profil-perso" *ngIf="auth.isConnect()">

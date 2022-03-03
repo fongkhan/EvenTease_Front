@@ -95,11 +95,15 @@
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                         <label class="form-check-label" for="flexCheckDefault">
                             {{answer}}
+                            <div>
+                                
+                            </div>
                         </label>
                     </div>
                 </form>
                 <div class="card-footer text-end">
                     <button type="button" class="btn btn-primary">Submit</button>
+                    <button (click)="this.getAllAnswersOfVote(vote.id)" type="button" class="btn btn-primary">See votes</button>
                 </div>
             </div>
         </div>
