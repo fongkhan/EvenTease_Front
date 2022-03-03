@@ -22,9 +22,7 @@
                     </div>
                     <input  name="profilePic" type="file" [hidden]="true" #file accept="image/*" (change)="onFileChanged($event)">
                     <div class="text-center" >
-                      <div *ngIf="!mediaExist(this.currentUser.profilePic)">
-                        <p>new image :</p>
-                      </div>
+                      <p>new image :</p>
                       <img [src]="mediaURL" alt="imageURL" width="50%" *ngIf="mediaURL">
                     </div>
                     <button type="button" mat-icon-button class="btn btn-block" (click)="file.click()">
