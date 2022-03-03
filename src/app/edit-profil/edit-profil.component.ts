@@ -61,10 +61,10 @@ export class EditProfilComponent implements OnInit {
        // user["id"]=this.auth.getUserConnect()["id"];
        // console.log(user);
         this.currentUser.profilePic = window.btoa(this.mediaURL);
-        console.log(this.currentUser.profilePic)
+        //console.log(this.currentUser.profilePic)
         this.http.put('http://localhost:8182/user/update/'+ this.currentUser.id ,this.currentUser).subscribe({
           next: (data)=> {
-            console.log(data);
+            //console.log(data);
             this.currentUser = data;
             this.auth.setUserSession(this.currentUser);
             this.route.navigateByUrl('profil-perso');
