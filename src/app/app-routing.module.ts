@@ -17,6 +17,8 @@ import { EditMyEventComponent } from './edit-my-event/edit-my-event.component';
 import { CreateGroupComponent } from './create-group/create-group.component';
 import { ListeAchatCreationComponent } from './liste-achat-creation/liste-achat-creation.component';
 import { FriendrequestComponent } from './friendrequest/friendrequest.component';
+import { AllMyEventsComponent } from './all-my-events/all-my-events.component';
+import { AllMyTeamsComponent } from './all-my-teams/all-my-teams.component';
 
 
 
@@ -37,6 +39,8 @@ const routes: Routes = [
   {component: EditMyEventComponent, path:"edit-my-event"},
   {component: CreateGroupComponent, path:"create-group"},
   {component: ListeAchatCreationComponent, path:"create-shoppinglist"},
+  {component: AllMyEventsComponent, path:"all-my-events"},
+  {component: AllMyTeamsComponent, path:"all-my-teams"},
   {component: FriendrequestComponent, path:"friendrequest"},
   {path :'',redirectTo:'home', pathMatch: 'full'},
 ];
