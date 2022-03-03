@@ -30,6 +30,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
+import { AllMyEventsComponent } from './all-my-events/all-my-events.component';
+import { AllMyTeamsComponent } from './all-my-teams/all-my-teams.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     ListeAchatCreationComponent,
     FriendrequestComponent,
     EditMyEventComponent,
+    AllMyEventsComponent,
+    AllMyTeamsComponent,
   ],
   imports: [
     FormsModule,
