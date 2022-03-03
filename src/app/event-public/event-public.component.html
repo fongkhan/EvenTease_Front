@@ -1,18 +1,18 @@
 <div class="container-fluid">
     <div class="p-3 mb-2 bg-dark text-white">
-        <h1>{{event.title}}</h1> 
+        <h1>{{event.title}}</h1>
     </div>
 </div>
-<section class ="container">
+<section class="container">
     <div class="row">
         <div class="col-sm-5">
             <br>
-       
+
             <br>
             <h2 *ngIf="!this.isPublicCheck()">
                 Private event
             </h2>
-            
+
             <h2 *ngIf="this.isPublicCheck()">
                 Public event
             </h2>
@@ -24,7 +24,7 @@
             <p *ngIf="auth.isConnect()">
             <h3> Location : {{event.locationEvent}}</h3>
 
-            
+
             <div class="p-3 mb-2 bg-dark text-white">
 
                 <h3>Descrption</h3> {{event.description}}
@@ -57,9 +57,7 @@
                 <div class="card-body">
 
                     <h5 class="card-title">{{event.title}}</h5>
-                    <button class="btn btn-primary">
-                        Request to participate!
-                    </button>
+
                 </div>
             </div>
         </div>
@@ -79,11 +77,17 @@
         </div>
     </div>
 </section>
-<section class ="container">
+<section class="container">
     <div class="p-3 mb-2 bg-dark text-white">
-        <h3 >Votes</h3>
-    </div>
-    <div >
-
+        <h3>Votes</h3>
+        <div *ngIf="!this.isParticipantCheck()">
+            As you are not participating in this event, you are not able to see the votes <br><br>
+            <button class="btn btn-primary">
+                Request to participate!
+            </button>
+        </div>
+        <div *ngIf="this.isParticipantCheck()">
+            yo
+        </div>
     </div>
 </section>
