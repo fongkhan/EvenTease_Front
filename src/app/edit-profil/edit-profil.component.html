@@ -11,7 +11,10 @@
                 <br>
 
                 <div align="center" class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                    <img height="110" width="110"
+                  <div *ngIf="mediaExist(this.currentUser.profilePic)">
+                    <img [src]="changeFormatMedia(this.currentUser.profilePic)" alt="profil picture">
+                  </div>
+                  <img height="110" width="110"
                         src="https://static.fnac-static.com/multimedia/Images/FR/MC/00/23/53/22225664/1540-1/tsp20140429182221/Figurine-Geante-Mickey-Mouse.jpg" />
                     <a href="#!">
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -21,20 +24,19 @@
                         <mat-icon>add_photo_alternate</mat-icon>
                       </button>
                     </div>
-                    <input type="file" [hidden]="true" #file accept="image/*" required ngModel="" name="image" (change)="onFileChanged($event)">
+                    <input  name="profilePic" type="file" [hidden]="true" #file accept="image/*" (change)="onFileChanged($event)">
                     <div class="text-center">
-                      <img [src]="mediaURL" alt="imageURL" width="100%" *ngIf="mediaURL">
+                      <img [src]="mediaURL" alt="imageURL" width="50%" *ngIf="mediaURL">
                     </div>
                 </div>
                 <div style="background-color: #3a86dd;" class="pt-1 mb-4">
-                    <button type="button" class="btn btn-lg btn-block white-text" routerLink=""> <b>Import profil
-                            picture</b> </button>
+                    <button type="button" class="btn btn-lg btn-block white-text" routerLink=""> <b>Import profil picture</b> </button>
                 </div>
 
                 <!-- Edit Login-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current login : <i>{{user.login}}</i></label>
-                    <input [(ngModel)]="currentUser.login" #loginAction="ngModel" name="login" type="text" class="form-control" placeholder="New login" required />
+                    <input ngiflogin=''[(ngModel)]="currentUser.login" #loginAction="ngModel" name="login" type="text" class="form-control" placeholder="New login" required />
                 </div>
                 <!-- Edit mdp-->
                 <div class="form-outline mb-4">
@@ -111,7 +113,7 @@
 
                     </div>
                 </div>
-            
+
 
         </div>
 

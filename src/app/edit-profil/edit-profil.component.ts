@@ -14,6 +14,7 @@ export class EditProfilComponent implements OnInit {
   msgErr = '';
   currentUser: any;
   mediaURL:any;
+  media:any;
   constructor(private http: HttpClient, public auth: AuthService, private route: Router,) { }
 
   ngOnInit(): void {
@@ -22,6 +23,18 @@ export class EditProfilComponent implements OnInit {
 
   get user(): any {
     return this.auth.getUserConnect();
+    }
+
+    changeFormatMedia(media:any){
+      return window.atob(media);
+    }
+
+    mediaExist(media:Blob): boolean{
+      if(media != null){
+        return true;
+      } else {
+        return false;
+      }
     }
 
     onFileChanged(event:any):any{
@@ -36,9 +49,11 @@ export class EditProfilComponent implements OnInit {
      // console.log("on recupere les modif",user);
        // user["id"]=this.auth.getUserConnect()["id"];
        // console.log(user);
+        this.currentUser.profilePic = window.btoa(this.mediaURL);
+        console.log(this.currentUser.profilePic)
         this.http.put('http://localhost:8182/user/update/'+ this.currentUser.id ,this.currentUser).subscribe({
           next: (data)=> {
-            // console.log(data);
+            console.log(data);
             this.currentUser = data;
             this.auth.setUserSession(this.currentUser);
             this.route.navigateByUrl('profil-perso');
