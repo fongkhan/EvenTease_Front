@@ -23,7 +23,7 @@
                     <input  name="profilePic" type="file" [hidden]="true" #file accept="image/*" (change)="onFileChanged($event)">
                     <div class="text-center" >
                       <p>new image :</p>
-                      <img [src]="mediaURL" alt="imageURL" width="50%" *ngIf="mediaURL">
+                      <img ngiflogin='' [(ngModel)]="currentUser.profilePic" #loginAction="ngModel" [src]="mediaURL" alt="imageURL" width="50%" *ngIf="mediaURL">
                     </div>
                     <button type="button" mat-icon-button class="btn btn-block" (click)="file.click()">
                       <mat-icon>add_photo_alternate</mat-icon>

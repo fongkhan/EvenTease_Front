@@ -60,7 +60,9 @@ export class EditProfilComponent implements OnInit {
      // console.log("on recupere les modif",user);
        // user["id"]=this.auth.getUserConnect()["id"];
        // console.log(user);
+       if(this.mediaURL != null){
         this.currentUser.profilePic = window.btoa(this.mediaURL);
+       }
         //console.log(this.currentUser.profilePic)
         this.http.put('http://localhost:8182/user/update/'+ this.currentUser.id ,this.currentUser).subscribe({
           next: (data)=> {
