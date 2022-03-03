@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 import { EventDetailsService } from '../service/event-details.service';
+import {MatDialog} from '@angular/material/dialog';
+import { CreateGroupComponent } from '../create-group/create-group.component';
 
 @Component({
   selector: 'app-auth-user-home',
@@ -11,11 +13,13 @@ import { EventDetailsService } from '../service/event-details.service';
 })
 export class AuthUserHomeComponent implements OnInit {
   user : any;
-  id:any;
-  events:any;
-  eventsparticip:any;
+  id: any;
+  events: any;
+  eventsparticip: any;
+  teams: any;
+  teamsparticip: any;
   msgErr=''
-  constructor(private http:HttpClient, private route: Router, private auth: AuthService, public eventDet: EventDetailsService) { }
+  constructor(private http:HttpClient, private route: Router, private auth: AuthService, public eventDet: EventDetailsService, private dialog: MatDialog) { }
   
   ngOnInit(): void {
 
@@ -23,7 +27,6 @@ export class AuthUserHomeComponent implements OnInit {
     this.http.get('http://localhost:8182/event/organizer/' + this.auth.getUserConnect().id).subscribe({
       next: (data)=> {
         this.events = data; 
-        console.log('events ', this.events)
         if(this.events!= null) {
          
         }
@@ -41,7 +44,30 @@ export class AuthUserHomeComponent implements OnInit {
       },
         error: (err)=>{console.log(err)}
       });
+
+      this.recupMyTeams();
         
+  }
+
+
+  recupMyTeams() {
+    this.http.get('http://localhost:8182/groupe').subscribe({
+      next: (data)=> {  
+        this.teams = data; 
+       // console.log('teams ', this.teams);
+      },
+        error: (err)=>{console.log(err)}
+      });
+  }
+
+  goTeamCreatePup(){
+    const dialogRef = this.dialog.open(CreateGroupComponent, {
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
+    });
   }
 
   // goCreateGroup() {

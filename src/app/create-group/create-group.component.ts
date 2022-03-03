@@ -7,6 +7,7 @@ import { map, Observable, startWith } from 'rxjs';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
+import { MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({
@@ -37,7 +38,7 @@ export class CreateGroupComponent implements OnInit {
 
   msgInfo: string = 'Selectionner les users concernées';
   users: any;
-  constructor(private http: HttpClient, private route: Router, public auth: AuthService) {
+  constructor(private http: HttpClient, private route: Router, public auth: AuthService, private dialogRef: MatDialogRef<CreateGroupComponent>) {
     // this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
     //   startWith(null),
     //   map((fruit: string | null) => (fruit ? this._filter(fruit) : this.allFruits.slice())),
@@ -67,11 +68,12 @@ export class CreateGroupComponent implements OnInit {
     const membres = group.membres;
     group.membres = null;
 
-    console.log("les datas ", group);
+    // console.log("les datas ", group);
     this.http.post('http://localhost:8182/group/user/' + membres, group).subscribe({
       next: (data) => {
         // console.log(data);
         // this.route.navigateByUrl('auth-user-home');
+        this.dialogRef.close();
       },
       error: (err) => { console.log(err) }
     });
