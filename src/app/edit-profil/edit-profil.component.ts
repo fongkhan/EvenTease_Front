@@ -11,8 +11,13 @@ import { AuthService } from '../service/auth.service';
 export class EditProfilComponent implements OnInit {
 
   // user:any;
+
   msgErr = '';
   currentUser: any;
+  fieldTextType: any;
+  
+  
+
   constructor(private http: HttpClient, public auth: AuthService, private route: Router,) { }
   
   ngOnInit(): void {
@@ -22,6 +27,12 @@ export class EditProfilComponent implements OnInit {
   get user(): any {
     return this.auth.getUserConnect();
     }
+    
+    // Pour switch type de text à password
+    toggleFieldTextType() {
+      this.fieldTextType = !this.fieldTextType;
+    }
+
 
 
     EditProfil(){
