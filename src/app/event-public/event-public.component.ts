@@ -17,8 +17,8 @@ export class EventPublicComponent implements OnInit {
   votes: any;
   eventid: any;
   user: any;
-  voteAnswerUser:any;
-
+  voteAnswerUser: any;
+  votanswer: any;
 
   constructor(private http: HttpClient, private route: Router, public eventDet: EventDetailsService, public auth: AuthService) { }
 
@@ -30,7 +30,7 @@ export class EventPublicComponent implements OnInit {
       next: (data) => {
         this.event = data;
         if (this.event != null) {
-         //s console.log(this.event)
+          //s console.log(this.event)
         }
         else {
           this.msgErr = 'No event to show';
@@ -48,26 +48,17 @@ export class EventPublicComponent implements OnInit {
       error: (err) => { console.log(err) }
     });
 
-    this.http.get('http://localhost:8182/event/vote/'+ this.id).subscribe({
+    this.http.get('http://localhost:8182/event/vote/' + this.id).subscribe({
       next: (data) => {
         this.votes = data;
         console.log(this.votes);
-        for (var vote of this.votes) {
-          console.log(vote.id);
-          this.http.get('http://localhost:8182/event/vote/answer/user/'+vote.id).subscribe({
-            next: (data) => {
-              this.voteAnswerUser;
-              console.log(this.voteAnswerUser);
-            },
-            error: (err) => { console.log(err) }
-          });
-        }
+
       },
       error: (err) => { console.log(err) }
     });
-   
 
-    
+
+
 
   }
   isPublicCheck() {
@@ -80,6 +71,19 @@ export class EventPublicComponent implements OnInit {
     }
   }
 
+  getAllAnswersOfVotes() {
+    for (var vote in this.votes) {
+      console.log(this.votes[vote].id);
+      this.http.get('http://localhost:8182/event/vote/answer/user/' + this.votes[vote].id).subscribe({
+        next: (data) => {
+          this.voteAnswerUser[vote] = data;
+          console.log(this.voteAnswerUser);
+          console.log("ok");
+        },
+        error: (err) => { console.log(err) }
+      });
+    }
+  }
   isParticipantCheck() {
     this.user = this.auth.getUserConnect();
     for (let i = 0; i < this.participants.length; i++) {
