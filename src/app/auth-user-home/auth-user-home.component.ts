@@ -41,8 +41,7 @@ export class AuthUserHomeComponent implements OnInit {
       },
         error: (err)=>{console.log(err)}
       });
-      
-    
+        
   }
 
   // goCreateGroup() {

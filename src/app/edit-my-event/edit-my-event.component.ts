@@ -13,6 +13,8 @@ export class EditMyEventComponent implements OnInit {
 
   constructor(private http: HttpClient, public auth: AuthService, private route: Router) { }
 
+  currentEvent: any;
+
   ngOnInit(): void {
   }
 

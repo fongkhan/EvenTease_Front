@@ -29,7 +29,7 @@
                 <!-- Edit Login-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current login : <i>{{user.login}}</i></label>
-                    <input ngiflogin=''[(ngModel)]="currentUser.login" #loginAction="ngModel" name="login" type="text" class="form-control" placeholder="New login" required />
+                    <input [(ngModel)]="currentUser.login" #loginAction="ngModel" name="login" type="text" class="form-control" placeholder="New login" required />
                 </div>
                 <!-- Edit mdp-->
                 <div class="form-outline mb-4">
