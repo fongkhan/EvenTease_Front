@@ -2,6 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
+import { map, Observable, startWith } from 'rxjs';
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-event-creation',

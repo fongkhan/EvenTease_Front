@@ -80,6 +80,10 @@
                         <input type="radio" id="anyone" name="chat" value="no"ngModel="" >
                         <label for="nok">Anyone</label>
                     </div>
+                    <div class="text-center">
+                        <ejs-multiselect id='membres' [dataSource]='auth.users' [placeholder]='msgInfo'
+                            name="membres" ngModel=""></ejs-multiselect>
+                    </div>
 
 
                     
