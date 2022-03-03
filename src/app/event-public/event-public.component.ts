@@ -19,6 +19,8 @@ export class EventPublicComponent implements OnInit {
   user: any;
   voteAnswerUser: any;
   votanswer: any;
+  idVote:any;
+  nbVoteAnswer:any;
 
   constructor(private http: HttpClient, private route: Router, public eventDet: EventDetailsService, public auth: AuthService) { }
 
@@ -71,18 +73,25 @@ export class EventPublicComponent implements OnInit {
     }
   }
 
-  getAllAnswersOfVotes() {
-    for (var vote in this.votes) {
-      console.log(this.votes[vote].id);
-      this.http.get('http://localhost:8182/event/vote/answer/user/' + this.votes[vote].id).subscribe({
+  getAllAnswersOfVote(idVote:any) {
+      this.nbVoteAnswer=[0,0,0,0];
+      console.log("ok");
+      this.http.get('http://localhost:8182/event/vote/answer/user/' + idVote).subscribe({
         next: (data) => {
-          this.voteAnswerUser[vote] = data;
-          console.log(this.voteAnswerUser);
-          console.log("ok");
+          console.log(data);
+          this.voteAnswerUser=data;
+          for (var vote of this.voteAnswerUser){
+            for (let i = 0; i < 4; i++){
+              if (vote.idAnswer==i+1){
+                  this.nbVoteAnswer[i]++;
+              }
+            }
+          }
+          console.log(this.nbVoteAnswer);
         },
         error: (err) => { console.log(err) }
-      });
-    }
+      })
+    
   }
   isParticipantCheck() {
     this.user = this.auth.getUserConnect();
