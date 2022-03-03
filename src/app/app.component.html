@@ -1,37 +1,52 @@
-<header>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white" >
-  
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
-        aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
+
+<div >
+  <nav class="navbar navbar-expand-md aqua-gradient py-4 mb-4 font-weight-bold z-depth-3" style="padding-top: 1rem !important; padding-bottom: 1rem !important; font-size: large;">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" white-color routerLink="home" routerLinkActive="lien-active"
+            *ngIf="!auth.isConnect()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login" routerLinkActive="lien-active" *ngIf="!auth.isConnect()">Connection</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link" routerLink="events" routerLinkActive="lien-active" *ngIf="auth.isConnect()">
+            Mes Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="teams" routerLinkActive="lien-active" *ngIf="auth.isConnect()">
+            Mes Teams</a>
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link" routerLink="profil-perso" routerLinkActive="lien-active" *ngIf="auth.isConnect()">My
+            Profile</a> -->
+            <button mat-mini-fab color="primary"  class=" nav-link for-mat-button" routerLink="profil-perso" *ngIf="auth.isConnect()">
+              <mat-icon>account_circle</mat-icon>
+            </button>
+        </li>
+
+
+      </ul>
+    </div>
+    <div class="mx-auto order-0">
+      <a class="navbar-brand mx-auto" routerLink="auth-user-home"> <marquee behavior="alternate" scrollamount="2">Event Ease</marquee> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarExample01" >
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="home" routerLinkActive="lien-active" *ngIf="!auth.isConnect()">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="login" routerLinkActive="lien-active" *ngIf="!auth.isConnect()">Connection</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="auth-user-home" routerLinkActive="lien-active" *ngIf="auth.isConnect()">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="profil-perso" routerLinkActive="lien-active" *ngIf="auth.isConnect()">My profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="auth.logout()" routerLinkActive="lien-active" *ngIf="auth.isConnect()">Disconnect</a>
-          </li>
-        </ul>
-        
-      </div>
-        <a class="nav-link" routerLink="/profil-perso" id="userSession" routerLinkActive="lien-active" *ngIf="auth.isConnect()">{{user.login}}</a>
-      </div>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" (click)="auth.logout()" routerLinkActive="lien-active" style="color: tomato;"
+            *ngIf="auth.isConnect()"><i class="fas fa-power-off"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link white-text" *ngIf="auth.isConnect()">{{user.login}}</a>
+        </li>
+      </ul>
+    </div>
   </nav>
-
-<!-- Navbar -->
-</header>
-
+</div>
 <router-outlet></router-outlet>
