@@ -1,3 +1,4 @@
+
 <p>liste-achat-creation works!</p>
 <section>
     <div class="container py-5 h-100">
@@ -7,6 +8,7 @@
     </div>
     <div class="col-md-12">
         <!-- Il reste à recuperer les info du createur -->
+
     <form #connect="ngForm" (ngSubmit)="CreateShoppingList(connect.value)">
         <div class="col-md-12">
             <div class="form-outline mb-4 col-auto" > 
@@ -22,8 +24,9 @@
                     </select>
                 <label ></label><br/>
                 <label for="addAchat"> Achats : </label>
-                <div *ngFor='let achat of achats, let i = index'>
-                    <input name="achat" type="list" ngModel="">
+                
+                <div *ngFor='let a of achats'>
+                    <input name="achat" type="list" ngModel="" >
                 </div>
                     <input type="button" class="btn btn-primary btn-sm "value="Add Achat" (click)="addInputAchat()">
                     <input type="button" class="btn btn-primary btn-sm "value="Remove Achat" (click)="removeInputAchat()">
@@ -44,6 +47,3 @@
 </div>
 </div>
 </section>
-
-
-

@@ -31,10 +31,10 @@ ngOnInit(): void {
     error: (err)=>{console.log(err)}
   });
 }
+
 CreateShoppingList(shoppinglist:any){
   this.user = this.auth.getUserConnect();
   shoppinglist["createur"]=this.user;
-  shoppinglist["achat"]=this.achats;
   console.log(this.user);
   console.log("les datas du formulaire",shoppinglist);
   this.http.post('http://localhost:8182/event/create',shoppinglist).subscribe({
@@ -50,6 +50,7 @@ addInputAchat() {
   this.achatNumber++; 
   this.achats.push("achat"+this.achatNumber)
 }
+
 removeInputAchat() {
   this.achatNumber = this.achatNumber-1;
   this.achats.splice(this.achatNumber)
@@ -60,3 +61,4 @@ removeInputAllAchat() {
 }
 
 }
+
