@@ -27,7 +27,7 @@ myfriendrequest:any;
   });
 
   
-  this.http.get('localhost:8182/friendrequest/'+this.user.id+'/'+this.user.id).subscribe({
+  this.http.get('http://localhost:8182/friendrequest/'+this.user.id+'/'+this.user.id).subscribe({
     next: (data)=> {
       this.myfriendrequest= data;
       console.log(data);

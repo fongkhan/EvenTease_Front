@@ -4,7 +4,7 @@
 
 
     <form class=" border border-light p-5" #edit="ngForm" (ngSubmit)="EditProfil()">
-        <h1 align="center">You can know edit your profil !</h1>
+        <h1 align="center">You can now edit your profil !</h1>
         <div class="form-row mb-4">
             <div class="col">
 
@@ -34,17 +34,17 @@
                 <!-- Edit Login-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current login : <i>{{user.login}}</i></label>
-                    <input ngiflogin=''[(ngModel)]="currentUser.login" #loginAction="ngModel" name="login" type="text" class="form-control" placeholder="New login" required />
+                    <input [(ngModel)]="currentUser.login" #loginAction="ngModel" name="login" type="text" class="form-control" placeholder="New login" required />
                 </div>
                 <!-- Edit mdp-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current password : <i>{{user.password}}</i></label>
-                    <input ngModel="" name="password" type="text" class="form-control" placeholder="New password" required/>
+                    <input ngifpassword=''[(ngModel)]="currentUser.password" #passwordAction="ngModel" name="password" type="text" class="form-control" placeholder="New password" required/>
                 </div>
                 <!-- Edit mail-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current mail : <i>{{user.mail}}</i></label>
-                    <input ngModel="" name="mail" type="text" class="form-control" placeholder="New mail" required/>
+                    <input ngifmail=''[(ngModel)]="currentUser.mail" #mailAction="ngModel" name="mail" type="text" class="form-control" placeholder="New mail" required/>
                 </div>
 
             </div>
@@ -59,23 +59,23 @@
                 <!-- Edit name-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current name : <i>{{user.name}}</i></label>
-                    <input ngModel="" name="name" type="text" class="form-control" placeholder="New name" required/>
+                    <input ngifname=''[(ngModel)]="currentUser.name" #nameAction="ngModel" name="name" type="text" class="form-control" placeholder="New name" required/>
                 </div>
                 <!-- Edit surname-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current username : <i>{{user.surname}}</i></label>
-                    <input ngModel="" name="surname" type="text" class="form-control" placeholder="New surname" required/>
+                    <input ngiflsurname=''[(ngModel)]="currentUser.surname" #surnameAction="ngModel" name="surname" type="text" class="form-control" placeholder="New surname" required/>
                 </div>
                 <!-- Edit phone number-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current phone number : <i>{{user.phone}}</i></label>
-                    <input ngModel="" name="phone" type="text" class="form-control" placeholder="New phone number" required/>
+                    <input ngifphone=''[(ngModel)]="currentUser.phone" #phoneAction="ngModel" name="phone" type="text" class="form-control" placeholder="New phone number" required/>
                 </div>
 
                 <!-- Edit zipcode-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current zipcode : <i>{{user.zipCode}}</i></label>
-                    <input ngModel="" name="zipCode" type="text" class="form-control" placeholder="New zipcode"required />
+                    <input ngifzipCode=''[(ngModel)]="currentUser.zipCode" #zipCodeAction="ngModel" name="zipCode" type="text" class="form-control" placeholder="New zipcode"required />
                 </div>
 
             </div>
@@ -90,23 +90,23 @@
                     <!-- Edit town-->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="">Current town : <i>{{user.town}}</i></label>
-                        <input ngModel="" name="town" type="text" class="form-control" placeholder="New town"required />
+                        <input ngiftown=''[(ngModel)]="currentUser.town" #townAction="ngModel" name="town" type="text" class="form-control" placeholder="New town"required /> <!-- Ici le placeholder n'est pas affiché -->
                     </div>
                     <!-- Edit description-->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="">Current description : <br><i>{{user.description}}</i></label>
-                        <input ngModel="" name="description" type="text" class="form-control" placeholder="New description" required/>
+                        <input ngifdescription=''[(ngModel)]="currentUser.description" #descriptionAction="ngModel" name="description" type="text" class="form-control" placeholder="New description" required/>
                     </div>
                     <!-- Edit birthday-->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="">Current birthdate : <i>{{user.birthDate}}</i></label>
-                        <input ngModel="" name="age" type="date" class="form-control" placeholder="Edit your birthday" required/>
+                        <input ngifbirthDate=''[(ngModel)]="currentUser.birthDate" #birthDateAction="ngModel" name="age" type="date" class="form-control" placeholder="Edit your birthday" required/>
                     </div>
                     <!-- Edit profil publique / privé -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Public profil ? <i>{{user.isPublic}}</i></label>
                         <br>
-                        <input type="checkbox" class="demo5" id="private" name="isPublic" value="false" ngModel="">
+                        <input ngifisPublic=''[(ngModel)]="currentUser.isPublic" #isPublicAction="ngModel"type="checkbox" class="demo5" id="private" name="isPublic" value="false" ngModel="">
                         <label for="private">Switch</label>
 
                     </div>
