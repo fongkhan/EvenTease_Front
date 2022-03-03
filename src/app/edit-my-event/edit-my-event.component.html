@@ -2,9 +2,12 @@
 
     <br>
 
-    <form class=" border border-light p-5" action="#!" #edit="ngForm" (ngSubmit)="EditEvent(edit.value)">
+    <form  class=" border border-light p-5" action="#!" #edit="ngForm" (ngSubmit)="EditEvent(edit.value)">
         <h1 align="center">You can now edit your event !</h1>
-        <div class="form-row mb-4">
+
+        <div *ngIf="isOrganiserCheck()">
+       
+            <div class="form-row mb-4" >
             <div class="col">
 
                 <br>
@@ -65,6 +68,8 @@
             </div>
 
         </div>
+    </div>
+        
 
 </form>
 
