@@ -3,7 +3,7 @@
     <br>
 
     <form class=" border border-light p-5" action="#!" #edit="ngForm" (ngSubmit)="EditEvent(edit.value)">
-        <h1 align="center">You can know edit your event !</h1>
+        <h1 align="center">You can now edit your event !</h1>
         <div class="form-row mb-4">
             <div class="col">
 
@@ -27,12 +27,12 @@
                 <!-- Edit Title-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current Title : <i>{{Event.title}}</i></label>
-                    <input ngModel="" name="title" type="text" class="form-control" placeholder="New title" required />
+                    <input ngifltitle=''[(ngModel)]="currentEvent.title" #titleAction="ngModel" name="title" type="text" class="form-control" placeholder="New title" required />
                 </div>
                 <!-- Edit Date-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current date : <i>{{Event.dateEvent}}</i></label>
-                    <input ngModel="" name="dateEvent" type="date" class="form-control" placeholder="New date" required/>
+                    <input ngifldateEvent=''[(ngModel)]="currentEvent.dateEvent" #dateEventAction="ngModel" name="dateEvent" type="date" class="form-control" placeholder="New date" required/>
                 </div>
             </div>
             <div class="col">
@@ -41,19 +41,19 @@
                 <!-- Edit location-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current location : <i>{{Event.locationEvent}}</i></label>
-                    <input ngModel="" name="locationEvent" type="text" class="form-control" placeholder="New location" required/>
+                    <input ngifllocationEvent=''[(ngModel)]="currentEvent.locationEvent" #locationEventAction="ngModel" name="locationEvent" type="text" class="form-control" placeholder="New location" required/>
                 </div>
                  <!-- Edit event publique / privé -->
                  <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example1">Public event ? <i>{{Event.isPublic}}</i></label>
                     <br>
-                    <input type="checkbox" class="demo5" id="private" name="isPublic" value="false" ngModel="">
+                    <input ngiflisPublic=''[(ngModel)]="currentEvent.isPublic" #isPublicAction="ngModel"type="checkbox" class="demo5" id="private" name="isPublic" value="false" ngModel="">
                     <label for="private">Switch</label>
                 </div>
                 <!-- Edit description-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Current description : <br><i>{{Event.description}}</i></label>
-                    <input ngModel="" name="description" type="text" class="form-control" placeholder="New description" required/>
+                    <input ngifldescription=''[(ngModel)]="currentEvent.description" #descriptionAction="ngModel" name="description" type="text" class="form-control" placeholder="New description" required/>
                 </div>
 
             </div>
