@@ -12,18 +12,19 @@ import { EventDetailsService } from '../service/event-details.service';
 export class AuthUserHomeComponent implements OnInit {
   user : any;
   id:any;
-  listevent:any;
-  listeventparticip:any;
+  events:any;
+  eventsparticip:any;
   msgErr=''
   constructor(private http:HttpClient, private route: Router, private auth: AuthService, public eventDet: EventDetailsService) { }
   
   ngOnInit(): void {
 
     this.user=this.auth.getUserConnect();
-    this.http.post('http://localhost:8182/event/organizer',this.user).subscribe({
+    this.http.get('http://localhost:8182/event/organizer/' + this.auth.getUserConnect().id).subscribe({
       next: (data)=> {
-        this.listevent = data; 
-        if(this.listevent!= null) {
+        this.events = data; 
+        console.log('events ', this.events)
+        if(this.events!= null) {
          
         }
         else{
@@ -34,16 +35,9 @@ export class AuthUserHomeComponent implements OnInit {
       });
 
       
-    this.http.post('http://localhost:8182/event/participant/user',this.user).subscribe({
-      next: (data)=> {
-        
-        this.listevent["participer"] = data; 
-        if(this.listevent!= null) {
-          console.log(this.listevent.participer[0].event)
-        }
-        else{
-          this.msgErr ='No event to show';
-        }
+    this.http.get('http://localhost:8182/user-participe-event/participant/' + this.auth.getUserConnect().id).subscribe({
+      next: (data)=> {  
+        this.eventsparticip = data; 
       },
         error: (err)=>{console.log(err)}
       });

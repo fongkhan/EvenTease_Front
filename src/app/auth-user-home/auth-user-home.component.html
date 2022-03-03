@@ -17,7 +17,7 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="p1">
                     <div class="row">
-                        <div class="col-sm-2" *ngFor="let event of listevent; let i = index">
+                        <div class="col-sm-2" *ngFor="let event of events;">
                             <div class="card">
                                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                     <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp"
@@ -29,12 +29,12 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">{{listevent[i].title}}</h5>
+                                <h5 class="card-title">{{event.title}}</h5>
 
-                                <p class="card-text">{{listevent[i].description}}</p>
+                                <p class="card-text">{{event.description}}</p>
 
                                 <button class="btn btn-primary">
-                                    <a class="nav-link" (click)="eventDet.setEventId(listevent[i].id)"
+                                    <a class="nav-link" (click)="eventDet.setEventId(event.id)"
                                         routerLink="/event-public">Lego!</a>
                                 </button>
                             </div>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="tab-pane fade" id="p2">
                     <div class="row">
-                        <div class="col-sm-2" *ngFor="let event of listevent.participer; let i = index">
+                        <div class="col-sm-2" *ngFor="let eventP of eventsparticip">
                             <div class="card">
                                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                     <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp"
@@ -56,12 +56,12 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">{{listevent.participer[i].event.title}}</h5>
+                                <h5 class="card-title">{{eventP.event.title}}</h5>
 
-                                <p class="card-text">{{listevent.participer[i].event.description}}</p>
+                                <p class="card-text">{{eventP.event.description}}</p>
 
                                 <button class="btn btn-primary">
-                                    <a class="nav-link" (click)="eventDet.setEventId(listevent.participer[i].event.id)"
+                                    <a class="nav-link" (click)="eventDet.setEventId(eventP.event.id)"
                                         routerLink="/event-public">Lego!</a>
                                 </button>
                             </div>
