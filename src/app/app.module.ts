@@ -10,7 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { EmailValidationComponent } from './email-validation/email-validation.component';
 import { AuthUserHomeComponent } from './auth-user-home/auth-user-home.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { EventPublicComponent } from './event-public/event-public.component';
 import { EventCreationComponent } from './event-creation/event-creation.component';
 import { ProfilPersoComponent } from './profil-perso/profil-perso.component';
@@ -22,6 +22,12 @@ import { ListeAchatCreationComponent } from './liste-achat-creation/liste-achat-
 import { FriendrequestComponent } from './friendrequest/friendrequest.component';
 import {MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { EditMyEventComponent } from './edit-my-event/edit-my-event.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatIconModule} from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -48,7 +54,14 @@ import { EditMyEventComponent } from './edit-my-event/edit-my-event.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MultiSelectAllModule
+    MultiSelectAllModule,
+    BrowserAnimationsModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    MatIconModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
