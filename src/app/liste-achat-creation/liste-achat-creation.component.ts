@@ -2,6 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import {MatChipInputEvent} from '@angular/material/chips';
+
+export interface Fruit {
+  name: string;
+}
 
 @Component({
   selector: 'app-liste-achat-creation',
@@ -16,6 +22,11 @@ export class ListeAchatCreationComponent implements OnInit {
   user:any;
   achats = ["achat1"];
   achatNumber = 1;
+  addOnBlur = true;
+
+  readonly separatorKeysCodes = [ENTER, COMMA] as const;
+  fruits: Fruit[] = [{name: 'Lemon'}, {name: 'Lime'}, {name: 'Apple'}];
+  
 
 
  constructor(private http: HttpClient, private route: Router,private auth: AuthService) { }
@@ -32,6 +43,25 @@ ngOnInit(): void {
   });
 }
 
+add(event: MatChipInputEvent): void {
+  const value = (event.value || '').trim();
+
+  // Add our fruit
+  if (value) {
+    this.fruits.push({name: value});
+  }
+
+  // Clear the input value
+  event.chipInput!.clear();
+}
+
+remove(fruit: Fruit): void {
+  const index = this.fruits.indexOf(fruit);
+
+  if (index >= 0) {
+    this.fruits.splice(index, 1);
+  }
+}
 CreateShoppingList(shoppinglist:any){
   this.user = this.auth.getUserConnect();
   shoppinglist["createur"]=this.user;

@@ -1,49 +1,66 @@
-
 <p>liste-achat-creation works!</p>
 <section>
     <div class="container py-5 h-100">
-<div class="row d-flex align-items-center justify-content-center h-100">
-    <div>
-        <h1><b>Ready to create your Shopping List?<br><br></b> </h1>
-    </div>
-    <div class="col-md-12">
-        <!-- Il reste à recuperer les info du createur -->
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div>
+                <h1><b>Ready to create your Shopping List?<br><br></b> </h1>
+            </div>
+            <div class="col-md-12">
 
-    <form #connect="ngForm" (ngSubmit)="CreateShoppingList(connect.value)">
-        <div class="col-md-12">
-            <div class="form-outline mb-4 col-auto" > 
-                <label class="form-label" for="">Name*</label>
-                <input type="text" name="name" class="form-control col-auto" ngModel="" />
-            </div>
-            <div class="form-outline mb-4 col-auto">
-                <label >Event* : </label>
-                <label ></label><br/>
-                    <select  name="event" class="col-md-6 form-control" ngModel="">
-                        <option>Select</option>
-                        <option *ngFor="let e of eventcreated" [ngValue]="e"> {{e.title}}</option>
-                    </select>
-                <label ></label><br/>
-                <label for="addAchat"> Achats : </label>
+                <form #connect="ngForm" (ngSubmit)="CreateShoppingList(connect.value)">
+                    <div class="col-md-12">
+                        <div class="form-outline mb-4 col-auto">
+                            <label class="form-label" for="">Name*</label>
+                            <input type="text" name="name" class="form-control col-auto" ngModel="" />
+                        </div>
+                        <div class="form-outline mb-4 col-auto">
+                            <label>Event* : </label>
+                            <label></label><br />
+                            <select name="event" class="col-md-6 form-control" ngModel="">
+                                <option>Select</option>
+                                <option *ngFor="let e of eventcreated" [ngValue]="e"> {{e.title}}</option>
+                            </select>
+                            <label></label><br />
+                            <label for="addAchat"> Achats : </label>
+                            <!--
+                            <div *ngFor='let a of achats'>
+                            <input name="achat" type="list" ngModel="" >
+                            </div>
+                            <input type="button" class="btn btn-primary btn-sm "value="Add Achat" (click)="addInputAchat()">
+                            <input type="button" class="btn btn-primary btn-sm "value="Remove Achat" (click)="removeInputAchat()">
+                            <input type="button" class="btn btn-primary btn-sm "value="Remove All Achat" (click)="removeInputAllAchat()">
+                            <input type="button" class="btn btn-primary btn-sm " value="Validate Achat list" >
                 
-                <div *ngFor='let a of achats'>
-                    <input name="achat" type="list" ngModel="" >
-                </div>
-                    <input type="button" class="btn btn-primary btn-sm "value="Add Achat" (click)="addInputAchat()">
-                    <input type="button" class="btn btn-primary btn-sm "value="Remove Achat" (click)="removeInputAchat()">
-                    <input type="button" class="btn btn-primary btn-sm "value="Remove All Achat" (click)="removeInputAllAchat()">
-                    <input type="button" class="btn btn-primary btn-sm " value="Validate Achat list" >
-           
+                            </div>
+                            -->
+                            <mat-form-field class="example-chip-list" appearance="fill">
+                                <mat-label>Favorite Fruits</mat-label>
+                                <mat-chip-list #chipList aria-label="Fruit selection">
+                                  <mat-chip *ngFor="let fruit of fruits" (removed)="remove(fruit)">
+                                    {{fruit.name}}
+                                    <button matChipRemove>
+                                      <mat-icon>cancel</mat-icon>
+                                    </button>
+                                  </mat-chip>
+                                  <input placeholder="New fruit..."
+                                         [matChipInputFor]="chipList"
+                                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                         [matChipInputAddOnBlur]="addOnBlur"
+                                         (matChipInputTokenEnd)="add($event)">
+                                </mat-chip-list>
+                              </mat-form-field>
+
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary btn-block mb-4 ">
+                                create
+                            </button>
+                            <br>
+                            <p><i><small>* = Must be completed</small></i></p>
+                        </div>
+                    </div>
+                </form>
             </div>
-             </div>
-        <div>
-            <button type="submit" class="btn btn-primary btn-block mb-4 ">
-                create
-            </button>
-            <br>
-            <p><i><small>* = Must be completed</small></i></p>
         </div>
-    </form>
-</div>
-</div>
-</div>
+    </div>
 </section>
