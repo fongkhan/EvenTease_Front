@@ -1,41 +1,52 @@
 <section class="container">
-    <div class="row">
-        <div class="col-sm-12 text-center">
-            <h1><b> USER </b></h1>
-            <!--<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">-->
-            <div *ngIf="mediaExist(user.profilePic)" class="text-center">
-              <img [src]="changeFormatMedia(user.profilePic)" width="50%" alt="Image de profil">
-                    <!--<a href="#!">
+  <div class="row">
+
+    <div class="col">
+<br><br><br><br>
+      <h1><b> USER </b></h1>
+      <!--<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">-->
+
+      <div *ngIf="mediaExist(user.profilePic)" class="text-center">
+        <img
+          [src]="changeFormatMedia(user.profilePic)"
+          width="50%"
+          alt="Image de profil"
+        />
+        <!--<a href="#!">
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                     </a>-->
-            </div>
-            <p><i>Name : {{user.name}}</i></p>
-            <p>Surname : {{user.surname}}</p>
-            <p>Date fo birth : {{user.birthDate}}</p>
-            <p>Mail : {{user.mail}}</p>
-            <p>Phone number : {{user.phone}}</p>
-            <p>Town : {{user.town}}</p>
-            <p>Description : {{user.description}}</p>
-
-
-            <br><br>
-
-
-
-            <div>
-                <form>
-                    <div style="background-color: #3a86dd;" class="pt-1 mb-4">
-                        <button type="button" class="btn btn-lg btn-block white-text" routerLink="/edit-profil"> <b>Edit
-                                your profil</b></button>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-
-
-
+      </div>
+    </div>
+    <div class="col">
+      <br><br><br><br>
+      <div>
+        <p>
+          <i>Name : {{ user.name }}</i>
+        </p>
+        <p>Surname : {{ user.surname }}</p>
+        <p>Date fo birth : {{ user.birthDate }}</p>
+        <p>Mail : {{ user.mail }}</p>
+        <p>Phone number : {{ user.phone }}</p>
+        <p>Town : {{ user.town }}</p>
+        <p>Description : {{ user.description }}</p>
+      </div>
     </div>
 
+    <br /><br />
+  </div>
+<br><br><br><br>
+    <div>
+      <form>
+        <div style="background-color: #3a86dd" class="pt-1 mb-4">
+          <button
+            type="button"
+            class="btn btn-lg btn-block white-text"
+            routerLink="/edit-profil"
+          >
+            <b>Edit your profil</b>
+          </button>
+        </div>
+      </form>
+    </div>
 
 </section>
