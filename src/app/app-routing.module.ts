@@ -39,9 +39,9 @@ const routes: Routes = [
   {component: EditMyEventComponent, path:"edit-my-event"},
   {component: CreateGroupComponent, path:"create-group"},
   {component: ListeAchatCreationComponent, path:"create-shoppinglist"},
-  {component: FriendrequestComponent, path:"create-friendrequest"},
   {component: AllMyEventsComponent, path:"all-my-events"},
   {component: AllMyTeamsComponent, path:"all-my-teams"},
+  {component: FriendrequestComponent, path:"friendrequest"},
   {path :'',redirectTo:'home', pathMatch: 'full'},
 ];
 
