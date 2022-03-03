@@ -1,5 +1,9 @@
 <section>
 <div class="container ">
+    <br>
+    <div class="text-center">
+        <img src="/assets/img/amis1.jpg" alt="" width="50%" style="opacity: 0.60;">
+    </div>
     <h1><b><br>Friend Request<br><br></b> </h1>
     <div class="row ">
         <div class="col">
@@ -12,7 +16,7 @@
                         <option *ngFor="let u of alluser" [ngValue]="u"> {{u.login}}</option>
                     </select>
                 <label ></label><br/>
-                <button type="submit" class="btn btn-primary btn-block mb-4">
+                <button type="submit" class="btn btn-primary btn-sm btn-block mb-4">
                     Send your Friend Request
                 </button>
             </form>

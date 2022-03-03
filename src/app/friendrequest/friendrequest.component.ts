@@ -60,6 +60,7 @@ this.http.get('http://localhost:8182/friendrequest/receveur/'+this.user.id+'/2')
   this.http.post('http://localhost:8182/friendrequest',friendrequest).subscribe({
     next: (data)=> {
       console.log("ok");
+      this.ngOnInit();
     },
     error: (err)=>{console.log(err)}
   });
@@ -72,6 +73,7 @@ this.http.get('http://localhost:8182/friendrequest/receveur/'+this.user.id+'/2')
       console.log(data);
       this.msgAccept = "Demande acceptée"+f.id;
       this.msgAppear = "true"+f.id;
+      this.ngOnInit();
     },
     error: (err)=>{console.log(err)}
   });
@@ -83,6 +85,7 @@ this.http.get('http://localhost:8182/friendrequest/receveur/'+this.user.id+'/2')
       console.log(data);
       this.msgAccept = "Demande refusée"+f.id;
       this.msgAppear = "true"+f.id;
+      this.ngOnInit();
     },
     error: (err)=>{console.log(err)}
   });
