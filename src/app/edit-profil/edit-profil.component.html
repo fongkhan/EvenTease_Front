@@ -11,19 +11,26 @@
                 <br>
 
                 <div align="center" class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-
-                    <img height="110" width="110"
+                  <div *ngIf="mediaExist(this.currentUser.profilePic)">
+                    <img [src]="changeFormatMedia(this.currentUser.profilePic)" alt="profil picture">
+                  </div>
+                  <img height="110" width="110"
                         src="https://static.fnac-static.com/multimedia/Images/FR/MC/00/23/53/22225664/1540-1/tsp20140429182221/Figurine-Geante-Mickey-Mouse.jpg" />
-
                     <a href="#!">
-
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-
                     </a>
+                    <div>
+                      <button type="button" mat-icon-button class="btn btn-block" (click)="file.click()">
+                        <mat-icon>add_photo_alternate</mat-icon>
+                      </button>
+                    </div>
+                    <input  name="profilePic" type="file" [hidden]="true" #file accept="image/*" (change)="onFileChanged($event)">
+                    <div class="text-center">
+                      <img [src]="mediaURL" alt="imageURL" width="50%" *ngIf="mediaURL">
+                    </div>
                 </div>
                 <div style="background-color: #3a86dd;" class="pt-1 mb-4">
-                    <button type="button" class="btn btn-lg btn-block white-text" routerLink=""> <b>Import profil
-                            picture</b> </button>
+                    <button type="button" class="btn btn-lg btn-block white-text" routerLink=""> <b>Import profil picture</b> </button>
                 </div>
 
                 <!-- Edit Login-->
@@ -36,7 +43,7 @@
 
                 <label class="form-label" for="password">Password :</label>
                 <div class="input-group-append form-outline mb-4">
-                    
+
                     <input ngifpassword='' [(ngModel)]="currentUser.password" #passwordAction="ngModel" name="password" [type]="fieldTextType ? 'text' : 'password'" class="form-control" placeholder="New password" required />
                     <span class="input-group-text">
                         <i class="fa" [ngClass]="{'fa-eye-slash': !fieldTextType,'fa-eye': fieldTextType}"

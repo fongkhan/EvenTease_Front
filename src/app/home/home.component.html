@@ -1,6 +1,6 @@
 <section class="container">
     <div class="row">
-      
+
         <div class="col-sm-5">
             <div class="py-5 h-100">
                 <div class="row d-flex ali gn-items-center justify-content-center h-100">
@@ -26,29 +26,29 @@
         </div>
             <div class="col-sm-2">
                 <br><br>
-        
+
                 <div class="card" height=3>
 
                     <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        
+
                         <img src="https://www.servigroup.com/assets/cache/uploads/cadena/destinos/benicasim/fotos-web/festivales/340x340/san-san-festival.jpg" class="img-fluid" />
-        
+
                         <a href="#!">
-        
+
                             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        
+
                         </a>
-        
+
                     </div>
 
-                        
+
                     <div class="card-body">
 
                         <h5 class="card-title">{{listevent[0].title}}</h5>
 
                         <p class="card-text">> {{listevent[0].dateEvent}}</p>
 
-                      
+
                         <button class="btn btn-primary">
                             <a class="nav-link" (click)="eventDet.setEventId(listevent[0].id)" routerLink="/event-public">I'm in!</a>
                         </button>
@@ -63,15 +63,15 @@
                     <div class="card" height=3>
 
                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-            
+
                             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/1f/c6/5a/open-air-cinema-kamari.jpg?w=1200&h=1200&s=1" class="img-fluid" />
-            
+
                             <a href="#!">
-            
+
                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-            
+
                             </a>
-            
+
                         </div>
 
                         <div class="card-body">
@@ -79,11 +79,11 @@
                             <h5 class="card-title">{{listevent[1].title}}</h5>
 
                             <p class="card-text">> {{listevent[1].dateEvent}}</p>
-    
+
                             <button class="btn btn-primary">
                                 <a class="nav-link" (click)="eventDet.setEventId(listevent[1].id)" routerLink="/event-public">I'm in!</a>
                             </button>
-    
+
                         </div>
 
 
@@ -98,15 +98,15 @@
                     <div class="card" height=3>
 
                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-            
+
                             <img src="https://www.marciatack.fr/wp-content/uploads/2016/07/apero-fille-e1467905528505.jpg" class="img-fluid" />
-            
+
                             <a href="#!">
-            
+
                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-            
+
                             </a>
-            
+
                         </div>
 
                         <div class="card-body">
@@ -114,7 +114,7 @@
                             <h5 class="card-title">{{listevent[2].title}}</h5>
 
                             <p class="card-text">> {{listevent[2].id}}</p>
-                            
+
                             <button class="btn btn-primary">
                                 <a class="nav-link" (click)="eventDet.setEventId(listevent[2].id)" routerLink="/event-public">I'm in!</a>
                             </button>
@@ -125,8 +125,8 @@
 
                 </div>
 
-        
-          
+
+
 
 
                 <!--
@@ -139,7 +139,7 @@
                             <th class="white-text">C4</th>
 
                             </tr>
-                    
+
 
                             <tr *ngFor="Event">
                             <td>{{m.C1}}</td>
@@ -148,7 +148,7 @@
                             <td>{{m.C4}}</td>
                             </tr>
 
-                    
+
 
 
                         </thead>
@@ -157,7 +157,7 @@
 
 
 
-        
+
     </div>
 
     <!-- Register buttons -->
