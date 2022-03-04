@@ -21,6 +21,7 @@ import { AllMyEventsComponent } from './all-my-events/all-my-events.component';
 import { AllMyTeamsComponent } from './all-my-teams/all-my-teams.component';
 import { AddParticipantEventComponent } from './add-participant-event/add-participant-event.component';
 import { TeamPageComponent } from './team-page/team-page.component';
+import { VoteCreationComponent } from './vote-creation/vote-creation.component';
 
 
 
@@ -46,6 +47,7 @@ const routes: Routes = [
   {component: FriendrequestComponent, path:"friendrequest"},
   {component: AddParticipantEventComponent, path:"event/add-participant"},
   {component: TeamPageComponent, path:"team-page"},
+  {component: VoteCreationComponent, path:"event/add-participant"},
   {path :'',redirectTo:'home', pathMatch: 'full'},
 ];
 
@@ -53,4 +55,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
+
+
 export class AppRoutingModule { }
