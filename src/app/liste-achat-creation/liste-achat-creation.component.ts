@@ -68,6 +68,7 @@ remove(achat: Achat): void {
     this.achats.splice(index, 1);
   }
 }
+
 CreateShoppingList(shoppinglist:any){
   this.user = this.auth.getUserConnect();
   shoppinglist["createur"]=this.user;
@@ -86,20 +87,6 @@ CreateShoppingList(shoppinglist:any){
     error: (err)=>{console.log(err)}
   });
 } 
-/*
-addInputAchat() {
-  this.achatNumber++; 
-  this.achats.push("achat"+this.achatNumber)
-}
-
-removeInputAchat() {
-  this.achatNumber = this.achatNumber-1;
-  this.achats.splice(this.achatNumber)
-}
-
-removeInputAllAchat() {
-  this.achats.splice(1,this.achatNumber)
-}*/
 
 }
 

@@ -5,6 +5,8 @@ import { AddParticipantEventComponent } from '../add-participant-event/add-parti
 import { AuthService } from '../service/auth.service';
 import { EventDetailsService } from '../service/event-details.service';
 import {MatDialog} from '@angular/material/dialog';
+import { ListeAchatCreationComponent } from '../liste-achat-creation/liste-achat-creation.component';
+import { VoteCreationComponent } from '../vote-creation/vote-creation.component';
 
 @Component({
   selector: 'app-event-public',
@@ -77,6 +79,26 @@ export class EventPublicComponent implements OnInit {
 
   goAddParticipantPup(){
     const dialogRef = this.dialog.open(AddParticipantEventComponent, {
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
+    });
+  }
+
+  goAddVotePup(){
+    const dialogRef = this.dialog.open(VoteCreationComponent, {
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
+    });
+  }
+
+  goAddShoppingListPup(){
+    const dialogRef = this.dialog.open(ListeAchatCreationComponent, {
       
     });
 

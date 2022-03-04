@@ -16,3 +16,8 @@ input[type="radio"]{
 .scroll {
   -ms-overflow-style: none;
 }
+  .scroller {
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+  }

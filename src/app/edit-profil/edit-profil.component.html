@@ -5,42 +5,40 @@
 
     <form class=" border border-light p-5" #edit="ngForm" (ngSubmit)="EditProfil()">
         <h1 align="center">You can now edit your profil !</h1>
-        >
+        <br><br><br>
 
         <div class="form-row mb-4">
 
             <div class="col ">
-
+              <div class="row">
                 <div class="col">
-
-                    <div *ngIf="mediaExist(this.currentUser.profilePic)">
+                    <div *ngIf="mediaExist(this.currentUser.profilePic)" class="text-center">
                         <p>current image :</p>
-                        <img [src]="changeFormatMedia(this.currentUser.profilePic)" width="50%" alt="profil picture">
+                        <img [src]="changeFormatMedia(this.currentUser.profilePic)" width="100%" alt="profil picture">
                     </div>
-
                 </div>
                 <div class="col">
-                    <div class="text-center">
+                    <div *ngIf="mediaExist(this.currentUser.profilePic)" class="text-center">
                         <p>new image :</p>
                         <img ngiflogin='' [(ngModel)]="currentUser.profilePic" #loginAction="ngModel" [src]="mediaURL"
-                            alt="imageURL" width="50%" *ngIf="mediaURL">
+                            alt="imageURL" width="100%" *ngIf="mediaURL">
                     </div>
-                    <input name="profilePic" type="file" [hidden]="true" #file accept="image/*"
-                        (change)="onFileChanged($event)">
-                    <button type="button" mat-icon-button class="btn btn-block" (click)="file.click()">
-                        <mat-icon>add_photo_alternate</mat-icon>
-                    </button>
-
                 </div>
-
+              </div>
+                <input name="profilePic" type="file" [hidden]="true" #file accept="image/*" (change)="onFileChanged($event)">
+                <div class="text-center">
+                  <button type="button" mat-icon-button class="btn btn-block" (click)="file.click()">
+                    <mat-icon>add_photo_alternate</mat-icon>
+                  </button>
+                </div>
                 <br>
                 <!--
                 <div align="center" class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  
-                
 
 
-                    
+
+
+
                 </div>
                 -->
 
