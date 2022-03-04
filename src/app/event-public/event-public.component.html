@@ -29,10 +29,9 @@
             <div class="p-3 mb-2 bg-dark text-white">
                 <h3>Description</h3> {{event.description}}
             </div>
-            <a *ngIf="this.isOrganiserCheck()" class="nav-link" routerLink="/edit-my-event"
-            routerLinkActive="lien-active">
-            <button type="button" class="btn btn-secondary btn-md w3-round-xlarge">Edit my event</button>
-            </a>
+            
+            <button *ngIf="this.isOrganiserCheck()" type="button" (click)="goToEdit({event})" class="btn btn-secondary btn-md w3-round-xlarge">Edit my event</button>
+
             <button type="button" (click)="goAddParticipantPup()" class="btn btn-secondary btn-md w3-round-xlarge">
                 Gestion des participants
             </button>

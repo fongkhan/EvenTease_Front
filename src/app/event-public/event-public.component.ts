@@ -144,6 +144,11 @@ export class EventPublicComponent implements OnInit {
     }
     return false;
   }
+
+  goToEdit(e: any) {
+    this.eventDet.eventCurrent = e;
+    this.route.navigateByUrl('edit-my-event');
+  }
 }
 
 

@@ -30,6 +30,8 @@ export class EditMyEventComponent implements OnInit {
     this.user = this.auth.getUserConnect();
     // charge l'ID de l'event connecté
     this.idEvent = this.eventDet.getEventId();
+    this.currentEvent = this.eventDet.eventCurrent;
+    console.log('current event ', this.currentEvent);
     // charge tout l'event correspond / donc "Organizer" aussi
     this.http.post('http://localhost:8182/eventid', this.idEvent).subscribe({
       next: (data) => {
@@ -45,7 +47,7 @@ export class EditMyEventComponent implements OnInit {
   // fct qui check si user = organizer // à appeler dans la div boutton init + dans le div haut de page
   isOrganiserCheck() {
     this.user = this.auth.getUserConnect();
-    if (this.event.organizer["id"] == this.user["id"]) {
+    if (this.currentEvent.organizer.id == this.user["id"]) {
       return true;
     }
     return false;

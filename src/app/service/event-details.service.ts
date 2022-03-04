@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 })
 export class EventDetailsService {
 
+  eventCurrent: any;
+
   constructor(private route: Router) { }
 
   setEventId(eventId: any) {
