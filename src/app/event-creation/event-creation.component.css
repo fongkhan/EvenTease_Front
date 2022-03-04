@@ -1,3 +1,8 @@
 input[type="radio"]{
     margin: 0 20px 0 20px;
   }
+  .scroller {
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+  }

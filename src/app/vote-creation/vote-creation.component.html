@@ -1,0 +1,50 @@
+<section>
+    <div  class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div>
+                <h1><b>Ready to create your Vote?<br><br></b> </h1>
+            </div>
+            <div class="col-md-12">
+                <form #connect="ngForm" (ngSubmit)="CreateVote(connect.value)">
+                    <div class="col-md-12">
+                        <div class="form-outline mb-4 col-auto">
+                            <label class="form-label" for="">Question</label>
+                            <input type="text" name="question" class="form-control col-auto" ngModel="" />
+                        </div>
+                        <div class="form-outline mb-4 col-auto">
+                            <label>Event : </label>
+                            <label></label><br />
+                            <select name="event" class="col-md-12 form-control" ngModel="">
+                                <option>Select</option>
+                                <option *ngFor="let e of eventcreated" [ngValue]="e"> {{e.title}}</option>
+                            </select>
+                            <label></label><br />
+                            <label for="addAchat"> Answer :</label><br>
+                            <mat-form-field class="list-answer col-md-12"  appearance="fill">
+                                <mat-chip-list #Answer name="answer" aria-label="Fruit selection">
+                                  <mat-chip *ngFor="let a of answers" (removed)="remove(a)">
+                                    {{a.name}}
+                                    <button matChipRemove>
+                                      <mat-icon>cancel</mat-icon>
+                                    </button>
+                                  </mat-chip>
+                                  <input placeholder="Type your Answer..."
+                                         [matChipInputFor]="Answer"
+                                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                         [matChipInputAddOnBlur]="addOnBlur"
+                                         (matChipInputTokenEnd)="add($event)">
+                                </mat-chip-list>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary btn-block mb-4 ">
+                                create
+                            </button>
+                            <br>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
