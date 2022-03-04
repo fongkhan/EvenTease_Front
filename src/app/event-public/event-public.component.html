@@ -1,7 +1,7 @@
 <section class="container" >
 
     <div class="card text-center p-2 w3-round-xxlarge z-depth-3" style="max-width: 18rem;" style="text-align: center;">
-        <h1>{{event.title}}</h1>
+        <h1>{{myEvent.title}}</h1>
     </div>
 
 <br><br>
@@ -23,14 +23,14 @@
                     Request to participate!
                 </button>
             <p>
-            <h3>Date : {{event.dateEvent}}</h3>
+            <h3>Date : {{myEvent.dateEvent}}</h3>
             <p *ngIf="auth.isConnect()">
-            <h3> Location : {{event.locationEvent}}</h3>
+            <h3> Location : {{myEvent.locationEvent}}</h3>
             <div class="p-3 mb-2 bg-dark text-white">
-                <h3>Description</h3> {{event.description}}
+                <h3>Description</h3> {{myEvent.description}}
             </div>
             
-            <button *ngIf="this.isOrganiserCheck()" type="button" (click)="goToEdit({event})" class="btn btn-secondary btn-md w3-round-xlarge">Edit my event</button>
+            <button *ngIf="this.isOrganiserCheck()" type="button" (click)="goToEdit({myEvent})" class="btn btn-secondary btn-md w3-round-xlarge">Edit my event</button>
 
             <button type="button" (click)="goAddParticipantPup()" class="btn btn-secondary btn-md w3-round-xlarge">
                 Gestion des participants
@@ -46,7 +46,7 @@
             <br><br>
             <h3>Organiser</h3>
             <ul>
-                <li><b>{{event.organizer.name}} {{event.organizer.surname}}</b></li>
+                <li><b>{{myEvent.organizer.name}} {{myEvent.organizer.surname}}</b></li>
             </ul>
             <h3>Participants</h3>
             <div *ngIf="auth.isConnect()">

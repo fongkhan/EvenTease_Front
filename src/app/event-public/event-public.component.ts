@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AddParticipantEventComponent } from '../add-participant-event/add-participant-event.component';
 import { AuthService } from '../service/auth.service';
 import { EventDetailsService } from '../service/event-details.service';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ListeAchatCreationComponent } from '../liste-achat-creation/liste-achat-creation.component';
 import { VoteCreationComponent } from '../vote-creation/vote-creation.component';
 
@@ -23,38 +23,25 @@ export class EventPublicComponent implements OnInit {
   user: any;
   voteAnswerUser: any;
   votanswer: any;
-  idVote:any;
-  nbVoteAnswer:any;
+  idVote: any;
+  nbVoteAnswer: any;
+
+  myEvent: any;
 
   constructor(private http: HttpClient, private route: Router, public eventDet: EventDetailsService, public auth: AuthService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.myEvent = this.eventDet.eventCurrent;
 
-    this.id = this.eventDet.getEventId();
-
-    this.http.post('http://localhost:8182/eventid', this.id).subscribe({
+    this.http.get('http://localhost:8182/participant/event/' + this.myEvent.id).subscribe({
       next: (data) => {
-        this.event = data;
-        if (this.event != null) {
-          //s console.log(this.event)
-        }
-        else {
-          this.msgErr = 'No event to show';
-        }
+        this.participants = data;
+        // console.log('part ', this.participants);
       },
       error: (err) => { console.log(err) }
     });
 
-
-    this.http.post('http://localhost:8182/event/participant/event', this.id).subscribe({
-      next: (data2) => {
-        this.participants = data2;
-
-      },
-      error: (err) => { console.log(err) }
-    });
-
-    this.http.get('http://localhost:8182/event/vote/' + this.id).subscribe({
+    this.http.get('http://localhost:8182/event/vote/' + this.myEvent.id).subscribe({
       next: (data) => {
         this.votes = data;
         console.log(this.votes);
@@ -62,14 +49,11 @@ export class EventPublicComponent implements OnInit {
       },
       error: (err) => { console.log(err) }
     });
-
-
-
-
   }
+
   isPublicCheck() {
 
-    if (this.event["isPublic"]) {
+    if (this.myEvent.isPublic) {
       return true;
 
     } else {
@@ -77,9 +61,9 @@ export class EventPublicComponent implements OnInit {
     }
   }
 
-  goAddParticipantPup(){
+  goAddParticipantPup() {
     const dialogRef = this.dialog.open(AddParticipantEventComponent, {
-      
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -87,9 +71,9 @@ export class EventPublicComponent implements OnInit {
     });
   }
 
-  goAddVotePup(){
+  goAddVotePup() {
     const dialogRef = this.dialog.open(VoteCreationComponent, {
-      
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -97,9 +81,9 @@ export class EventPublicComponent implements OnInit {
     });
   }
 
-  goAddShoppingListPup(){
+  goAddShoppingListPup() {
     const dialogRef = this.dialog.open(ListeAchatCreationComponent, {
-      
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -107,39 +91,44 @@ export class EventPublicComponent implements OnInit {
     });
   }
 
-  getAllAnswersOfVote(idVote:any) {
-      this.nbVoteAnswer=[0,0,0,0];
-      console.log("ok");
-      this.http.get('http://localhost:8182/event/vote/answer/user/' + idVote).subscribe({
-        next: (data) => {
-          console.log(data);
-          this.voteAnswerUser=data;
-          for (var vote of this.voteAnswerUser){
-            for (let i = 0; i < 4; i++){
-              if (vote.idAnswer==i+1){
-                  this.nbVoteAnswer[i]++;
-              }
+  getAllAnswersOfVote(idVote: any) {
+    this.nbVoteAnswer = [0, 0, 0, 0];
+    console.log("ok");
+    this.http.get('http://localhost:8182/event/vote/answer/user/' + idVote).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.voteAnswerUser = data;
+        for (var vote of this.voteAnswerUser) {
+          for (let i = 0; i < 4; i++) {
+            if (vote.idAnswer == i + 1) {
+              this.nbVoteAnswer[i]++;
             }
           }
-          console.log(this.nbVoteAnswer);
-        },
-        error: (err) => { console.log(err) }
-      })
-    
+        }
+        console.log(this.nbVoteAnswer);
+      },
+      error: (err) => { console.log(err) }
+    })
+
   }
   isParticipantCheck() {
     this.user = this.auth.getUserConnect();
-    for (let i = 0; i < this.participants.length; i++) {
-      if (this.participants[i].user["id"] == this.user["id"]) {
-        return true;
+    if (this.participants != null) {
+      for (let i = 0; i < this.participants.length; i++) {
+        if (this.participants[i].user["id"] == this.user["id"]) {
+          return true;
+        }
       }
+      return true;
     }
-    return false;
+    else {
+      return false;
+    }
   }
 
   isOrganiserCheck() {
     this.user = this.auth.getUserConnect();
-    if (this.event.organizer["id"] == this.user["id"]) {
+    if (this.myEvent.organizer.id == this.user.id) {
       return true;
     }
     return false;

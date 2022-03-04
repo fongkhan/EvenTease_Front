@@ -92,6 +92,11 @@ export class AuthUserHomeComponent implements OnInit {
     });
   }
 
+  goToDetailEvent(event: any){
+    this.eventDet.eventCurrent = event;
+    this.route.navigateByUrl('event-public');
+  }
+
   // goCreateGroup() {
   //   this.route.navigateByUrl('create-group');
   // }
