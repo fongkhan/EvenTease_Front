@@ -4,17 +4,18 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class EventDetailsService {
+export class TeamDetailsService {
 
   constructor(private route: Router) { }
-  setEventId(eventId: any) {
-    localStorage.setItem('eventId',JSON.parse(eventId));
+
+  setTeamId(TeamId: any) {
+    localStorage.setItem('teamId',JSON.parse(TeamId));
   }
 
-  getEventId(){
-    let eventId: any;
-    eventId = localStorage.getItem('eventId');
-    return JSON.parse(eventId);
+  getTeamId(){
+    let teamId: any;
+    teamId = localStorage.getItem('teamId');
+    return JSON.parse(teamId);
   }
 /*
   isConnect(){
@@ -25,9 +26,8 @@ export class EventDetailsService {
     }
   }
   */
-  deleteEventId(){
+  deleteTeamId(){
     localStorage.clear();
-    this.route.navigateByUrl("login")
+    this.route.navigateByUrl("auth-user-home")
   }
-
 }

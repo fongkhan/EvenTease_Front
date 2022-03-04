@@ -20,6 +20,7 @@ import { FriendrequestComponent } from './friendrequest/friendrequest.component'
 import { AllMyEventsComponent } from './all-my-events/all-my-events.component';
 import { AllMyTeamsComponent } from './all-my-teams/all-my-teams.component';
 import { AddParticipantEventComponent } from './add-participant-event/add-participant-event.component';
+import { TeamPageComponent } from './team-page/team-page.component';
 import { VoteCreationComponent } from './vote-creation/vote-creation.component';
 
 
@@ -46,6 +47,8 @@ const routes: Routes = [
   {component: FriendrequestComponent, path:"friendrequest"},
   {component: AddParticipantEventComponent, path:"event/add-participant"},
   {component: VoteCreationComponent, path:"event/add-vote"},
+  {component: TeamPageComponent, path:"team-page"},
+
   {path :'',redirectTo:'home', pathMatch: 'full'},
 ];
 

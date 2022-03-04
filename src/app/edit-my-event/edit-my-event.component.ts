@@ -34,12 +34,11 @@ export class EditMyEventComponent implements OnInit {
     this.http.post('http://localhost:8182/eventid', this.idEvent).subscribe({
       next: (data) => {
         this.event = data;
-              },
+      },
       error: (err) => { console.log(err) }
-    });
-   
+      });
     // Création d'un event vide
-    this.eventDet.setEventId(5); // a supp
+    //this.eventDet.setEventId(5); // a supp
 
   }
 
@@ -64,7 +63,7 @@ export class EditMyEventComponent implements OnInit {
       // il y a de base l'info event id dans le localstorage + on l'a recup dans le ng init
     EditEvent(Event:any){
       //console.log("on recupere les modif",Event);
-       // Event["id"]=this.auth.getEventId()["id"]; // on va pas chercher le clic il faut modif cette ligne
+      // Event["id"]=this.auth.getEventId()["id"]; // on va pas chercher le clic il faut modif cette ligne
       //console.log(Event); // pour voir si on ouvre le bon event
         
                

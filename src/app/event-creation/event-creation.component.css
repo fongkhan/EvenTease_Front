@@ -1,6 +1,21 @@
 input[type="radio"]{
     margin: 0 20px 0 20px;
   }
+
+.scroll{
+  overflow-y: scroll; max-height: calc(100vh - 20px);
+}
+  /* Hide scrollbar for Chrome, Safari and Opera */
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+
+.scroll {
+  -ms-overflow-style: none;
+}
   .scroller {
     overflow-y: scroll;
     scrollbar-color: rebeccapurple green;
