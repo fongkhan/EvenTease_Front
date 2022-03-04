@@ -15,7 +15,6 @@ import { VoteCreationComponent } from '../vote-creation/vote-creation.component'
 })
 export class EventPublicComponent implements OnInit {
   id: any;
-  event: any;
   msgErr = '';
   participants: any;
   votes: any;
@@ -26,6 +25,9 @@ export class EventPublicComponent implements OnInit {
   idVote: any;
   nbVoteAnswer: any;
 
+  shoppinglist:any;
+  shoppinglists:any;
+
   myEvent: any;
 
   constructor(private http: HttpClient, private route: Router, public eventDet: EventDetailsService, public auth: AuthService, private dialog: MatDialog) { }
@@ -33,7 +35,7 @@ export class EventPublicComponent implements OnInit {
   ngOnInit(): void {
     this.myEvent = this.eventDet.eventCurrent;
 
-    this.http.get('http://localhost:8182/participant/event/' + this.myEvent.id).subscribe({
+    this.http.get('http://localhost:8182/participant/event/'+this.myEvent.id).subscribe({
       next: (data) => {
         this.participants = data;
         // console.log('part ', this.participants);
@@ -49,6 +51,18 @@ export class EventPublicComponent implements OnInit {
       },
       error: (err) => { console.log(err) }
     });
+
+    this.http.get('http://localhost:8182/event/shoppingList/' + this.myEvent.id).subscribe({
+      next: (data4) => {
+        this.shoppinglists = data4;
+        console.log(this.shoppinglists);
+
+      },
+      error: (err) => { console.log(err) }
+    });
+
+
+
   }
 
   isPublicCheck() {
@@ -109,6 +123,9 @@ export class EventPublicComponent implements OnInit {
     })
 
   }
+
+  getAllAnswersOfShoppingList() {}
+
   isParticipantCheck() {
     this.user = this.auth.getUserConnect();
     if (this.participants != null) {

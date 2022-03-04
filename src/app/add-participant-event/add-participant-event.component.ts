@@ -71,7 +71,9 @@ export class AddParticipantEventComponent implements OnInit {
     this.http.post('http://localhost:8182/event/addparticipant',participation).subscribe({
     next: (data)=> {
       console.log("ok");
-      this.route.navigateByUrl('auth-user-home');
+      this.route.navigateByUrl('event-public');
+      this.ngOnInit();
+      this.dialogRef.close();
     },
     error: (err)=>{console.log(err)}
   });

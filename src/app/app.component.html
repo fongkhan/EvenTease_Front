@@ -13,15 +13,19 @@
        
         <li class="nav-item">
           <a class="nav-link" routerLink="all-my-events" routerLinkActive="lien-active" *ngIf="auth.isConnect()">
-            Mes Events</a>
+            My Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="event-public" routerLinkActive="lien-active" *ngIf="auth.isConnect()">
+            All Events</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="all-my-teams" routerLinkActive="lien-active" *ngIf="auth.isConnect()">
-            Mes Teams</a>
+            My Teams</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="friendrequest" routerLinkActive="lien-active" *ngIf="auth.isConnect()">
-            Mes Friends</a>
+            My Friends</a>
         </li>
         <li class="nav-item">
           <!-- <a class="nav-link" routerLink="profil-perso" routerLinkActive="lien-active" *ngIf="auth.isConnect()">My

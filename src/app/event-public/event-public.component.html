@@ -1,65 +1,68 @@
 <section class="container">
 
-    <div class="card text-center p-2 w3-round-xxlarge z-depth-3" style="max-width: 18rem;" style="text-align: center;">
+    <div class=""  style="text-align: center;">
+        <br>
         <h1>{{myEvent.title}}</h1>
     </div>
 
-<br><br>
-<div class="card mb-3">
-    <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="card-img-top" alt="Wild Landscape"/>
-    <div class="card-body row">
-        <div class="col-8" >
-            <br><br>
-            <h2 *ngIf="!this.isPublicCheck()">
-                Private event
-            </h2>
-            <h2 *ngIf="this.isPublicCheck()">
-                Public event
-            </h2>
-            <br>
-            <p *ngIf="!auth.isConnect()"><br> <i>As you are not logged in, you only have access to part of the available
-                    information</i><br>
-                <button class="btn btn-primary">
-                    Request to participate!
-                </button>
-            <p>
-            <h3>Date : {{myEvent.dateEvent}}</h3>
-            <p *ngIf="auth.isConnect()">
-            <h3> Location : {{myEvent.locationEvent}}</h3>
-            <div class="p-3 mb-2 bg-dark text-white">
-                <h3>Description</h3> {{myEvent.description}}
-            </div>
-            
-            <button *ngIf="this.isOrganiserCheck()" type="button" (click)="goToEdit({myEvent})" class="btn btn-secondary btn-md w3-round-xlarge">Edit my event</button>
+    <br><br>
+    <div class="card mb-3">
+        <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="card-img-top" alt="Wild Landscape" />
+        <div class="card-body row">
+            <div class="col-8">
+                <br><br>
+                <h2 *ngIf="!this.isPublicCheck()">
+                    Private event
+                </h2>
+                <h2 *ngIf="this.isPublicCheck()">
+                    Public event
+                </h2>
+                <br>
+                <p *ngIf="!auth.isConnect()"><br> <i>As you are not logged in, you only have access to part of the
+                        available
+                        information</i><br>
+                    <button class="btn btn-primary">
+                        Request to participate!
+                    </button>
+                <p>
+                <h3>Date : {{myEvent.dateEvent}}</h3>
+                <p *ngIf="auth.isConnect()">
+                <h3> Location : {{myEvent.locationEvent}}</h3>
+                <h3>Description</h3> {{myEvent.description}} <br>
+                <div>
+                    <button *ngIf="this.isOrganiserCheck()" type="button" (click)="goToEdit({myEvent})"
+                        class="btn btn-primary btn-md w3-round-xlarge">Edit my event</button>
 
-            <button type="button" (click)="goAddParticipantPup()" class="btn btn-secondary btn-md w3-round-xlarge">
-                Gestion des participants
-            </button>
-            <button type="button" (click)="goAddVotePup()" class="btn btn-secondary btn-md w3-round-xlarge">
-                Gestion des votes
-            </button>
-            <button type="button" (click)="goAddShoppingListPup()" class="btn btn-secondary btn-md w3-round-xlarge">
-                Gestion des listes d'achats
-            </button>
-        </div>
-        <div class="col" >
-            <br><br>
-            <h3>Organiser</h3>
-            <ul>
-                <li><b>{{myEvent.organizer.name}} {{myEvent.organizer.surname}}</b></li>
-            </ul>
-            <h3>Participants</h3>
-            <div *ngIf="auth.isConnect()">
-                <ul>
-                    <li *ngFor="let participant of participants; let i = index">{{participants[i].user.name}}
+                    <button *ngIf="this.isOrganiserCheck()" type="button" (click)="goAddParticipantPup()"
+                        class="btn btn-primary btn-md w3-round-xlarge">
+                        Add a participant
+                    </button>
+                    <button *ngIf="this.isOrganiserCheck()" type="button" (click)="goAddVotePup()"
+                        class="btn btn-primary btn-md w3-round-xlarge">
+                        Add a vote
+                    </button>
+                    <button *ngIf="this.isOrganiserCheck()" type="button" (click)="goAddShoppingListPup()"
+                        class="btn btn-primary btn-md w3-round-xlarge">
+                        Add a shopping list
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <ul class="list-group">
+                    <li class="list-group-item active">Organizer</li>
+                    <li class="list-group-item">{{myEvent.organizer.name}} {{myEvent.organizer.surname}}</li>
+                </ul>
+                <ul class="list-group" *ngIf="auth.isConnect()">
+                    <li class="list-group-item active">Participants</li>
+                    <li class="list-group-item" *ngFor="let participant of participants; let i = index">
+                        {{participants[i].user.name}}
                         {{participants[i].user.surname}}</li>
                 </ul>
             </div>
         </div>
-    </div>
 
 
-    <!--
+        <!--
     <div class="row" class="card p-2 w3-round-xxlarge z-depth-3" >
         <div class="col" class="card text-center p-2 w3-round-xxlarge z-depth-3" >
             <br><br>
@@ -119,7 +122,7 @@
         </div>
     </div>
 -->
-</div>
+    </div>
 </section>
 
 <section class="container">
@@ -146,7 +149,8 @@
                 </form>
                 <div class="card-footer text-end">
                     <button type="button" class="btn btn-primary btn-md w3-round-xlarge">Submit</button>
-                    <button (click)="this.getAllAnswersOfVote(vote.id)" type="button" class="btn btn-primary btn-md w3-round-xlarge">See
+                    <button (click)="this.getAllAnswersOfVote(vote.id)" type="button"
+                        class="btn btn-primary btn-md w3-round-xlarge">See
                         votes</button>
                 </div>
             </div>
@@ -162,7 +166,7 @@
         <div *ngIf="!this.isParticipantCheck()&&!this.isOrganiserCheck()">
             As you are not participating in this event, you are not able to see the shopping list <br><br>
         </div>
-        <!-- <div *ngIf="this.isParticipantCheck()||this.isOrganiserCheck()">
+        <div *ngIf="this.isParticipantCheck()||this.isOrganiserCheck()">
             <div class="row col-5 card text-center p-2 w3-round-xxlarge z-depth-3" *ngFor="let s of shoppinglists">
                 <form class="px-4" action="">
                     <h4>{{s.name}}</h4>
@@ -178,10 +182,11 @@
                 </form>
                 <div class="card-footer text-end">
                     <button type="button" class="btn btn-primary btn-md w3-round-xlarge">Submit</button>
-                    <button (click)="this.getAllAnswersOfShoppingList()" type="button" class="btn btn-primary btn-md w3-round-xlarge">See
+                    <button (click)="this.getAllAnswersOfShoppingList()" type="button"
+                        class="btn btn-primary btn-md w3-round-xlarge">See
                         votes</button>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
 </section>
