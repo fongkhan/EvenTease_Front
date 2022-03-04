@@ -1,25 +1,24 @@
-<div class="container-fluid">
-    <div class="p-3 mb-2 bg-dark text-white">
+<section class="container" >
+
+    <div class="card text-center p-2 w3-round-xxlarge z-depth-3" style="max-width: 18rem;" style="text-align: center;">
         <h1>{{event.title}}</h1>
     </div>
-</div>
-<section class="container">
-    <div class="row">
-        <div class="col-sm-5">
-            <br>
 
-            <br>
+<br><br>
+<div class="card mb-3">
+    <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="card-img-top" alt="Wild Landscape"/>
+    <div class="card-body row">
+        <div class="col-8" >
+            <br><br>
             <h2 *ngIf="!this.isPublicCheck()">
                 Private event
             </h2>
-
             <h2 *ngIf="this.isPublicCheck()">
                 Public event
             </h2>
             <br>
             <p *ngIf="!auth.isConnect()"><br> <i>As you are not logged in, you only have access to part of the available
                     information</i><br>
-
                 <button class="btn btn-primary">
                     Request to participate!
                 </button>
@@ -28,42 +27,17 @@
             <p *ngIf="auth.isConnect()">
             <h3> Location : {{event.locationEvent}}</h3>
             <div class="p-3 mb-2 bg-dark text-white">
-                <h3>Descrption</h3> {{event.description}}
+                <h3>Description</h3> {{event.description}}
             </div>
             <a *ngIf="this.isOrganiserCheck()" class="nav-link" routerLink="/edit-my-event"
             routerLinkActive="lien-active">
-            <button type="button" class="btn btn-primary">Edit my event</button>
+            <button type="button" class="btn btn-secondary btn-md w3-round-xlarge">Edit my event</button>
             </a>
+            <button type="button" (click)="goAddParticipantPup()" class="btn btn-secondary btn-md w3-round-xlarge">
+                Gestion des participants
+            </button>
         </div>
-
-        <div class="col-md-4">
-
-            <br><br>
-
-            <div class="card" height=3>
-
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-
-
-                    <img src="http://api.park-gorkogo.com/storage/gallery/145/regular_preview_picture-3c291bf33d4002b149ff55e671dd7bfc.jpg"
-                        class="img-fluid" />
-
-                    <a href="#!">
-
-                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-
-                    </a>
-
-                </div>
-
-                <div class="card-body">
-
-                    <h5 class="card-title">{{event.title}}</h5>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
+        <div class="col" >
             <br><br>
             <h3>Organiser</h3>
             <ul>
@@ -78,7 +52,71 @@
             </div>
         </div>
     </div>
+  </div>
+
+
+<!--
+    <div class="row" class="card p-2 w3-round-xxlarge z-depth-3" >
+        <div class="col" class="card text-center p-2 w3-round-xxlarge z-depth-3" >
+            <br><br>
+            <h2 *ngIf="!this.isPublicCheck()">
+                Private event
+            </h2>
+            <h2 *ngIf="this.isPublicCheck()">
+                Public event
+            </h2>
+            <br>
+            <p *ngIf="!auth.isConnect()"><br> <i>As you are not logged in, you only have access to part of the available
+                    information</i><br>
+                <button class="btn btn-primary">
+                    Request to participate!
+                </button>
+            <p>
+            <h3>Date : {{event.dateEvent}}</h3>
+            <p *ngIf="auth.isConnect()">
+            <h3> Location : {{event.locationEvent}}</h3>
+            <div class="p-3 mb-2 bg-dark text-white">
+                <h3>Description</h3> {{event.description}}
+            </div>
+            <a *ngIf="this.isOrganiserCheck()" class="nav-link" routerLink="/edit-my-event"
+            routerLinkActive="lien-active">
+            <button type="button" class="btn btn-secondary btn-md w3-round-xlarge">Edit my event</button>
+            </a>
+            <button type="button" (click)="goAddParticipantPup()" class="btn btn-secondary btn-md w3-round-xlarge">
+                Gestion des participants
+            </button>
+        </div>
+        <div class="col" class="card text-center p-2 w3-round-xxlarge z-depth-3">
+            <br><br>
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="http://api.park-gorkogo.com/storage/gallery/145/regular_preview_picture-3c291bf33d4002b149ff55e671dd7bfc.jpg"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{event.title}}</h5>
+                </div>
+        </div>
+        <div class="col" class="card text-center p-2 w3-round-xxlarge z-depth-3">
+            <br><br>
+            <h3>Organiser</h3>
+            <ul>
+                <li><b>{{event.organizer.name}} {{event.organizer.surname}}</b></li>
+            </ul>
+            <h3>Participants</h3>
+            <div *ngIf="auth.isConnect()">
+                <ul>
+                    <li *ngFor="let participant of participants; let i = index">{{participants[i].user.name}}
+                        {{participants[i].user.surname}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+-->
 </section>
+
 <section class="container">
     <div class="p-3 mb-2 bg-dark text-white">
         <h3>Votes</h3><i>you can choose one or more options</i>
@@ -107,5 +145,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 </section>

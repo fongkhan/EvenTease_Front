@@ -1,0 +1,38 @@
+<section>
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div>
+                <h1><b>Manage your Event's Participant !<br><br></b> </h1>
+            </div>
+            <div class="col-md-12">
+                <form #connect="ngForm" (ngSubmit)="AddParticipant(connect.value)">
+                    <div class="col-md-12">
+                        <label>Event : </label>
+                            <label></label><br />
+                            <select name="event" class="col-md-6 form-control" ngModel="">
+                                <option>Select</option>
+                                <option *ngFor="let e of eventcreated" [ngValue]="e"> {{e.title}}</option>
+                            </select><br>
+                            <label>User : </label>
+                            <label></label><br />
+                            <select name="user" class="col-md-6 form-control" ngModel="">
+                                <option>Select</option>
+                                <option *ngFor="let u of alluser" [ngValue]="u"> {{u.name}} {{u.surname}}</option>
+                            </select><br>
+                        <!--<div class="text-center">
+                            <ejs-multiselect id='membres' [dataSource]='auth.users' [placeholder]='msgInfo'
+                                name="membres" ngModel=""></ejs-multiselect>
+                        </div>-->
+                        <br>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-block mb-4 ">
+                            create
+                        </button>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

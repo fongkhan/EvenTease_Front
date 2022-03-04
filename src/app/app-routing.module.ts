@@ -19,6 +19,7 @@ import { ListeAchatCreationComponent } from './liste-achat-creation/liste-achat-
 import { FriendrequestComponent } from './friendrequest/friendrequest.component';
 import { AllMyEventsComponent } from './all-my-events/all-my-events.component';
 import { AllMyTeamsComponent } from './all-my-teams/all-my-teams.component';
+import { AddParticipantEventComponent } from './add-participant-event/add-participant-event.component';
 
 
 
@@ -42,6 +43,7 @@ const routes: Routes = [
   {component: AllMyEventsComponent, path:"all-my-events"},
   {component: AllMyTeamsComponent, path:"all-my-teams"},
   {component: FriendrequestComponent, path:"friendrequest"},
+  {component: AddParticipantEventComponent, path:"event/add-participant"},
   {path :'',redirectTo:'home', pathMatch: 'full'},
 ];
 

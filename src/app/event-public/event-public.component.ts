@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AddParticipantEventComponent } from '../add-participant-event/add-participant-event.component';
 import { AuthService } from '../service/auth.service';
 import { EventDetailsService } from '../service/event-details.service';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-event-public',
@@ -22,7 +24,7 @@ export class EventPublicComponent implements OnInit {
   idVote:any;
   nbVoteAnswer:any;
 
-  constructor(private http: HttpClient, private route: Router, public eventDet: EventDetailsService, public auth: AuthService) { }
+  constructor(private http: HttpClient, private route: Router, public eventDet: EventDetailsService, public auth: AuthService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -71,6 +73,16 @@ export class EventPublicComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  goAddParticipantPup(){
+    const dialogRef = this.dialog.open(AddParticipantEventComponent, {
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
+    });
   }
 
   getAllAnswersOfVote(idVote:any) {
