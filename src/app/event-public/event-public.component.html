@@ -1,13 +1,13 @@
 <section class="container">
 
-    <div class=""  style="text-align: center;">
+    <div class="" style="text-align: center;">
         <br>
         <h1>{{myEvent.title}}</h1>
     </div>
 
     <br><br>
     <div class="card mb-3">
-        <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="card-img-top" alt="Wild Landscape" />
+        <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" style="opacity: 0.40;" class="card-img-top" alt="Wild Landscape" />
         <div class="card-body row">
             <div class="col-8">
                 <br><br>
@@ -134,31 +134,38 @@
             As you are not participating in this event, you are not able to see the votes <br><br>
         </div>
         <div *ngIf="this.isParticipantCheck()||this.isOrganiserCheck()">
-            <div class="row col-5 card text-center p-2 w3-round-xxlarge z-depth-3" *ngFor="let vote of votes">
-                <form class="px-4" action="">
-                    <h4>{{vote.question}}</h4>
-                    <div class="form-check" *ngFor="let answer of vote.answer">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">
-                            {{answer}}
-                            <div>
+            <div class="row container-fluid">
+                <div class="col-sm-4" *ngFor="let vote of votes">
+                    <div class="card p-2">
+                        <h4>{{vote.question}}</h4>
+                        <div class="form-check" *ngFor="let answer of vote.answer">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <label class="form-check-label" for="flexCheckDefault">
+                                {{answer}}
+                                <div>
 
-                            </div>
-                        </label>
+                                </div>
+                            </label>
+                        </div>
+
+
+
+                        <div class="card-footer text-end">
+                            <button type="button" class="btn btn-primary btn-md w3-round-xlarge">Submit</button>
+                            <button (click)="this.getAllAnswersOfVote(vote.id)" type="button"
+                                class="btn btn-primary btn-md w3-round-xlarge">See
+                                votes</button>
+                        </div>
                     </div>
-                </form>
-                <div class="card-footer text-end">
-                    <button type="button" class="btn btn-primary btn-md w3-round-xlarge">Submit</button>
-                    <button (click)="this.getAllAnswersOfVote(vote.id)" type="button"
-                        class="btn btn-primary btn-md w3-round-xlarge">See
-                        votes</button>
+                    <br>
                 </div>
             </div>
         </div>
+        <br><br>
     </div>
 </section>
 
-<section class="container">
+<section class="container mt-5">
     <div class="card text-center p-2 w3-round-xxlarge z-depth-3">
         <h3>Shopping List</h3><i>you can see the shopping list !</i>
         <br>
@@ -167,24 +174,26 @@
             As you are not participating in this event, you are not able to see the shopping list <br><br>
         </div>
         <div *ngIf="this.isParticipantCheck()||this.isOrganiserCheck()">
-            <div class="row col-5 card text-center p-2 w3-round-xxlarge z-depth-3" *ngFor="let s of shoppinglists">
-                <form class="px-4" action="">
-                    <h4>{{s.name}}</h4>
-                    <div class="form-check" *ngFor="let achat of s.achat">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label" for="flexCheckDefault">
-                            {{achat}}
-                            <div>
+            <div class="row" style="margin-left: 10px; margin-right: 10px;">
+                <div class=" col-sm-4 card text-center p-2 w3-round-xxlarge z-depth-3" *ngFor="let s of shoppinglists">
+                    <div >
+                        <h4>{{s.name}}</h4>
+                        <div class="form-check" *ngFor="let achat of s.achat">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <label class="form-check-label" for="flexCheckDefault">
+                                {{achat}}
+                                <div>
 
-                            </div>
-                        </label>
+                                </div>
+                            </label>
+                        </div>
                     </div>
-                </form>
-                <div class="card-footer text-end">
-                    <button type="button" class="btn btn-primary btn-md w3-round-xlarge">Submit</button>
-                    <button (click)="this.getAllAnswersOfShoppingList()" type="button"
-                        class="btn btn-primary btn-md w3-round-xlarge">See
-                        votes</button>
+                    <div class="card-footer text-end">
+                        <button type="button" class="btn btn-primary btn-md w3-round-xlarge">Submit</button>
+                        <button (click)="this.getAllAnswersOfShoppingList()" type="button"
+                            class="btn btn-primary btn-md w3-round-xlarge">See
+                            votes</button>
+                    </div>
                 </div>
             </div>
         </div>
