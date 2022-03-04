@@ -2,24 +2,16 @@
     <div class="container py-5 h-100">
         <div class="row d-flex align-items-center justify-content-center h-100">
             <div>
-                <h1><b>Ready to create your own event?<br><br></b> </h1>
+                <h1><b>Ready to create your own event?</b> </h1>
             </div>
-
             <div class="col-md-12">
-
                 <!-- Il reste à recuperer les info du createur -->
             <form #connect="ngForm" (ngSubmit)="CreateEvent(connect.value)">
                 <div class="col-md-6">
-
-                    
-                    
                     <div class="form-outline mb-4"> 
                         <label class="form-label" for="">Name*</label>
                         <input type="text" name="title" class="form-control" ngModel="" />
                     </div>
-                    
-                    
-                    
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Date</label>
                         <input type="date" name="dateEvent" class="form-control"ngModel="" />

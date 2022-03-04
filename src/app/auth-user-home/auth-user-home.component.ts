@@ -6,6 +6,7 @@ import { EventDetailsService } from '../service/event-details.service';
 import {MatDialog} from '@angular/material/dialog';
 import { CreateGroupComponent } from '../create-group/create-group.component';
 import { AddParticipantEventComponent } from '../add-participant-event/add-participant-event.component';
+import { EventCreationComponent } from '../event-creation/event-creation.component';
 
 @Component({
   selector: 'app-auth-user-home',
@@ -63,6 +64,16 @@ export class AuthUserHomeComponent implements OnInit {
 
   goTeamCreatePup(){
     const dialogRef = this.dialog.open(CreateGroupComponent, {
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
+    });
+  }
+
+  goEventCreatePup(){
+    const dialogRef = this.dialog.open(EventCreationComponent, {
       
     });
 
