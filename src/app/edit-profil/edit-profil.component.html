@@ -10,18 +10,14 @@
         <div class="form-row mb-4">
 
             <div class="col ">
-
+                <div class="row">
                 <div class="col">
-                    
-
                     <div *ngIf="mediaExist(this.currentUser.profilePic)" class="text-center">
                         <p>current image :</p>
                         <img [src]="changeFormatMedia(this.currentUser.profilePic)" width="50%" alt="profil picture">
                     </div>
-
                 </div>
                 <div class="col">
-                    
                     <div *ngIf="mediaExist(this.currentUser.profilePic)" class="text-center">
                         <p>new image :</p>
                         <img ngiflogin='' [(ngModel)]="currentUser.profilePic" #loginAction="ngModel" [src]="mediaURL"
@@ -34,6 +30,7 @@
                     </button>
 
                 </div>
+            </div>
 
                 <br>
                 <!--
