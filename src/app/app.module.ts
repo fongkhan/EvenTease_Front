@@ -33,6 +33,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { AllMyEventsComponent } from './all-my-events/all-my-events.component';
 import { AllMyTeamsComponent } from './all-my-teams/all-my-teams.component';
 import { AddParticipantEventComponent } from './add-participant-event/add-participant-event.component';
+import { TeamPageComponent } from './team-page/team-page.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { AddParticipantEventComponent } from './add-participant-event/add-partic
     AllMyEventsComponent,
     AllMyTeamsComponent,
     AddParticipantEventComponent,
+    TeamPageComponent,
   ],
   imports: [
     FormsModule,
