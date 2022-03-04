@@ -46,8 +46,9 @@ const routes: Routes = [
   {component: AllMyTeamsComponent, path:"all-my-teams"},
   {component: FriendrequestComponent, path:"friendrequest"},
   {component: AddParticipantEventComponent, path:"event/add-participant"},
+  {component: VoteCreationComponent, path:"event/add-vote"},
   {component: TeamPageComponent, path:"team-page"},
-  {component: VoteCreationComponent, path:"event/add-participant"},
+
   {path :'',redirectTo:'home', pathMatch: 'full'},
 ];
 

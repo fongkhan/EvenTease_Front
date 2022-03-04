@@ -63,7 +63,6 @@ export class EventPublicComponent implements OnInit {
 
   goAddParticipantPup() {
     const dialogRef = this.dialog.open(AddParticipantEventComponent, {
-
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -73,7 +72,6 @@ export class EventPublicComponent implements OnInit {
 
   goAddVotePup() {
     const dialogRef = this.dialog.open(VoteCreationComponent, {
-
     });
 
     dialogRef.afterClosed().subscribe(result => {
