@@ -25,6 +25,8 @@ export class EventPublicComponent implements OnInit {
   votanswer: any;
   idVote:any;
   nbVoteAnswer:any;
+  shoppinglist:any;
+  shoppinglists:any;
 
   constructor(private http: HttpClient, private route: Router, public eventDet: EventDetailsService, public auth: AuthService, private dialog: MatDialog) { }
 
@@ -55,9 +57,18 @@ export class EventPublicComponent implements OnInit {
     });
 
     this.http.get('http://localhost:8182/event/vote/' + this.id).subscribe({
-      next: (data) => {
-        this.votes = data;
+      next: (data3) => {
+        this.votes = data3;
         console.log(this.votes);
+
+      },
+      error: (err) => { console.log(err) }
+    });
+
+    this.http.get('http://localhost:8182/event/shoppingList/' + this.id).subscribe({
+      next: (data4) => {
+        this.shoppinglists = data4;
+        console.log(this.shoppinglists);
 
       },
       error: (err) => { console.log(err) }
@@ -68,7 +79,6 @@ export class EventPublicComponent implements OnInit {
 
   }
   isPublicCheck() {
-
     if (this.event["isPublic"]) {
       return true;
 
@@ -79,7 +89,6 @@ export class EventPublicComponent implements OnInit {
 
   goAddParticipantPup(){
     const dialogRef = this.dialog.open(AddParticipantEventComponent, {
-      
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -89,7 +98,6 @@ export class EventPublicComponent implements OnInit {
 
   goAddVotePup(){
     const dialogRef = this.dialog.open(VoteCreationComponent, {
-      
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -106,6 +114,8 @@ export class EventPublicComponent implements OnInit {
       this.ngOnInit();
     });
   }
+
+  getAllAnswersOfShoppingList() {}
 
   getAllAnswersOfVote(idVote:any) {
       this.nbVoteAnswer=[0,0,0,0];

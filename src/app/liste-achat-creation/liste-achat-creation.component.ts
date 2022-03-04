@@ -4,6 +4,7 @@ import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
+import { MatDialogRef } from '@angular/material/dialog';
 
 export interface Achat {
   name: string;
@@ -30,7 +31,7 @@ export class ListeAchatCreationComponent implements OnInit {
   
 
 
-constructor(private http: HttpClient, private route: Router,private auth: AuthService) { }
+constructor(private http: HttpClient, private route: Router,private auth: AuthService, private dialogRef: MatDialogRef<ListeAchatCreationComponent>) { }
 
 ngOnInit(): void {
   this.user=this.auth.getUserConnect();
@@ -82,7 +83,9 @@ CreateShoppingList(shoppinglist:any){
   this.http.post('http://localhost:8182/shoppinglist/add',shoppinglist).subscribe({
     next: (data)=> {
       console.log("ok");
-      this.route.navigateByUrl('auth-user-home');
+      this.route.navigateByUrl('event-public');
+      this.ngOnInit();
+      this.dialogRef.close();
     },
     error: (err)=>{console.log(err)}
   });

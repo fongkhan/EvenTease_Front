@@ -4,6 +4,7 @@ import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
+import { MatDialogRef } from '@angular/material/dialog';
 
 export interface Answer {
   name: string;
@@ -26,7 +27,7 @@ export class VoteCreationComponent implements OnInit {
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   answers: Answer [] = [];
 
-  constructor(private http: HttpClient, private route: Router,private auth: AuthService) { }
+  constructor(private http: HttpClient, private route: Router,private auth: AuthService, private dialogRef: MatDialogRef<VoteCreationComponent>) { }
 
   ngOnInit(): void {
     this.user=this.auth.getUserConnect();
@@ -78,7 +79,10 @@ export class VoteCreationComponent implements OnInit {
     this.http.post('http://localhost:8182/event/vote/create',answerlist).subscribe({
       next: (data)=> {
         console.log("ok");
-        this.route.navigateByUrl('auth-user-home');
+        this.route.navigateByUrl('event-public');
+        this.ngOnInit();
+        this.dialogRef.close();
+
       },
       error: (err)=>{console.log(err)}
     });
