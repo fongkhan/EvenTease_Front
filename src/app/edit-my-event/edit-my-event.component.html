@@ -2,16 +2,16 @@
 
     <br>
 
-    <form  class=" border border-light p-5" action="#!" #edit="ngForm" (ngSubmit)="EditEvent(edit.value)">
+    <form class=" border border-light p-5" action="#!" #edit="ngForm" (ngSubmit)="EditEvent(edit.value)">
         <h1 align="center">You can now edit your event !</h1>
 
         <div *ngIf="isOrganiserCheck()">
-       
-            <div class="form-row mb-4" >
-            <div class="col">
 
-                <br>
-                <!--
+            <div class="form-row mb-4">
+                <div class="col">
+
+                    <br>
+                    <!--
 
                 <div align="center" class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 
@@ -31,60 +31,72 @@
                 -->
 
 
-                <!-- Edit Title-->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="">Current Title : <i>{{myEvent.myEvent.title}}</i></label>
-                    <input [(ngModel)]="currentEvent.title" #titleAction="ngModel" name="title" type="text" class="form-control" placeholder="New title" required />
+                    <!-- Edit Title-->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="">Current Title : <i>{{myEvent.myEvent.title}}</i></label>
+                        <input [(ngModel)]="currentEvent.title" #titleAction="ngModel" name="title" type="text"
+                            class="form-control" placeholder="New title" required />
+                    </div>
+                    <!-- Edit Date-->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="">Current date : <i>{{myEvent.myEvent.dateEvent}}</i></label>
+                        <input ngifldateEvent='' [(ngModel)]="currentEvent.dateEvent" #dateEventAction="ngModel"
+                            name="dateEvent" type="date" class="form-control" placeholder="New date" required />
+                    </div>
                 </div>
-                <!-- Edit Date-->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="">Current date : <i>{{myEvent.myEvent.dateEvent}}</i></label>
-                    <input ngifldateEvent=''[(ngModel)]="currentEvent.dateEvent" #dateEventAction="ngModel" name="dateEvent" type="date" class="form-control" placeholder="New date" required/>
-                </div>
-            </div>
-            <div class="col">
+                <div class="col">
 
-                <br><br><br><br><br><br>
-                <!-- Edit location-->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="">Current location : <i>{{myEvent.myEvent.locationEvent}}</i></label>
-                    <input ngifllocationEvent=''[(ngModel)]="currentEvent.locationEvent" #locationEventAction="ngModel" name="locationEvent" type="text" class="form-control" placeholder="New location" required/>
-                </div>
-                 <!-- Edit event publique / privé -->
-                 <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example1">Public event ? <i>{{myEvent.myEvent.isPublic}}</i></label>
                     <br>
-                    <input [(ngModel)]="currentEvent.isPublic" #isPublicAction="ngModel"type="checkbox" class="demo5" id="private" name="isPublic" value="false" ngModel="">
-                    <label for="private">Switch</label>
+                    <!-- Edit location-->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="">Current location :
+                            <i>{{myEvent.myEvent.locationEvent}}</i></label>
+                        <input ngifllocationEvent='' [(ngModel)]="currentEvent.locationEvent"
+                            #locationEventAction="ngModel" name="locationEvent" type="text" class="form-control"
+                            placeholder="New location" required />
+                    </div>
+                    <!-- Edit event publique / privé -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example1">Public event ?
+                            <i>{{myEvent.myEvent.isPublic}}</i></label>
+                        <br>
+                        <input [(ngModel)]="currentEvent.isPublic" #isPublicAction="ngModel" type="checkbox"
+                            class="demo5" id="private" name="isPublic" value="false" ngModel="">
+                        <label for="private">Switch</label>
+                    </div>
+
+
                 </div>
-                <!-- Edit description-->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="">Current description : <br><i>{{myEvent.description}}</i></label>
-                    <input [(ngModel)]="currentEvent.description" #descriptionAction="ngModel" name="description" type="text" class="form-control" placeholder="New description" required/>
+            </div>
+            <!-- Edit description-->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="">Current description :
+                    <br><i>{{myEvent.description}}</i></label>
+                <input [(ngModel)]="currentEvent.description" #descriptionAction="ngModel" name="description"
+                    type="text" class="form-control" placeholder="New description" required />
+            </div>
+
+            <div>
+
+                <div style="background-color: #3a86dd;" class="pt-1 mb-4">
+                    <button type="submit" class="btn btn-lg btn-block white-text"> <b>Edit</b></button>
                 </div>
 
             </div>
         </div>
-        <div>
 
-            <div style="background-color: #3a86dd;" class="pt-1 mb-4">
-                <button type="submit" class="btn btn-lg btn-block white-text" > <b>Edit</b></button>
-            </div>
 
-        </div>
-    </div>
-        
+    </form>
 
-</form>
-
-        <div style="background-color: #3a86dd;" class="pt-1 mb-4">
+    <div style="background-color: #3a86dd;" class="pt-1 mb-4">
         <button class="btn btn-lg btn-block white-text" type="button" routerLink=""><b>manage votes</b></button>
     </div>
-        
+
     <div style="background-color: #3a86dd;" class="pt-1 mb-4">
-        <button class="btn btn-lg btn-block white-text" type="button" routerLink=""><b>manage shopping lists</b></button>
+        <button class="btn btn-lg btn-block white-text" type="button" routerLink=""><b>manage shopping
+                lists</b></button>
     </div>
-    
+
 
 
 
